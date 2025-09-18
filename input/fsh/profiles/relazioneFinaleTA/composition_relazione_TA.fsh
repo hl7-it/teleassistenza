@@ -1,7 +1,7 @@
 Alias: $loinc = http://loinc.org
 
 Profile: CompositionRelazioneTeleassistenza
-Parent: CompositionTelemedicina
+Parent: Composition
 Id: CompositionRelazioneTeleassistenza
 Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Telemonitoraggio"
 * ^status = #draft
@@ -12,8 +12,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section ^slicing.rules = #open
 * section contains
     pianoDiCura 1..1 and
-    // anamnesi 0..1 and TODO: aggiungi anamnesi
-    // allergie 0..1 and TODO: aggiungi anamnesi
+    anamnesi 0..1 and 
+    allergie 0..1 and 
     prestazioni 0..1 and
     confrontoPrecedentiEsamiEseguiti 0..1 and
     referto 0..1 and
@@ -22,33 +22,32 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     accertamentiControlliConsigliati 0..1 and
     terapiaFarmacologicaConsigliata 0..1 and
     precedentiEsamiEseguiti 0..1
-
     
 * section[pianoDiCura] ^sliceName = "pianoDiCura"
 * section[pianoDiCura].code = $loinc#18776-5 (exactly)
 * section[pianoDiCura].entry only Reference(CarePlanRelazioneTA)
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
-* section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
+* section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTeleassistenza)
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
 * section[precedentiEsamiEseguiti].code = $loinc#30954-2 (exactly)
-* section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
+* section[precedentiEsamiEseguiti].entry only Reference(ObservationTeleassistenza)
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].code = $loinc#62387-6 (exactly)
-* section[prestazioni].entry only Reference(EncounterTelemedicina)
+* section[prestazioni].entry only Reference(EncounterTeleassistenza)
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
 * section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1 (exactly)
-* section[confrontoPrecedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
+* section[confrontoPrecedentiEsamiEseguiti].entry only Reference(ObservationTeleassistenza)
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].code = $loinc#29548-5 (exactly)
-* section[diagnosi].entry only Reference(ObservationTelemedicina)
+* section[diagnosi].entry only Reference(ObservationTeleassistenza)
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
 * section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0 (exactly)
-* section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTelemedicina)
+* section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTeleassistenza)
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
 * section[accertamentiControlliConsigliati].code = $loinc#80615-8 (exactly)
-* section[accertamentiControlliConsigliati].entry only Reference(ObservationTelemedicina)
+* section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleassistenza)
 * section[referto] ^sliceName = "referto"
-* section[referto].entry only Reference(ObservationTelemedicina)
-// * section[anamnesi] ^sliceName = "referto"
-// * section[anamnesi].code = $loinc#80615-8 (exactly)
-// * section[anamnesi].entry only Reference(ObservationTelemedicina)
+* section[referto].entry only Reference(ObservationTeleassistenza)
+* section[anamnesi] ^sliceName = "anamnesi"
+* section[anamnesi].code = $loinc#80615-8 (exactly)
+* section[anamnesi].entry only Reference(ObservationTeleassistenza)

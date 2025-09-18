@@ -5,8 +5,8 @@ Description: "Definisce il sistema di terminologie da usare per le diagnosi seco
 * ^version = "1.0.0"
 * ^status = #draft
 * ^content = #complete
-* ^caseSensitive = false
-
+* ^caseSensitive = true
+* ^experimental = true
 * #001 "COLERA"
 * #001.0 "COLERA DA VIBRIO CHOLERAE"
 * #001.1 "COLERA DA VIBRIO CHOLERAE EL TOR"

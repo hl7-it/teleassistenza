@@ -4,13 +4,13 @@ Title: "Ministero della Salute - ASL"
 Description: "Definisce il sistema di terminologie da usare per il codice ASL ereditato da Hl7.it"
 * ^name = "CodesystemMinisteroDellaSalute_ASL"
 * ^versionNeeded = false
-* ^url = "https://terminology.agenas.gov.it/CodeSystem/minsan-fls"
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true
 * ^publisher = "pnt.gov.it"
-* ^caseSensitive = false
+* ^caseSensitive = true
 * ^content = #complete
+* ^experimental = true
 * #010201 "TO1"
 * #010202 "TO2"
 * #010203 "TO3"

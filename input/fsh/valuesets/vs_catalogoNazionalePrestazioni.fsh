@@ -5,6 +5,6 @@ Description: "Contiene la lista di codici da utilizzare per le prestazioni secon
 * ^name = "ValueSet_CatalogoNazionalePrestazioni"
 * ^version = "1.0.0"
 * ^status = #draft
-* ^experimental = true
+* ^experimental = false
 * ^publisher = "pnt.gov.it"
 * include codes from system CsCatalogoNazionalePrestazioni

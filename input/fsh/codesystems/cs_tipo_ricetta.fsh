@@ -5,6 +5,7 @@ Description: "Codici identificativi per tipologie di assistenza a stranieri in t
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
+* ^experimental = true
 * #EE "Assicurati extra-europei in temporaneo soggiorno"
 * #UE "Assicurati europei in temporaneo soggiorno"
 * #NA "Assistiti SASN con visita ambulatoriale"

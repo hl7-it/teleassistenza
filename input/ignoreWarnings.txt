@@ -3,3 +3,8 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+For the complex type CodeableConcept, consider using a pattern rather than a fixed value to avoid over-constraining the instance
+There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.3.0-ballot-tc1', found versions: 4.0.1, 5.2.0, 5.3.0-ballot-tc1. Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace' to 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.3.0-ballot-tc1'
+The value set expansion is too large, and only a subset has been displayed
+There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v2-0203'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.0.0', found versions: 4.0.0, 5.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v2-0203' to 'http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0'

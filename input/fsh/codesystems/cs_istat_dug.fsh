@@ -4,6 +4,7 @@ Title: "ISTAT - Registro delle Denominazioni Urbanistiche Generiche (DUG)"
 Description: "ISTAT - Registro delle Denominazioni Urbanistiche Generiche (DUG)"
 * ^experimental = false
 * ^caseSensitive = true 
+* ^experimental = true
 * #1 "arco"
 * #2 "autostrada"
 * #3 "belvedere"

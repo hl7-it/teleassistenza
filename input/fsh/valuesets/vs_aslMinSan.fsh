@@ -1,5 +1,3 @@
-// Alias: $cs-asl = http://hl7.it/fhir/lab-report/CodeSystem/cs-asl
-
 ValueSet: VsMinisteroSaluteAsl
 Id: minsan-asl
 Title: "MDS - ASL"
@@ -15,4 +13,4 @@ Description: "MDS - ASL"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "https://hl7.it"
 * ^jurisdiction = urn:iso:std:iso:3166#IT "Italy"
-// * include codes from system $cs-asl
+* include codes from system https://www.hl7.it/fhir/terminology/CodeSystem/cs-asl

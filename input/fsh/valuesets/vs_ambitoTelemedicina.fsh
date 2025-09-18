@@ -5,6 +5,6 @@ Description: "Contiene la lista di codici da utilizzare per la tipologia di refe
 * ^name = "ValueSet_ambitoTelemedicina"
 * ^version = "1.0.0"
 * ^status = #draft
-* ^experimental = true
+* ^experimental = false
 * ^publisher = "pnt.gov.it"
 * include codes from system csAmbitoTelemedicina
