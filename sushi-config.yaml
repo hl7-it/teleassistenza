@@ -156,7 +156,7 @@ groups:
     resources:
     - StructureDefinition/BundlePianoTeleassistenza
     - StructureDefinition/CompositionPianoTA
-    - StructureDefinition/CarePlanPianoDiCuraTA   
+    - StructureDefinition/CarePlanPianoDiCuraTeleassistenza   
   GroupI:
     name: Profili Relazione di Teleassistenza
     description: Profili utilizzati nel contesto della Relazione di Teleassistenza

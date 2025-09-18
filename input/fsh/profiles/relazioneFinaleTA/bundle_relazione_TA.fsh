@@ -10,6 +10,7 @@ Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Tele
 * entry ^slicing.discriminator[1].path = "resource"
 * entry ^slicing.ordered = false
 * entry ^slicing.rules = #open
+
 * entry contains
     composition 1..1 and
     carePlan 0..* and
@@ -18,6 +19,7 @@ Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Tele
     organization 0..* and
     practitioner 0..* and
     activityDefinition 0..*
+
 * entry[composition].resource only CompositionRelazioneTeleassistenza
 * entry[carePlan].resource only CarePlanRelazioneTA
 * entry[patient].resource only PatientTeleassistenza

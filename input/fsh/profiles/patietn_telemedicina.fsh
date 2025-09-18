@@ -9,7 +9,7 @@ Alias: $cf = http://hl7.it/sid/codiceFiscale
 Profile: PatientTeleassistenza
 Parent: Patient
 Id: PatientTeleassistenza
-Description: "Profilo base del Patient condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo base del Patient utilizzato nel contesto della Teleassistenza."
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true
@@ -20,13 +20,12 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 
 * identifier  
 * identifier 1..
+* identifier ^short = "Identificativo del paziente."
 * identifier.extension contains ExtRecordCertification named certificazioneId 0..1
 * identifier.extension[certificazioneId] ^short = "Identificativo certificato (tipicamente per CF)"
-* identifier.extension[certificazioneId] ^definition = "Indica che questo identificativo è stato certificato. Usato tipicamente per il Codice Fiscale."
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this.system"
 * identifier ^slicing.rules = #open
-* identifier ^short = "Identificativo del paziente."
 * identifier.type from VstipoIdentificatore (extensible)
 * identifier contains
     codiceFiscale 0..1   and
@@ -36,7 +35,6 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
     codiceANA 0..1 and
     tesseraTEAM 0..1 and
     codiceSTP 0..1
-
 * identifier[codiceFiscale] ^short = "Codice Fiscale."
 * identifier[codiceFiscale].system ^short = "Namespace per il valore dell'identifier."
 * identifier[codiceFiscale].system 1..  
@@ -76,13 +74,12 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 
 * name 1..
 * name obeys it-pat-1
-
-* telecom ^short = "recapiti paziente."
-
 * name ^short = "Nome dell'assistito."
 * name ^definition = "Un nome associato al paziente."
 * name ^comment = "Un paziente può avere più nomi con usi o periodi di applicazione diversi. Per gli animali, il nome è un \"HumanName\" nel senso che viene assegnato e utilizzato dagli esseri umani e ha gli stessi schemi."
 * name ^requirements = "Need to be able to track the patient by multiple names. Examples are your official name and a partner name. The Alphabetic representation of the name SHALL be always provided"
+
+* telecom ^short = "recapiti paziente."
 
 * gender 1..
 * gender ^definition = "Genere amministrativo."
@@ -96,14 +93,8 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 * birthDate ^comment = "Se non si conosce la vera data di nascita, si dovrebbe fornire almeno un anno stimato. Esiste un'estensione standard \"patient-birthTime\" che dovrebbe essere utilizzata quando è richiesta l'ora (ad esempio nei sistemi di assistenza alla maternità/infanzia)."
 
 * deceased[x] ^short = "Indica se l'individuo è deceduto o meno."
-* deceased[x] ^definition = "Indica se l'individuo è deceduto o meno."
-* deceased[x] ^comment = "Se non c'è alcun valore nell'istanza, significa che non c'è alcuna dichiarazione sul fatto che l'individuo sia o meno deceduto. La maggior parte dei sistemi interpreta l'assenza di un valore come un segno che la persona è viva."
-* deceased[x] ^mustSupport = false
 
 * maritalStatus ^short = "Stato civile del paziente"
-* maritalStatus ^definition = "Questo campo contiene l'ultimo stato civile del paziente."
-* maritalStatus ^comment = "Non tutti gli usi della terminologia si adattano a questo schema generale. In alcuni casi, i modelli non dovrebbero usare CodeableConcept e utilizzare direttamente la codifica, fornendo la propria struttura per la gestione del testo, delle codifiche, delle traduzioni e delle relazioni tra gli elementi e il pre e post coordinamento."
-
 
 * generalPractitioner ^slicing.discriminator.type = #profile
 * generalPractitioner ^slicing.discriminator.path = "$this"

@@ -3,13 +3,26 @@ Alias: $loinc = http://loinc.org
 Profile: CompositionRelazioneTeleassistenza
 Parent: Composition
 Id: CompositionRelazioneTeleassistenza
-Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Telemonitoraggio"
+Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Teleassistenza"
 * ^status = #draft
 * title = "Relazione di Teleassistenza" (exactly)
+
+* subject only Reference(PatientTeleassistenza)
+* encounter only Reference(EncounterTeleassistenza)
+* encounter ^short = "Contesto in cui è stato generato il documento."
+* date ^short = "Data di modifica della risorsa."
+
+* author only Reference(PractitionerRoleTeleassistenza or OrganizationT1)
+* author ^short = "Autore del Piano di Teleassistenza."
+
+* title ^short = "Titolo del documento"
+* title = "Relazione di Teleassistenza" (exactly)
+
 * type = $loinc#91531-4 (exactly)
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
+
 * section contains
     pianoDiCura 1..1 and
     anamnesi 0..1 and 

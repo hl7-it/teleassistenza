@@ -19,12 +19,8 @@ Description: "Profilo del Bundle utilizzato nel contesto della Piano di Teleassi
     practitioner 0..* and
     activityDefinition 0..*
 * entry[composition].resource only CompositionPianoTA
-* entry[carePlan].resource only CarePlanPianoDiCuraTA
+* entry[carePlan].resource only CarePlanPianoDiCuraTeleassistenza
 * entry[patient].resource only PatientTeleassistenza
-* entry[patient].resource.address 1..
-* entry[patient].resource.address ^slicing.discriminator.type = #value
-* entry[patient].resource.address ^slicing.discriminator.path = "use"
-* entry[patient].resource.address ^slicing.rules = #open
 * entry[practitionerRole].resource only PractitionerRoleTeleassistenza
 * entry[organization].resource only OrganizationT1
 * entry[practitioner].resource only PractitionerTeleassistenza

@@ -7,11 +7,19 @@ Parent: Composition
 Id: CompositionPianoTA
 Description: "Profilo della Composition utilizzata nel contesto della Piano di Teleassistenza"
 * ^status = #draft
-* type ^definition = "Campo che specifica il particolare tipo di Composition."
-* subject ^definition = "Il soggetto a cui si riferisce la Composition, ad esempio un paziente sottoposto a monitoraggio remoto"
-* author ^definition = "Identifica chi è responsabile delle informazioni nella Composition, non necessariamente chi le ha inserite."
-* title = "Piano di Telemonitoraggio" (exactly)
-* title ^definition = "Titolo human-readable ufficiale per la Composition."
+* type ^definition = "Tipo di Composition."
+
+* subject only Reference(PatientTeleassistenza)
+* encounter only Reference(EncounterTeleassistenza)
+* encounter ^short = "Contesto in cui è stato generato il documento."
+* date ^short = "Data di modifica della risorsa."
+
+* author only Reference(PractitionerRoleTeleassistenza or OrganizationT1)
+* author ^short = "Autore del Piano di Teleassistenza."
+
+* title ^short = "Titolo del documento"
+* title = "Piano di Teleassistenza" (exactly)
+
 //Section
 * section
   * ^slicing.discriminator[+].type = #exists
@@ -20,12 +28,14 @@ Description: "Profilo della Composition utilizzata nel contesto della Piano di T
   * ^slicing.discriminator[=].path = "$this.entry"
   * ^slicing.ordered = false
   * ^slicing.rules = #open
+
 * section contains
     pianoDiCura 0..1 and
     diagnosi 0..1
+
 * section[pianoDiCura] ^sliceName = "pianoDiCura"
 * section[pianoDiCura].code = $loinc#18776-5 (exactly)
-* section[pianoDiCura].entry only Reference(CarePlanPianoDiCuraTA)
+* section[pianoDiCura].entry only Reference(CarePlanPianoDiCuraTeleassistenza)
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].code = $loinc#29548-5 (exactly)
 * section[diagnosi].entry only Reference(ObservationTeleassistenza)
