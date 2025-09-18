@@ -31,4 +31,4 @@ Queste connessioni descrivono come le risorse all’interno del Bundle si riferi
 
 ---
 
-![](Modello_logico_TV.png)
+![](Relazione_finale_TA_v3.png)

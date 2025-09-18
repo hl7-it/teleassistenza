@@ -77,7 +77,7 @@ dependencies:
 menu:
   Home: index.html
   Artifacts: artifacts.html
-  ModelMaps: RefertoDiTelevisita.html  
+  ModelMaps: teleassistenza.html  
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
