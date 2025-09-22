@@ -13,7 +13,7 @@ Description: "Profilo del Bundle utilizzato nel contesto della Piano di Teleassi
 * entry contains
     composition 1..1 and
     carePlan 0..* and
-    patient 1..1 and
+    patient 0..1 and
     practitionerRole 0..* and
     organization 0..* and
     practitioner 0..* and

@@ -7,14 +7,13 @@ Parent: Composition
 Id: CompositionPianoTA
 Description: "Profilo della Composition utilizzata nel contesto della Piano di Teleassistenza"
 * ^status = #draft
-* type ^definition = "Tipo di Composition."
 
 * subject only Reference(PatientTeleassistenza)
 * encounter only Reference(EncounterTeleassistenza)
 * encounter ^short = "Contesto in cui è stato generato il documento."
 * date ^short = "Data di modifica della risorsa."
 
-* author only Reference(PractitionerRoleTeleassistenza or OrganizationT1)
+* author only Reference(PractitionerRoleTeleassistenza)
 * author ^short = "Autore del Piano di Teleassistenza."
 
 * title ^short = "Titolo del documento"
@@ -22,12 +21,10 @@ Description: "Profilo della Composition utilizzata nel contesto della Piano di T
 
 //Section
 * section
-  * ^slicing.discriminator[+].type = #exists
-  * ^slicing.discriminator[=].path = "$this.section"
-  * ^slicing.discriminator[+].type = #exists
-  * ^slicing.discriminator[=].path = "$this.entry"
-  * ^slicing.ordered = false
-  * ^slicing.rules = #open
+* section ^slicing.discriminator.type = #value
+* section ^slicing.discriminator.path = "code"
+* section ^slicing.rules = #open
+* section ^slicing.ordered = false
 
 * section contains
     pianoDiCura 0..1 and
