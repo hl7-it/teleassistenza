@@ -26,7 +26,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section contains
     pianoDiCura 1..1 and
     anamnesi 0..1 and 
-    allergie 0..1 and 
+    //allergie 0..1 and 
     prestazioni 0..1 and
     confrontoPrecedentiEsamiEseguiti 0..1 and
     referto 0..1 and
@@ -41,6 +41,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[pianoDiCura].entry only Reference(CarePlanRelazioneTA)
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTeleassistenza)
+* section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6  
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
 * section[precedentiEsamiEseguiti].code = $loinc#30954-2 (exactly)
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTeleassistenza)
@@ -61,6 +62,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleassistenza)
 * section[referto] ^sliceName = "referto"
 * section[referto].entry only Reference(ObservationTeleassistenza)
+* section[referto].code = $loinc#47045-0  
 * section[anamnesi] ^sliceName = "anamnesi"
-* section[anamnesi].code = $loinc#80615-8 (exactly)
+* section[anamnesi].code = $loinc#11329-0 
 * section[anamnesi].entry only Reference(ObservationTeleassistenza)

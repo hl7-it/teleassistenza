@@ -1,5 +1,5 @@
 Alias: $loinc = http://loinc.org
-Alias: $prestazioni = http://hl7.it/CodeSystem/prestazioni
+Alias: $prestazioni = http://hl7.it/fhir/teleassistenza/CodeSystem/CsCatalogoNazionalePrestazioni
 Alias: $organization-type = http://terminology.hl7.org/CodeSystem/organization-type
 Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
@@ -9,6 +9,7 @@ Alias: $istat-DUG-CS = https://www.hl7.it/fhir/terminology/CodeSystem/dug
 Instance: PianoDiTeleassistenza
 InstanceOf: BundlePianoTeleassistenza
 Usage: #example
+Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 * type = #document
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:bfcf00e2-e2bb-4a7d-adaa-3de9d419d27e"
@@ -38,6 +39,7 @@ Usage: #example
 Instance: composition-pta-1
 InstanceOf: CompositionPianoTA
 Usage: #example
+Description: "Esempio di Composition nel contesto del piano di teleassistenza."
 * id = "composition-pta-1"
 * status = #final
 * type = $loinc#75496-0 "Telehealth Note"
@@ -57,8 +59,9 @@ Usage: #example
 Instance: careplan-tele-1
 InstanceOf: CarePlanPianoDiCuraTeleassistenza
 Usage: #example
+Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
 * id = "careplan-tele-1"
-* identifier.system = "http://hl7.it/identifiers/careplan"
+//* identifier.system = "http://hl7.it/identifiers/careplan"
 * identifier.value = "TM-2025-000123"
 * status = #active
 * intent = #plan
@@ -69,7 +72,7 @@ Usage: #example
 * period.end = "2026-08-31"
 * activity[0].detail.kind = #ServiceRequest
 //* activity[=].detail.instantiatesCanonical = Reference(ActivityDefinition/actdef-tm-card)
-* activity[=].detail.code = $prestazioni#TM-CARD-01 "Telemonitoraggio cardiologico"
+* activity[=].detail.code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 2
 * activity[=].detail.scheduledTiming.repeat.period = 1
@@ -78,7 +81,7 @@ Usage: #example
 * activity[=].detail.performer = Reference(org-assistenza)
 * activity[+].detail.kind = #ServiceRequest
 //* activity[=].detail.instantiatesCanonical = "ActivityDefinition/actdef-teleass"
-* activity[=].detail.code = $prestazioni#TEL-ASS-01 "Teleassistenza infermieristica"
+* activity[=].detail.code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 1
 * activity[=].detail.scheduledTiming.repeat.period = 1
@@ -194,16 +197,17 @@ Usage: #example
 Instance: obs-dx-icd9
 InstanceOf: ObservationTeleassistenza
 Usage: #example
+Description: "Esempio di Observation nel contesto del piano di teleassistenza."
 * id = "obs-dx-icd9"
 * status = #final
 * category = $observation-category#social-history
 * category.text = "Diagnosi"
-* code = $icd-9-cm#428.0 "Insufficienza cardiaca congestizia"
+* code = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * code.text = "Diagnosi principale"
 * subject = Reference(patient-mrossi)
 * effectiveDateTime = "2024-03-15"
 * performer = Reference(practrole-bianchi-gom)
-* valueCodeableConcept = $icd-9-cm#428.0 "Insufficienza cardiaca congestizia"
+* valueCodeableConcept = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * valueCodeableConcept.text = "Insufficienza cardiaca congestizia"
 
 Instance: actdef-tm-card
@@ -219,7 +223,7 @@ Usage: #example
 * timingTiming.repeat.period = 1
 * timingTiming.repeat.periodUnit = #d
 * location.display = "Domicilio"
-* code = $prestazioni#TM-CARD-01 "Telemonitoraggio cardiologico"
+* code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
 
 Instance: actdef-teleass
 InstanceOf: ActivityDefinition
@@ -233,4 +237,257 @@ Usage: #example
 * timingTiming.repeat.frequency = 1
 * timingTiming.repeat.period = 1
 * timingTiming.repeat.periodUnit = #wk
-* code = $prestazioni#TEL-ASS-01 "Teleassistenza infermieristica"
+* code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
+
+
+// Relazione di teleassistenza esempio
+
+Instance: RelazioneDiTeleassistenza
+InstanceOf: BundleRelazioneTeleassistenza
+Usage: #example
+Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
+* type = #document
+* identifier.system = "urn:ietf:rfc:39861"
+* identifier.value = "urn:uuid:2e7fd4a4-d5a0-41db-96f9-8e9a45a6b4f2"
+* timestamp = "2023-03-20T09:00:00+01:00"
+
+* entry[composition].fullUrl = "http://example.org/fhir/Composition/composition-rel-1"
+* entry[composition].resource = composition-rel-1
+
+* entry[carePlan].fullUrl = "http://example.org/fhir/CarePlan/careplan-rel-1"
+* entry[carePlan].resource = careplan-rel-1
+
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient-mrossi"
+* entry[patient].resource = patient-mrossi
+
+* entry[practitionerRole].fullUrl = "http://example.org/fhir/PractitionerRole/practrole-bianchi-gom"
+* entry[practitionerRole].resource = practrole-bianchi-gom
+
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
+* entry[organization].resource = org-assistenza
+
+* entry[practitioner].fullUrl = "http://example.org/fhir/Practitioner/pract-bianchi"
+* entry[practitioner].resource = pract-bianchi
+
+* entry[encounter].fullUrl = "http://example.org/fhir/Encounter/enc-tele-1"
+* entry[encounter].resource = enc-tele-1
+
+* entry[medicationRequest].fullUrl = "http://example.org/fhir/MedicationRequest/medreq-terapia-1"
+* entry[medicationRequest].resource = medreq-terapia-1
+
+* entry[observation][0].fullUrl = "http://example.org/fhir/Observation/obs-anamnesi-1"
+* entry[observation][0].resource = obs-anamnesi-1
+
+* entry[observation][1].fullUrl = "http://example.org/fhir/Observation/obs-confronto-1"
+* entry[observation][1].resource = obs-confronto-1
+
+* entry[observation][1].fullUrl = "http://example.org/fhir/Observation/obs-referto-1"
+* entry[observation][1].resource = obs-referto-1
+
+* entry[observation][2].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
+* entry[observation][2].resource = obs-dx-icd9
+
+* entry[observation][3].fullUrl = "http://example.org/fhir/Observation/obs-suggerimenti-1"
+* entry[observation][3].resource = obs-suggerimenti-1
+
+* entry[observation][4].fullUrl = "http://example.org/fhir/Observation/obs-accertamenti-1"
+* entry[observation][4].resource = obs-accertamenti-1
+
+* entry[observation][5].fullUrl = "http://example.org/fhir/Observation/obs-precedenti-1"
+* entry[observation][5].resource = obs-precedenti-1
+
+* entry[observation][6].fullUrl = "http://example.org/fhir/Observation/obs-confronto-1"
+* entry[observation][6].resource = obs-confronto-1
+
+
+
+
+// * entry[activityDefinition][0].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-controllo-pressione"
+// * entry[activityDefinition][0].resource = actdef-controllo-pressione
+
+
+// ======================================================
+// 1) CarePlanRelazioneTA
+// ======================================================
+Instance: careplan-rel-1
+InstanceOf: CarePlanRelazioneTA
+Usage: #example
+Description: "CarePlan per la Relazione di Teleassistenza (follow-up del piano)."
+* id = "careplan-rel-1"
+* status = #active
+* intent = #plan
+* identifier.system = "urn:ietf:rfc:39861"
+* identifier.value = "urn:uuid:5c8a6df2-5b7a-4f7f-8b2e-1f7f6b1c2d3e"
+* category = csTipologiaPiano#02 "Piano di Teleassistenza"
+* subject = Reference(Patient/patient-mrossi)
+* author = Reference(PractitionerRole/practrole-bianchi-gom)
+* period.start = "2023-03-01"
+* period.end   = "2023-03-31"
+
+// attività principali ricondotte a ServiceRequest/Task come tipo di attività
+* activity[0].detail.kind = #ServiceRequest
+* activity[0].detail.status = #completed
+* activity[0].detail.description = "Revisione parametri domiciliari ultimi 14 giorni e video-consulto conclusivo."
+* activity[1].detail.kind = #Task
+* activity[1].detail.status = #in-progress
+* activity[1].detail.description = "Educazione sanitaria: aderenza terapeutica e uso corretto saturimetro."
+
+// ======================================================
+// 2) CompositionRelazioneTeleassistenza
+// ======================================================
+Instance: composition-rel-1
+InstanceOf: CompositionRelazioneTeleassistenza
+Usage: #example
+Description: "Relazione di Teleassistenza finale riferita al piano di mrossi."
+* id = "composition-rel-1"
+* status = #final
+* type = $loinc#91531-4
+* date = "2023-03-31T10:30:00+01:00"
+* title = "Relazione di Teleassistenza"
+* subject = Reference(Patient/patient-mrossi)
+* encounter = Reference(Encounter/enc-tele-1)
+* author[0] = Reference(PractitionerRole/practrole-bianchi-gom)
+
+* section[pianoDiCura].code = $loinc#18776-5
+* section[pianoDiCura].title = "Piano di cura"
+* section[pianoDiCura].entry[0] = Reference(CarePlan/careplan-rel-1)
+
+* section[anamnesi].code = $loinc#11329-0 
+* section[anamnesi].title = "Anamnesi"
+* section[anamnesi].entry[0] = Reference(Observation/obs-anamnesi-1)
+
+* section[prestazioni].code = $loinc#62387-6
+* section[prestazioni].title = "Prestazioni eseguite"
+* section[prestazioni].entry[0] = Reference(Encounter/enc-tele-1)
+
+* section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1
+* section[confrontoPrecedentiEsamiEseguiti].title = "Confronto con precedenti esami eseguiti"
+* section[confrontoPrecedentiEsamiEseguiti].entry[0] = Reference(Observation/obs-confronto-1)
+
+* section[referto].code = $loinc#47045-0
+* section[referto].title = "Referto"
+* section[referto].entry[0] = Reference(Observation/obs-referto-1)
+
+* section[diagnosi].code = $loinc#29548-5
+* section[diagnosi].title = "Diagnosi"
+* section[diagnosi].entry[0] = Reference(Observation/obs-dx-icd9)
+
+* section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0
+* section[suggerimentiPerMedicoPrescrittore].title = "Suggerimenti per il Medico Prescrittore"
+* section[suggerimentiPerMedicoPrescrittore].entry[0] = Reference(Observation/obs-suggerimenti-1)
+
+* section[accertamentiControlliConsigliati].code = $loinc#80615-8
+* section[accertamentiControlliConsigliati].title = "Accertamenti e controlli consigliati"
+* section[accertamentiControlliConsigliati].entry[0] = Reference(Observation/obs-accertamenti-1)
+
+* section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6
+* section[terapiaFarmacologicaConsigliata].title = "Terapia farmacologica consigliata"
+* section[terapiaFarmacologicaConsigliata].entry[0] = Reference(MedicationRequest/medreq-terapia-1)
+
+* section[precedentiEsamiEseguiti].code = $loinc#30954-2
+* section[precedentiEsamiEseguiti].title = "Precedenti esami eseguiti"
+* section[precedentiEsamiEseguiti].entry[0] = Reference(Observation/obs-precedenti-1)
+
+
+
+// ======================================================
+// 3) RISORSE DI SUPPORTO (Observation / MedicationRequest)
+//    — profili: ObservationTeleassistenza, MedicationRequestTeleassistenza
+//    — minime per popolare le section della Composition
+// ======================================================
+
+// --- ANAMNESI
+Instance: obs-anamnesi-1
+InstanceOf: ObservationTeleassistenza
+Usage: #example
+Description: "Anamnesi teleassistenza - mrossi."
+* id = "obs-anamnesi-1"
+* status = #final
+* code.text = "Anamnesi sintetica del percorso di teleassistenza"
+* subject = Reference(Patient/patient-mrossi)
+* effectiveDateTime = "2023-03-30T09:00:00+01:00"
+* valueString = "Paziente con BPCO lieve, nessuna riacutizzazione nell’ultimo mese."
+* performer = Reference(practrole-bianchi-gom)
+
+// --- CONFRONTO PRECEDENTI ESAMI
+Instance: obs-confronto-1
+InstanceOf: ObservationTeleassistenza
+Usage: #example
+Description: "Confronto con precedenti esami."
+* id = "obs-confronto-1"
+* status = #final
+* code.text = "Confronto andamento SpO2/FC vs mese precedente"
+* subject = Reference(Patient/patient-mrossi)
+* effectiveDateTime = "2023-03-31T09:30:00+01:00"
+* component[0].code.text = "Media SpO2 ultimi 14 giorni"
+* component[0].valueQuantity.value = 96
+* component[0].valueQuantity.unit = "%"
+* component[1].code.text = "Media SpO2 mese precedente"
+* component[1].valueQuantity.value = 95
+* component[1].valueQuantity.unit = "%"
+* performer = Reference(practrole-bianchi-gom)
+
+// --- REFERTO
+Instance: obs-referto-1
+InstanceOf: ObservationTeleassistenza
+Usage: #example
+Description: "Referto conclusivo del percorso."
+* id = "obs-referto-1"
+* status = #final
+* code.text = "Referto conclusivo teleassistenza"
+* subject = Reference(Patient/patient-mrossi)
+* effectiveDateTime = "2023-03-31T10:00:00+01:00"
+* valueString = "Parametri nella norma. Non evidenza di desaturazioni notturne significative."
+* performer = Reference(practrole-bianchi-gom)
+
+// --- SUGGERIMENTI PER IL MEDICO PRESCRITTORE
+Instance: obs-suggerimenti-1
+InstanceOf: ObservationTeleassistenza
+Usage: #example
+Description: "Suggerimenti clinico-gestionali."
+* id = "obs-suggerimenti-1"
+* status = #final
+* code.text = "Suggerimenti per MMG"
+* subject = Reference(Patient/patient-mrossi)
+* effectiveDateTime = "2023-03-31T10:05:00+01:00"
+* valueString = "Rivalutare terapia inalatoria in prossima visita; mantenere telemonitoraggio trimestrale."
+* performer = Reference(practrole-bianchi-gom)
+
+// --- ACCERTAMENTI E CONTROLLI CONSIGLIATI
+Instance: obs-accertamenti-1
+InstanceOf: ObservationTeleassistenza
+Usage: #example
+Description: "Accertamenti/controlli consigliati."
+* id = "obs-accertamenti-1"
+* status = #final
+* code.text = "Controlli consigliati"
+* subject = Reference(Patient/patient-mrossi)
+* effectiveDateTime = "2023-03-31T10:10:00+01:00"
+* valueString = "Spirometria di controllo tra 6 mesi; valutazione fisioterapica respiratoria."
+* performer = Reference(practrole-bianchi-gom)
+
+// --- PRECEDENTI ESAMI ESEGUITI
+Instance: obs-precedenti-1
+InstanceOf: ObservationTeleassistenza
+Usage: #example
+Description: "Precedenti esami rilevanti."
+* id = "obs-precedenti-1"
+* status = #final
+* code.text = "Esami precedenti"
+* subject = Reference(Patient/patient-mrossi)
+* effectiveDateTime = "2023-02-15T11:00:00+01:00"
+* valueString = "RX torace (negativo), Emogas analisi (nella norma)."
+* performer = Reference(practrole-bianchi-gom)
+
+// --- TERAPIA FARMACOLOGICA CONSIGLIATA
+Instance: medreq-terapia-1
+InstanceOf: MedicationRequestTeleassistenza
+Usage: #example
+Description: "Terapia farmacologica consigliata nella relazione."
+* id = "medreq-terapia-1"
+* status = #active
+* medicationCodeableConcept.text = "Broncodilatatore a lunga durata + corticosteroide inalatorio"
+* subject = Reference(Patient/patient-mrossi)
+* authoredOn = "2023-03-31T10:15:00+01:00"
+* requester = Reference(PractitionerRole/practrole-bianchi-gom)
+* dosageInstruction[0].text = "1 inalazione mattino e sera; istruire su tecnica inalatoria."

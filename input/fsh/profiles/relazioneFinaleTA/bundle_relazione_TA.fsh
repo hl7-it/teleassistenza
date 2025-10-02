@@ -18,6 +18,9 @@ Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Tele
     practitionerRole 0..* and
     organization 0..* and
     practitioner 0..* and
+    observation 0..* and
+    medicationRequest 0..* and
+    encounter 0..1 and
     activityDefinition 0..*
 
 * entry[composition].resource only CompositionRelazioneTeleassistenza
@@ -25,5 +28,8 @@ Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Tele
 * entry[patient].resource only PatientTeleassistenza
 * entry[practitionerRole].resource only PractitionerRoleTeleassistenza
 * entry[organization].resource only OrganizationT1
+* entry[observation].resource only ObservationTeleassistenza
+* entry[medicationRequest].resource only MedicationRequestTeleassistenza
 * entry[practitioner].resource only PractitionerTeleassistenza
 * entry[activityDefinition].resource only ActivityDefinition
+* entry[encounter].resource only EncounterTeleassistenza

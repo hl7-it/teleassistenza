@@ -2,7 +2,7 @@ CodeSystem: CsCatalogoNazionalePrestazioni
 Id: CsCatalogoNazionalePrestazioni
 Title: "Codesystem catalogo nazionale prestazioni"
 Description: "Definisce il sistema di terminologie da usare per i codici prestazione definiti dal catalogo nazionale"
-* ^status = #draft
+* ^status = #active
 * ^content = #complete
 * ^experimental = false
 * ^caseSensitive = true

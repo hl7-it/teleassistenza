@@ -8,3 +8,31 @@ For the complex type CodeableConcept, consider using a pattern rather than a fix
 There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.3.0-ballot-tc1', found versions: 4.0.1, 5.2.0, 5.3.0-ballot-tc1. Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace' to 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.3.0-ballot-tc1'
 The value set expansion is too large, and only a subset has been displayed
 There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/v2-0203'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.0.0', found versions: 4.0.0, 5.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/CodeSystem/v2-0203' to 'http://terminology.hl7.org/CodeSystem/v2-0203|5.0.0'
+No definition could be found for URL value 'urn:ietf:rfc:39861'
+No definition could be found for URL value 'http://hl7.it/identifiers/careplan'
+No definition could be found for URL value 'http://hl7.it/sid/codiceFiscale'
+No definition could be found for URL value 'http://hl7.it/sid/fls'
+No definition could be found for URL value 'http://hl7.it/sid/partitaIva'
+No definition could be found for URL value 'http://hl7.it/sid/codiceFiscale'
+No definition could be found for URL value 'http://hl7.it/sid/codiceFiscale'
+No definition could be found for URL value 'http://hl7.it/fhir/televisita/sid/codiceNosologico'
+No definition could be found for URL value 'http://hl7.it/identifiers/careplan'
+No definition could be found for URL value 'http://hl7.it/fhir/televisita/sid/codiceNosologico'
+The resource ActivityDefinition/actdef-teleass could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+The resource ActivityDefinition/actdef-tm-card could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+HL7 Defined CodeSystems should ensure that every concept has a definition
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+The extension http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.2.0 is deprecated with the note: 'Replaced by [[[http://hl7.org/fhir/StructureDefinition/iso21090-codedString]]]'
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+The resource status 'draft' and the standards status 'trial-use' may not be consistent and should be reviewed
+Reference to draft CodeSystem http://hl7.it/fhir/teleassistenza/CodeSystem/diagnosi-icd9cm|0.1.0
+There are multiple different potential matches for the url 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '5.2.0', found versions: 4.0.1, 5.2.0. Suggested fix: change the canonical reference from 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace' to 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.2.0'
+No definition could be found for URL value 'http://hl7.it/fhir/televisita/CodeSystem/csspecialityPractitionerRole'
+Error from https://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/televisita/CodeSystem/csspecialityPractitionerRole
+No definition could be found for URL value 'http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni'
+Error from https://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni
+This element does not match any known slice defined in the profile http://hl7.it/fhir/teleassistenza/StructureDefinition/BundlePianoTeleassistenza|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+Constraint failed: ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation (name.matches('[A-Z]([A-Za-z0-9_]){0,254}'))'
+Reference to draft CodeSystem http://hl7.it/fhir/teleassistenza/CodeSystem/csTipologiaPiano|0.1.0
+Reference to draft CodeSystem http://hl7.it/fhir/teleassistenza/CodeSystem/csTipologiaPiano|0.1.0
