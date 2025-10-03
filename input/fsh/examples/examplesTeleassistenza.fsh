@@ -468,7 +468,7 @@ Description: "Accertamenti/controlli consigliati."
 
 // --- PRECEDENTI ESAMI ESEGUITI
 Instance: obs-precedenti-1
-InstanceOf: ObservationTeleassistenza
+InstanceOf: ObservationTeleassistenzaNarrative
 Usage: #example
 Description: "Precedenti esami rilevanti."
 * id = "obs-precedenti-1"
@@ -491,3 +491,81 @@ Description: "Terapia farmacologica consigliata nella relazione."
 * authoredOn = "2023-03-31T10:15:00+01:00"
 * requester = Reference(PractitionerRole/practrole-bianchi-gom)
 * dosageInstruction[0].text = "1 inalazione mattino e sera; istruire su tecnica inalatoria."
+
+
+//AllergyIntolerance
+
+Instance: AllergyIntoleranceTeleassistenzaExample
+InstanceOf: AllergyIntoleranceTeleassistenza
+Title: "Esempio AllergyIntolerance per Teleassistenza"
+Description: "Esempio di allergia/intolleranza codificata per il contesto Telemedicina"
+Usage: #example
+
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* type = #allergy
+* criticality = #high
+
+* code = http://snomed.info/sct#91936005 "Allergy to penicillin"
+* code.text = "Allergia alla penicillina"
+
+* patient = Reference(Patient/patient-mrossi) "Mario Rossi"
+* recordedDate = "2025-10-02T10:30:00+01:00"
+* recorder = Reference(pract-bianchi) "Dr. Bianchi (Telemedicina)"
+
+* reaction[0].manifestation[0] = http://snomed.info/sct#271807003 "Rash"
+* reaction[0].manifestation[0].text = "Eruzione cutanea"
+* reaction[0].severity = #severe
+
+
+Instance: PresidioSandroPertini
+InstanceOf: OrganizationT2
+Title: "Presidio Sandro Pertini"
+Description: "Presidio ospedaliero facente parte di ASL Roma 1"
+Usage: #example
+* id = "osp-pertini"
+* name = "Ospedale Sandro Pertini"
+* partOf = Reference(Organization/org-assistenza)
+* identifier.system = "http://hl7.it/sid/hsp"
+* identifier.value = "HSP00123"
+
+
+Instance: UOCardiologiaPertini
+InstanceOf: OrganizationT3
+Title: "U.O. Cardiologia - Ospedale Pertini"
+Description: "Unità Operativa di Cardiologia afferente all'Ospedale Pertini"
+Usage: #example
+* id = "uo-cardiologia-pertini"
+* name = "U.O. Cardiologia"
+* partOf = Reference(Organization/osp-pertini)
+* identifier.system = "http://hl7.it/sid/hsp"
+* identifier.value = "UO12345"
+
+
+Instance: ProcedureTeleassistenzaExample
+InstanceOf: ProcedureTeleassistenza
+Title: "Esempio ProcedureTeleassistenza - Telemonitoraggio"
+Description: "Esempio di procedura di teleassistenza: telemonitoraggio parametri vitali"
+Usage: #example
+
+* extension[ModalitaEsecuzioneProcedura].url = "http://hl7.org/fhir/StructureDefinition/procedure-method"
+* extension[ModalitaEsecuzioneProcedura].valueCodeableConcept = http://snomed.info/sct#73761001 "Colonoscopy"
+
+//* partOf = Reference(Observation/ObservationTeleassistenzaExample)
+
+* status = #completed
+
+* code.coding[0] = CsCatalogoNazionalePrestazioni#25.01 "BIOPSIA [AGOBIOPSIA] DELLA LINGUA"
+
+
+* subject = Reference(Patient/patient-mrossi)
+
+* performedPeriod.start = "2025-10-02T08:30:00+02:00"
+* performedPeriod.end = "2025-10-02T08:45:00+02:00"
+
+* recorder = Reference(pract-bianchi)
+* performer[0].actor = Reference(pract-bianchi)
+* performer[0].onBehalfOf = Reference(Organization/org-assistenza)
+
+* outcome.text = "Parametri nella norma. Nessun evento avverso."
+* note[0].text = "Sessione effettuata in videochiamata; misurazioni guidate."

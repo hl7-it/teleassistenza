@@ -18,7 +18,7 @@ Description:  "Profilo base della Procedure utilizzata nel contesto della Teleas
 * code.coding.display MS
 * code.coding.code MS
 * code ^short = "Codice della prestazione eseguita"
-* code from VsCatalogoNazionalePrestazioni (required)
+* code from VsCatalogoNazionalePrestazioni (preferred)
 
 * subject only Reference(PatientTeleassistenza)
 * subject ^short = "Paziente coinvolto nella procedura."
@@ -46,3 +46,5 @@ Description:  "Profilo base della Procedure utilizzata nel contesto della Teleas
 * category.coding.code MS
 
 * note ^short = "Note"
+
+

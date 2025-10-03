@@ -36,3 +36,6 @@ This element does not match any known slice defined in the profile http://hl7.it
 Constraint failed: ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation (name.matches('[A-Z]([A-Za-z0-9_]){0,254}'))'
 Reference to draft CodeSystem http://hl7.it/fhir/teleassistenza/CodeSystem/csTipologiaPiano|0.1.0
 Reference to draft CodeSystem http://hl7.it/fhir/teleassistenza/CodeSystem/csTipologiaPiano|0.1.0
+No definition could be found for URL value 'http://hl7.it/sid/hsp'
+No definition could be found for URL value 'http://hl7.it/sid/hsp'
+None of the codings provided are in the value set 'ValueSet for Codesystem catalogo nazionale prestazioni' (http://hl7.it/fhir/teleassistenza/ValueSet/VsCatalogoNazionalePrestazioni|0.1.0), and a coding from this value set is required) (codes = http://hl7.it/fhir/teleassistenza/CodeSystem/CsCatalogoNazionalePrestazioni#25.01)
