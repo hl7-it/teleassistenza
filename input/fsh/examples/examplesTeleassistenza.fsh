@@ -569,3 +569,57 @@ Usage: #example
 
 * outcome.text = "Parametri nella norma. Nessun evento avverso."
 * note[0].text = "Sessione effettuata in videochiamata; misurazioni guidate."
+
+
+//==========
+// PianoDiTeleassistenzaTransaction
+//==========
+Instance: PianoDiTeleassistenzaTransaction
+InstanceOf: BundlePianoTeleassistenzaTransaction
+Usage: #example
+Description: "Esempio di Bundle transaction per il piano di teleassistenza: admin=PUT, cliniche=POST"
+* type = #transaction
+
+// --- ADMIN (PUT) ---
+* entry[0].fullUrl = "http://example.org/fhir/Patient/patient-mrossi"
+* entry[0].resource = patient-mrossi
+* entry[0].request.method = #PUT
+* entry[0].request.url = "Patient/patient-mrossi"
+
+* entry[+].fullUrl = "http://example.org/fhir/Practitioner/pract-bianchi"
+* entry[=].resource = pract-bianchi
+* entry[=].request.method = #PUT
+* entry[=].request.url = "Practitioner/pract-bianchi"
+
+* entry[+].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
+* entry[=].resource = org-assistenza
+* entry[=].request.method = #PUT
+* entry[=].request.url = "Organization/org-assistenza"
+
+* entry[+].fullUrl = "http://example.org/fhir/PractitionerRole/practrole-bianchi-gom"
+* entry[=].resource = practrole-bianchi-gom
+* entry[=].request.method = #PUT
+* entry[=].request.url = "PractitionerRole/practrole-bianchi-gom"
+
+// --- CLINICHE (POST) ---
+* entry[+].fullUrl = "http://example.org/fhir/Composition/composition-pta-1"
+* entry[=].resource = composition-pta-1
+* entry[=].request.method = #POST
+* entry[=].request.url = "Composition"
+
+* entry[+].fullUrl = "http://example.org/fhir/CarePlan/careplan-tele-1"
+* entry[=].resource = careplan-tele-1
+* entry[=].request.method = #POST
+* entry[=].request.url = "CarePlan"
+
+// Encounter (POST)
+* entry[+].fullUrl = "http://example.org/fhir/Encounter/enc-tele-1"
+* entry[=].resource = enc-tele-1
+* entry[=].request.method = #POST
+* entry[=].request.url = "Encounter"
+
+// Observation (POST)
+* entry[+].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
+* entry[=].resource = obs-dx-icd9
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
