@@ -623,3 +623,106 @@ Description: "Esempio di Bundle transaction per il piano di teleassistenza: admi
 * entry[=].resource = obs-dx-icd9
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
+
+
+/*
+ BundleRelazioneTeleassistenzaTransaction
+*/
+
+Instance: RelazioneDiTeleassistenzaTransaction
+InstanceOf: BundleRelazioneTeleassistenzaTransaction
+Usage: #example
+Description: "Esempio di Bundle transaction per la Relazione di Teleassistenza: risorse amministrative via PUT, cliniche via POST."
+* type = #transaction
+
+// =====================
+// AMMINISTRATIVE (PUT)
+// =====================
+
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient-mrossi"
+* entry[patient].resource = patient-mrossi
+* entry[patient].request.method = #PUT
+* entry[patient].request.url = "Patient/patient-mrossi"
+
+* entry[practitionerRole].fullUrl = "http://example.org/fhir/PractitionerRole/practrole-bianchi-gom"
+* entry[practitionerRole].resource = practrole-bianchi-gom
+* entry[practitionerRole].request.method = #PUT
+* entry[practitionerRole].request.url = "PractitionerRole/practrole-bianchi-gom"
+
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
+* entry[organization].resource = org-assistenza
+* entry[organization].request.method = #PUT
+* entry[organization].request.url = "Organization/org-assistenza"
+
+* entry[practitioner].fullUrl = "http://example.org/fhir/Practitioner/pract-bianchi"
+* entry[practitioner].resource = pract-bianchi
+* entry[practitioner].request.method = #PUT
+* entry[practitioner].request.url = "Practitioner/pract-bianchi"
+
+
+// ===============
+// CLINICHE (POST)
+// ===============
+
+* entry[composition].fullUrl = "http://example.org/fhir/Composition/composition-rel-1"
+* entry[composition].resource = composition-rel-1
+* entry[composition].request.method = #POST
+* entry[composition].request.url = "Composition"
+
+* entry[carePlan].fullUrl = "http://example.org/fhir/CarePlan/careplan-rel-1"
+* entry[carePlan].resource = careplan-rel-1
+* entry[carePlan].request.method = #POST
+* entry[carePlan].request.url = "CarePlan"
+
+* entry[encounter].fullUrl = "http://example.org/fhir/Encounter/enc-tele-1"
+* entry[encounter].resource = enc-tele-1
+* entry[encounter].request.method = #POST
+* entry[encounter].request.url = "Encounter"
+
+* entry[medicationRequest].fullUrl = "http://example.org/fhir/MedicationRequest/medreq-terapia-1"
+* entry[medicationRequest].resource = medreq-terapia-1
+* entry[medicationRequest].request.method = #POST
+* entry[medicationRequest].request.url = "MedicationRequest"
+
+// ---- Observation (POST) ----
+// 0: Anamnesi
+* entry[observation][0].fullUrl = "http://example.org/fhir/Observation/obs-anamnesi-1"
+* entry[observation][0].resource = obs-anamnesi-1
+* entry[observation][0].request.method = #POST
+* entry[observation][0].request.url = "Observation"
+
+// 1: Confronto
+* entry[observation][1].fullUrl = "http://example.org/fhir/Observation/obs-confronto-1"
+* entry[observation][1].resource = obs-confronto-1
+* entry[observation][1].request.method = #POST
+* entry[observation][1].request.url = "Observation"
+
+// 2: Referto
+* entry[observation][2].fullUrl = "http://example.org/fhir/Observation/obs-referto-1"
+* entry[observation][2].resource = obs-referto-1
+* entry[observation][2].request.method = #POST
+* entry[observation][2].request.url = "Observation"
+
+// 3: Diagnosi (ICD9)
+* entry[observation][3].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
+* entry[observation][3].resource = obs-dx-icd9
+* entry[observation][3].request.method = #POST
+* entry[observation][3].request.url = "Observation"
+
+// 4: Suggerimenti
+* entry[observation][4].fullUrl = "http://example.org/fhir/Observation/obs-suggerimenti-1"
+* entry[observation][4].resource = obs-suggerimenti-1
+* entry[observation][4].request.method = #POST
+* entry[observation][4].request.url = "Observation"
+
+// 5: Accertamenti
+* entry[observation][5].fullUrl = "http://example.org/fhir/Observation/obs-accertamenti-1"
+* entry[observation][5].resource = obs-accertamenti-1
+* entry[observation][5].request.method = #POST
+* entry[observation][5].request.url = "Observation"
+
+// 6: Precedenti
+* entry[observation][6].fullUrl = "http://example.org/fhir/Observation/obs-precedenti-1"
+* entry[observation][6].resource = obs-precedenti-1
+* entry[observation][6].request.method = #POST
+* entry[observation][6].request.url = "Observation"
