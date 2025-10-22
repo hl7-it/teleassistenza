@@ -16,7 +16,6 @@ Description: "Profilo base dell'Encounter nel contesto della Teleassistenza"
 
 * type ^short = "Disciplina specialistica ambulatoriale"
 * type from ValueSet_specialita_PractitionerRole (required) 
-* type MS
 
 * priority ^short = "Priorità della richiesta."
 

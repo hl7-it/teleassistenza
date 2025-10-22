@@ -48,6 +48,9 @@ Description: "Esempio di Composition nel contesto del piano di teleassistenza."
 * subject = Reference(Patient/patient-mrossi)
 * encounter = Reference(Encounter/enc-tele-1)
 * author = Reference(PractitionerRole/practrole-bianchi-gom)
+* attester[legalAuthenticator].mode = #legal
+* attester[legalAuthenticator].time = "2023-02-25T12:45:00+01:00"
+* attester[legalAuthenticator].party = Reference(PractitionerRole/practrole-bianchi-gom)
 //* custodian = Reference(org-assistenza)
 * section[pianoDiCura].title = "pianoDiCura"
 * section[pianoDiCura].code = $loinc#18776-5
@@ -347,7 +350,9 @@ Description: "Relazione di Teleassistenza finale riferita al piano di mrossi."
 * subject = Reference(Patient/patient-mrossi)
 * encounter = Reference(Encounter/enc-tele-1)
 * author[0] = Reference(PractitionerRole/practrole-bianchi-gom)
-
+* attester[legalAuthenticator].mode = #legal
+* attester[legalAuthenticator].time = "2023-02-25T12:45:00+01:00"
+* attester[legalAuthenticator].party = Reference(PractitionerRole/practrole-bianchi-gom)
 * section[pianoDiCura].code = $loinc#18776-5
 * section[pianoDiCura].title = "Piano di cura"
 * section[pianoDiCura].entry[0] = Reference(CarePlan/careplan-rel-1)

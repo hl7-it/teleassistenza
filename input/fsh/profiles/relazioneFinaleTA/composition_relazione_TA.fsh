@@ -19,6 +19,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * attester ^definition = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
 * attester contains legalAuthenticator 1..1
 * attester[legalAuthenticator].mode = #legal (exactly)
+* attester[legalAuthenticator].time ^short = "Data di firma della relazione"
 * attester[legalAuthenticator].time 1..
 * attester[legalAuthenticator].party 1..
 * attester[legalAuthenticator].party only Reference(PractitionerRoleTeleassistenza)
@@ -54,14 +55,13 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[pianoDiCura].code = $loinc#18776-5 (exactly)
 * section[pianoDiCura].entry only Reference(CarePlanRelazioneTA)
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
-* section[questitoDiagnostico].entry only Reference(ObservationTeleconsulto)
+* section[questitoDiagnostico].entry only Reference(ObservationTeleassistenza)
 * section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
 * section[InquadramentoClinicoIniziale].code = $loinc#11329-0 (exactly)
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
-
 * section[InquadramentoClinicoIniziale].section contains
     anamnesi 0..1 and
     allergie 0..* and
@@ -69,13 +69,13 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     esameObiettivo 0..1
 * section[InquadramentoClinicoIniziale].section[allergie] ^sliceName = "allergie"
 * section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2 (exactly)
-* section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTeleconsulto)
+* section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTeleassistenza)
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^sliceName = "terapiaFarmacologicaInAtto"
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0 (exactly)
-* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatementTeleconsulto)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatementTeleassistenza)
 * section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
 * section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1 (exactly)
-* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelevisitaNarrative)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTeleassistenzaNarrative)
 
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTeleassistenza)

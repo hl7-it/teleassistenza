@@ -7,7 +7,6 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * ^version = "1.0.0"
 * ^status = #draft
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
-* identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
 
 * requisition ^short = "Identificativo univoco della richiesta composita."
 * requisition ^definition = "Un identificativo condiviso comune a tutte le singole istanze della richiesta, generate contemporaneamente da un singolo autore: rappresenta l'identificativo composito o di gruppo.\n\nPer i casi di richieste di prescrizione rappresenterà l'NRE oppure il numero di ricetta cartacea."
@@ -69,31 +68,23 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * encounter ^definition = "Elemento di tipo Reference che contiene il riferimento alla risorsa Encounter."
 * encounter ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la non disponibilità temporanea, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
 
-* occurrence[x] ^short = "Quando la richiesta deve essere erogata."
-* occurrence[x] ^definition = "Data di erogazione/erogazione desiderata\nTiming: Estensione per la definizione di un timing specifico ad uno specifico orario del giorno/settimana"
+* occurrence[x] ^short = "Data e ora di inizio e fine erogazione."
 
 * authoredOn ^short = "Data di invio della richiesta."
-* authoredOn ^definition = "Nei casi di prescrizione, corrisponde alla data di compilazione della prescrizione."
+
 * requester only Reference(PractitionerRoleTeleassistenza)
 * requester ^short = "Medico prescrittore."
-* requester ^definition = "Elemento di tipo Reference che contiene il riferimento alla asl e medico richiedente."
 
 * performer ^short = "Esecutori della richiesta."
-* performer ^definition = "Elemento di tipo Reference che contiene il riferimento alle risorse Organization, Practitioner, PractitionerRole e HealthCareService."
-* performer ^comment = "*La reference ad HealthcareService fornirà indicazioni sulla tipologia di servizio di telemedicina da erogare\n\n*La reference ad Organization fornirà indicazioni sull'asl che erogherà la richiesta\n\n*La reference al Practitioner e PractitioneRole fornirà indicazioni sul medico/operatore erogatore ed il rispettivo ruolo"
 
 * reasonCode ^short = "Codice diagnosi/Quesito diagnostico."
-* reasonCode ^definition = "Una spiegazione o giustificazione del motivo per cui viene richiesto il servizio, in forma codificata o testuale."
 
 // * reasonReference only Reference(DiagnosticReportTelemedicina)
 * insurance ^short = "Copertura assicurativa associata."
-* insurance ^definition = "Elemento di tipo reference utilizzato per indicare il codice esenzione associato alla richiesta.\n\n*Se la reference non riusulta valorizzata, la posizione dell'assistito è da intendersi come NON ESENTE."
 
 //* specimen ^short = "Campione della procedura."
 
 * note ^short = "Note."
-* note ^definition = "Note o commenti relative alla richiesta."
-* note ^comment = "Per i sistemi che non dispongono di annotazioni strutturate, possono semplicemente comunicare una singola annotazione senza autore o tempo.  Questo elemento potrebbe dover essere incluso nella narrativa a causa del potenziale di modifica delle informazioni.  *Le annotazioni NON DEVONO* essere usate per comunicare informazioni \"modificanti\" che potrebbero essere calcolate. (Questo è un DOVERE perché far rispettare il comportamento dell'utente è quasi impossibile)."
 
 // * code.coding ^slicing.discriminator.type = #value
 // * code.coding ^slicing.discriminator.path = "extension.value"
