@@ -12,7 +12,7 @@ Description: "Profilo base dell'Encounter nel contesto della Teleassistenza"
 
 * status ^short = "Stato attuale dell'incontro."
 
-* class ^short = "Classificazione dell'incontro con il paziente."
+* class ^short = "Provenienza."
 
 * type ^short = "Disciplina specialistica ambulatoriale"
 * type from ValueSet_specialita_PractitionerRole (required) 
@@ -23,13 +23,13 @@ Description: "Profilo base dell'Encounter nel contesto della Teleassistenza"
 * subject ^short = "Paziente coinvolto nell'incontro"
 * subject only Reference(PatientTeleassistenza)
 
-// * basedOn only Reference(ServiceRequestTelevisita) 
+* basedOn only Reference(ServiceRequestTeleassistenza) 
 * basedOn ^short = "Richiesta che ha avviato la teleassistenza."
 
 * participant ^short = "Altre figura tecnica coinvolte."
 * participant.individual only Reference(PractitionerTeleassistenza)
 
-//* appointment only Reference(AppointmentTelevisita)
+* appointment only Reference(AppointmentTeleassistenza)
 * appointment ^short = "Appuntamento da cui è partita l'incontro."
 
 * period ^short = "Data e Ora di inizio e di fine dell'incontro."

@@ -183,7 +183,7 @@ Usage: #example
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode|3.0.0#VR "Virtual"
 * subject = Reference(patient-mrossi)
 // * basedOn = Reference(ServiceRequestTelemedicinaExample)
-// * appointment = Reference(AppointmentTelevisitaExample)
+// * appointment = Reference(AppointmentTeleassistenzaExample)
 * period.start = "2025-06-16T09:00:00+02:00"
 * period.end = "2025-06-16T09:45:00+02:00"
 * identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico"

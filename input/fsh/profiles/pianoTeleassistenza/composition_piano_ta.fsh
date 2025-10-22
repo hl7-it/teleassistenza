@@ -16,6 +16,18 @@ Description: "Profilo della Composition utilizzata nel contesto della Piano di T
 * author only Reference(PractitionerRoleTeleassistenza)
 * author ^short = "Autore del Piano di Teleassistenza."
 
+* attester ^slicing.discriminator.type = #value
+* attester ^slicing.discriminator.path = "mode"
+* attester ^slicing.rules = #open
+* attester ^short = "Professionisti che attestano la validità del documento."
+* attester ^definition = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
+* attester contains legalAuthenticator 1..1
+* attester[legalAuthenticator].mode = #legal (exactly)
+* attester[legalAuthenticator].time 1..
+* attester[legalAuthenticator].party 1..
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleassistenza)
+
+
 * title ^short = "Titolo del documento"
 * title = "Piano di Teleassistenza" (exactly)
 

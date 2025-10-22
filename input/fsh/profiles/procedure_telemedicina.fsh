@@ -37,8 +37,8 @@ Description:  "Profilo base della Procedure utilizzata nel contesto della Teleas
 
 * outcome.text ^short = "Testo libero per la relazione alla fine della procedura."
 
-// * usedReference ^short = "Strumentazione utilizzata nel corso della procedura."
-//* usedReference only Reference(DeviceTelemedicinaTesserino)
+* usedReference ^short = "Strumentazione utilizzata nel corso della procedura."
+* usedReference only Reference(Deviceteleassistenza)
 
 * category ^short = "Procedura operativa eseguita."
 * category MS

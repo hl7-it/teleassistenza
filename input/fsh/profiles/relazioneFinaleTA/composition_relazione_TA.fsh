@@ -12,6 +12,17 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * encounter ^short = "Contesto in cui è stato generato il documento."
 * date ^short = "Data di modifica della risorsa."
 
+* attester ^slicing.discriminator.type = #value
+* attester ^slicing.discriminator.path = "mode"
+* attester ^slicing.rules = #open
+* attester ^short = "Professionisti che attestano la validità del documento."
+* attester ^definition = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
+* attester contains legalAuthenticator 1..1
+* attester[legalAuthenticator].mode = #legal (exactly)
+* attester[legalAuthenticator].time 1..
+* attester[legalAuthenticator].party 1..
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleassistenza)
+
 * author only Reference(PractitionerRoleTeleassistenza or OrganizationT1)
 * author ^short = "Autore del Piano di Teleassistenza."
 
@@ -25,6 +36,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 * section contains
     pianoDiCura 1..1 and
+    questitoDiagnostico 1..1 and
+    InquadramentoClinicoIniziale 0..1 and
     anamnesi 0..1 and 
     //allergie 0..1 and 
     prestazioni 0..1 and
@@ -34,11 +47,36 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     suggerimentiPerMedicoPrescrittore 0..1 and
     accertamentiControlliConsigliati 0..1 and
     terapiaFarmacologicaConsigliata 0..1 and
-    precedentiEsamiEseguiti 0..1
+    precedentiEsamiEseguiti 0..1 and 
+    allegati 0..1
     
 * section[pianoDiCura] ^sliceName = "pianoDiCura"
 * section[pianoDiCura].code = $loinc#18776-5 (exactly)
 * section[pianoDiCura].entry only Reference(CarePlanRelazioneTA)
+* section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
+* section[questitoDiagnostico].entry only Reference(ObservationTeleconsulto)
+* section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
+* section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
+* section[InquadramentoClinicoIniziale].code = $loinc#11329-0 (exactly)
+* section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
+* section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
+* section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
+
+* section[InquadramentoClinicoIniziale].section contains
+    anamnesi 0..1 and
+    allergie 0..* and
+    terapiaFarmacologicaInAtto 0..* and
+    esameObiettivo 0..1
+* section[InquadramentoClinicoIniziale].section[allergie] ^sliceName = "allergie"
+* section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2 (exactly)
+* section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTeleconsulto)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^sliceName = "terapiaFarmacologicaInAtto"
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0 (exactly)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatementTeleconsulto)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1 (exactly)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelevisitaNarrative)
+
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTeleassistenza)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6  
@@ -66,3 +104,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[anamnesi] ^sliceName = "anamnesi"
 * section[anamnesi].code = $loinc#11329-0 
 * section[anamnesi].entry only Reference(ObservationTeleassistenza)
+* section[allegati] ^sliceName = "allegati"
+* section[allegati].entry only Reference(DocumentReference or Binary or Media)
+* section[allegati].code = $loinc#77599-9  
