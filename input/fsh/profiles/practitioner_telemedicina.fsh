@@ -14,7 +14,6 @@ Description: "Profilo base del Practitioner utilizzato nel contesto della Teleas
 
 * identifier contains codiceFiscale 0..1
 * identifier[codiceFiscale] ^short = "Codice Fiscale"
-* identifier[codiceFiscale] ^definition = "Codice Fiscale"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale" (exactly)
 
 * name ^short = "Nome dell'operatore sanitario."

@@ -16,7 +16,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * attester ^slicing.discriminator.path = "mode"
 * attester ^slicing.rules = #open
 * attester ^short = "Professionisti che attestano la validità del documento."
-* attester ^definition = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
 * attester contains legalAuthenticator 1..1
 * attester[legalAuthenticator].mode = #legal (exactly)
 * attester[legalAuthenticator].time ^short = "Data di firma della relazione"
