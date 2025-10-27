@@ -1,8 +1,8 @@
 Profile: AllergyIntoleranceTeleassistenza
 Parent: AllergyIntolerance
 Id: AllergyIntoleranceTeleassistenza
-Title: "AllergyIntolerance telemedicina"
-Description: "Profilo base del AllergyIntolerance condiviso in tutti i documenti di Telemedicina"
+Title: "AllergyIntolerance teleassistenza"
+Description: "Profilo di AllergyIntolerance utilizzato nel contesto della Teleassistenza."
 * code 1..1
 * code ^short = "Codice dell'allergia o intolleranza"
 * code ^definition = "Codice dell'allergia o intolleranza"

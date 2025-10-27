@@ -9,7 +9,7 @@ Alias: $cf = http://hl7.it/sid/codiceFiscale
 Profile: PatientTeleassistenza
 Parent: Patient
 Id: PatientTeleassistenza
-Description: "Profilo base del Patient utilizzato nel contesto della Teleassistenza."
+Description: "Profilo del Patient utilizzato nel contesto della Teleassistenza."
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true
@@ -75,22 +75,16 @@ Description: "Profilo base del Patient utilizzato nel contesto della Teleassiste
 * name 1..
 * name obeys it-pat-1
 * name ^short = "Nome dell'assistito."
-* name ^definition = "Un nome associato al paziente."
-* name ^comment = "Un paziente può avere più nomi con usi o periodi di applicazione diversi. Per gli animali, il nome è un \"HumanName\" nel senso che viene assegnato e utilizzato dagli esseri umani e ha gli stessi schemi."
 * name ^requirements = "Need to be able to track the patient by multiple names. Examples are your official name and a partner name. The Alphabetic representation of the name SHALL be always provided"
 
 * telecom ^short = "recapiti paziente."
 
 * gender 1..
-* gender ^definition = "Genere amministrativo."
-* gender ^comment = "Il genere potrebbe non corrispondere al sesso biologico determinato dalla genetica o dall'identificazione preferita dall'individuo. Si noti che sia per gli esseri umani che, in particolare, per gli animali, esistono altre possibilità legittime oltre a quella di maschio e femmina, anche se la stragrande maggioranza dei sistemi e dei contesti supporta solo maschio e femmina.  I sistemi che forniscono supporto decisionale o applicano le regole aziendali dovrebbero idealmente farlo sulla base di osservazioni che riguardano il sesso specifico o l'aspetto del genere di interesse (anatomico, cromosomico, sociale, ecc.) Tuttavia, poiché queste osservazioni sono registrate di rado, la prassi comune è quella di assegnare il genere amministrativo.  In questi casi, l'applicazione delle regole deve tenere conto della variazione tra gli aspetti amministrativi e quelli biologici, cromosomici e di altro genere.  Ad esempio, un avviso relativo a un'isterectomia su un uomo dovrebbe essere gestito come un avvertimento o un errore escludibile, e non come un errore \"duro\".  Per ulteriori informazioni sulla comunicazione del sesso e del genere del paziente, consultare la sezione Genere e sesso del paziente."
 
 * address only AddressItTelemedicina
 
 * birthDate 1..
 * birthDate ^short = "La data di nascita dell'individuo"
-* birthDate ^definition = "La data di nascita dell'individuo."
-* birthDate ^comment = "Se non si conosce la vera data di nascita, si dovrebbe fornire almeno un anno stimato. Esiste un'estensione standard \"patient-birthTime\" che dovrebbe essere utilizzata quando è richiesta l'ora (ad esempio nei sistemi di assistenza alla maternità/infanzia)."
 
 * deceased[x] ^short = "Indica se l'individuo è deceduto o meno."
 
