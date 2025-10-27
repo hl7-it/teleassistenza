@@ -230,8 +230,8 @@ Usage: #example
 
 Instance: AppointmentTeleassistenzaExample
 InstanceOf: AppointmentTeleassistenza
-Title: "Appuntamento Teleconsulto Cardiologica"
-Description: "Esempio di appuntamento per teleconsulto cardiologica del paziente Mario Rossi"
+Title: "Appuntamento Teleassistenza Cardiologica"
+Description: "Esempio di appuntamento per teleassistenza cardiologica del paziente Mario Rossi"
 Usage: #example
 * id = "9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 * status = #booked
@@ -242,7 +242,7 @@ Usage: #example
 * basedOn = Reference(ServiceRequestTeleassistenzaExample)
 * serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#8 "Counselling"
 * reasonCode = http://snomed.info/sct#3143004 "Visual field examination and evaluation, intermediate"
-* reasonCode.text = "Teleconsulto cardiologica per controllo post-operatorio"
+* reasonCode.text = "Teleassistenza cardiologica per controllo post-operatorio"
 * participant[0].actor = Reference(patient-mrossi)
 * participant[0].status = #accepted
 * participant[1].actor = Reference(practrole-bianchi-gom)
@@ -568,7 +568,7 @@ Usage: #example
 
 Instance: MedicationStatement-terapia-corrente
 InstanceOf: MedicationStatementTeleassistenza
-Description: "Esempio di medicationStatement nel contesto della teleconsulto"
+Description: "Esempio di medicationStatement nel contesto della teleassistenza"
 Usage: #example
 * status = #active
 * subject = Reference(Patient/patient-mrossi)
@@ -578,7 +578,7 @@ Usage: #example
 
 Instance: Observation-anamnesi
 InstanceOf: ObservationTeleassistenzaNarrative
-Description: "Esempio di anamnesi nel contesto della teleconsulto"
+Description: "Esempio di anamnesi nel contesto della teleassistenza"
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
 * status = #final
@@ -591,7 +591,7 @@ Usage: #example
 
 Instance: Observation-esame-obiettivo
 InstanceOf: ObservationTeleassistenzaNarrative
-Description: "Esempio di esame obiettivo nel contesto della teleconsulto"
+Description: "Esempio di esame obiettivo nel contesto della teleassistenza"
 Usage: #example
 * status = #final
 * code = $loinc#29545-1
@@ -638,7 +638,7 @@ Usage: #example
 
 * status = #completed
 
-* code.coding[0] = CsCatalogoNazionalePrestazioni#25.01 "BIOPSIA [AGOBIOPSIA] DELLA LINGUA"
+* code.coding[0] = CsCatalogoNazionalePrestazioni#45.23 "COLONSCOPIA TOTALE CON ENDOSCOPIO FLESSIBILE. Escluso: RETTOSIGMOIDOSCOPIA CON ENDOSCOPIO FLESSIBILE (45.24), PROCTOSIGMOIDOSCOPIA CON ENDOSCOPIO RIGIDO (48.23)"
 
 
 * subject = Reference(Patient/patient-mrossi)
