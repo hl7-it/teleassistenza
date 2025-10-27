@@ -31,6 +31,9 @@ Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 * entry[6].resource = enc-tele-1
 * entry[7].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
 * entry[7].resource = obs-dx-icd9
+* entry[7].fullUrl = "http://example.org/fhir/'ServiceRequest/ServiceRequestTeleassistenzaExample"
+* entry[7].resource = ServiceRequestTeleassistenzaExample
+
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-tm-card"
 // * entry[8].resource = actdef-tm-card
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-teleass"
@@ -319,6 +322,9 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 * entry[observation][8].fullUrl = "http://example.org/fhir/Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
 * entry[observation][8].resource = Observation-esame-obiettivo
 
+* entry[serviceRequest].fullUrl = "http://example.org/fhir/'ServiceRequest/ServiceRequestTeleassistenzaExample"
+* entry[serviceRequest].resource = ServiceRequestTeleassistenzaExample
+
 
 // * entry[activityDefinition][0].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-controllo-pressione"
 // * entry[activityDefinition][0].resource = actdef-controllo-pressione
@@ -452,7 +458,7 @@ Description: "Esempio di quesito diagnostico nel contesto della teleassistenza"
 Usage: #example
 * id = "Observation-quesito"
 * status = #final
-* code = http://hl7.it/fhir/teleconsulto/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
+* code = diagnosi-icd9cm#786.2 "TOSSE"
 * subject = Reference(Patient/patient-mrossi)
 * valueString = "Controllo post-COVID per tosse persistente"
 * performer = Reference(PractitionerRole/practrole-bianchi-gom)
@@ -821,23 +827,16 @@ Description: "Richiesta di teleassistenza domiciliare sincrona (video), con requ
 * id = "ServiceRequestTeleassistenzaExample"
 * identifier[0].system = "http://example.org/fhir/id/servicerequest"
 * identifier[0].value = "SR-2025-000987"
-// Requisition (identificativo di gruppo) — rispetta l’invariante requisition-system
 * requisition.system = "http://www.acme.it/identifiers/requisition"
 * requisition.value = "REQ-2025-000123"
-// Tipologia di identificativo (slice tipoRicetta) — SOSTITUIRE il code con un valore valido da vs-tipo-ricetta
 * requisition.type = cs-tipo-ricetta#ND "Assistiti SASN con visita domiciliare"
 
-// Stato e intento
 * status = #active
 * intent = #order
 * priority = #routine
-// Classificazione del servizio (categoria/branca) — Esempio con ValueSet AGENAS (sostituire con codice reale se disponibile)
 * category = csspecialityPractitionerRole#07 "Cardiochirurgia"
 
-// Prestazione richiesta (code) — esempio locale; sostituire con catalogo ufficiale quando disponibile
-* code.coding[0].system = "http://example.org/fhir/CodeSystem/servizi-teleassistenza"
-* code.coding[0].code = #VID-CHK
-* code.coding[0].display = "Controllo in videochiamata (teleassistenza)"
+* code = http://snomed.info/sct#4914002 "Treatment planning for teletherapy"
 * code.text = "Teleassistenza sincrona via video per monitoraggio paziente cronico"
 
 // Dettagli ordine
@@ -876,6 +875,4 @@ Description: "Device di teleassistenza per monitoraggio SpO2"
 * serialNumber = "SNSPO20021"
 
 * deviceName[0].name = "Meditech OxiCare Pro"
-* deviceName[0].type = http://snomed.info/sct#24110008 "Blood pressure monitor, device"
-
-* type.text = "Pulsossimetro da dito"
+* deviceName[0].type = http://hl7.org/fhir/device-nametype#model-name "Model name"

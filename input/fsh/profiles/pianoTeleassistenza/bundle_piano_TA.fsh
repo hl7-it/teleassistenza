@@ -18,7 +18,8 @@ Description: "Profilo del Bundle utilizzato nel contesto della Piano di Teleassi
     organization 0..* and
     practitioner 0..* and
     encounter 0..1 and
-    activityDefinition 0..*
+    activityDefinition 0..* and
+    serviceRequest 0..1
 * entry[composition].resource only CompositionPianoTA
 * entry[carePlan].resource only CarePlanPianoDiCuraTeleassistenza
 * entry[patient].resource only PatientTeleassistenza
@@ -27,3 +28,4 @@ Description: "Profilo del Bundle utilizzato nel contesto della Piano di Teleassi
 * entry[practitioner].resource only PractitionerTeleassistenza
 * entry[encounter].resource only EncounterTeleassistenza
 * entry[activityDefinition].resource only ActivityDefinition
+* entry[serviceRequest].resource only ServiceRequestTeleassistenza
