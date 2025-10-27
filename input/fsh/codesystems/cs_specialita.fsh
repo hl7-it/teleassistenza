@@ -4,7 +4,7 @@ Title: "CodeSystem per specialita PractitionerRole"
 Description: "Definisce il sistema di terminologie da usare per i codici delle specialità cliniche e delle discipline ospedaliere. (19A00915) (GU Serie Generale n.38 del 14-02-2019)"
 * ^name = "CodeSystem_per_specialita_PractitionerRole"
 * ^version = "1.0.0"
-* ^status = #draft
+* ^status = #active
 * ^versionNeeded = false
 * ^experimental = false
 * ^caseSensitive = true
