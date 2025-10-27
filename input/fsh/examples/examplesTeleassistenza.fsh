@@ -33,8 +33,8 @@ Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 * entry[7].resource = obs-dx-icd9
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-tm-card"
 // * entry[8].resource = actdef-tm-card
-// * entry[9].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-teleass"
-// * entry[9].resource = actdef-teleass
+// * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-teleass"
+// * entry[8].resource = actdef-teleass
 
 Instance: composition-pta-1
 InstanceOf: CompositionPianoTA
@@ -83,7 +83,7 @@ Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
 * activity[=].detail.description = "Rilevazione PA, FC, SpO2 due volte al giorno; fascia 08:00-10:00 e 18:00-20:00."
 * activity[=].detail.performer = Reference(org-assistenza)
 * activity[+].detail.kind = #ServiceRequest
-//* activity[=].detail.instantiatesCanonical = "ActivityDefinition/actdef-teleass"
+* activity[=].detail.instantiatesCanonical = Canonical(actdef-teleass)
 * activity[=].detail.code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 1
@@ -183,9 +183,9 @@ Description: "Esempio di incontro conforme al profilo EncounterTelevisitaExample
 Usage: #example
 * id = "enc-tele-1"
 * status = #finished
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode|3.0.0#VR "Virtual"
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0#VR "Virtual"
 * subject = Reference(patient-mrossi)
-// * basedOn = Reference(ServiceRequestTelemedicinaExample)
+* basedOn = Reference(ServiceRequestTeleassistenzaExample)
 // * appointment = Reference(AppointmentTeleassistenzaExample)
 * period.start = "2025-06-16T09:00:00+02:00"
 * period.end = "2025-06-16T09:45:00+02:00"
@@ -213,23 +213,8 @@ Description: "Esempio di Observation nel contesto del piano di teleassistenza."
 * valueCodeableConcept = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * valueCodeableConcept.text = "Insufficienza cardiaca congestizia"
 
-Instance: actdef-tm-card
-InstanceOf: ActivityDefinition
-Usage: #example
-* id = "actdef-tm-card"
-* status = #active
-* name = "TelemonitoraggioCardiologico"
-* title = "Telemonitoraggio cardiologico domiciliare"
-* kind = #ServiceRequest
-* description = "Rilevazione PA, FC, SpO2 con device UDI; revisione parametri su piattaforma; gestione soglie."
-* timingTiming.repeat.frequency = 2
-* timingTiming.repeat.period = 1
-* timingTiming.repeat.periodUnit = #d
-* location.display = "Domicilio"
-* code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
-
 Instance: actdef-teleass
-InstanceOf: ActivityDefinition
+InstanceOf: ActivityDefinitionTeleassistenza
 Usage: #example
 * id = "actdef-teleass"
 * status = #active
@@ -242,6 +227,26 @@ Usage: #example
 * timingTiming.repeat.periodUnit = #wk
 * code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
 
+
+Instance: AppointmentTeleassistenzaExample
+InstanceOf: AppointmentTeleassistenza
+Title: "Appuntamento Teleconsulto Cardiologica"
+Description: "Esempio di appuntamento per teleconsulto cardiologica del paziente Mario Rossi"
+Usage: #example
+* id = "9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
+* status = #booked
+* identifier.value = "TV-20250709-001"
+* created = "2025-07-01T09:00:00+01:00"
+* start = "2025-07-09T10:00:00+01:00"
+* end = "2025-07-09T10:30:00+01:00"
+* basedOn = Reference(ServiceRequestTeleassistenzaExample)
+* serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#8 "Counselling"
+* reasonCode = http://snomed.info/sct#3143004 "Visual field examination and evaluation, intermediate"
+* reasonCode.text = "Teleconsulto cardiologica per controllo post-operatorio"
+* participant[0].actor = Reference(patient-mrossi)
+* participant[0].status = #accepted
+* participant[1].actor = Reference(practrole-bianchi-gom)
+* participant[1].status = #accepted
 
 // Relazione di teleassistenza esempio
 
@@ -302,7 +307,17 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 * entry[observation][6].fullUrl = "http://example.org/fhir/Observation/obs-confronto-1"
 * entry[observation][6].resource = obs-confronto-1
 
+* entry[observation][7].fullUrl = "http://example.org/fhir/Observation/Observation-quesito"
+* entry[observation][7].resource = Observation-quesito
 
+* entry[allergyIntolerance][0].fullUrl = "http://example.org/fhir/AllergyIntolerance/1360bd6a-3855-48d3-aa33-96a9d961bb94"
+* entry[allergyIntolerance][0].resource = AllergyIntoleranceTeleassistenzaExample
+
+* entry[medicationStatement].fullUrl = "http://example.org/fhir/MedicationStatement/e62c9f1d-9c0b-4433-853b-06ec5074f19a"
+* entry[medicationStatement].resource = MedicationStatement-terapia-corrente
+
+* entry[observation][8].fullUrl = "http://example.org/fhir/Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
+* entry[observation][8].resource = Observation-esame-obiettivo
 
 
 // * entry[activityDefinition][0].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-controllo-pressione"
@@ -357,9 +372,9 @@ Description: "Relazione di Teleassistenza finale riferita al piano di mrossi."
 * section[pianoDiCura].title = "Piano di cura"
 * section[pianoDiCura].entry[0] = Reference(CarePlan/careplan-rel-1)
 
-* section[anamnesi].code = $loinc#11329-0 
-* section[anamnesi].title = "Anamnesi"
-* section[anamnesi].entry[0] = Reference(Observation/obs-anamnesi-1)
+* section[questitoDiagnostico].code = $loinc#29299-5
+* section[questitoDiagnostico].title = "Quesito diagnostico"
+* section[questitoDiagnostico].entry[0] = Reference(Observation/Observation-quesito)
 
 * section[prestazioni].code = $loinc#62387-6
 * section[prestazioni].title = "Prestazioni eseguite"
@@ -376,6 +391,22 @@ Description: "Relazione di Teleassistenza finale riferita al piano di mrossi."
 * section[diagnosi].code = $loinc#29548-5
 * section[diagnosi].title = "Diagnosi"
 * section[diagnosi].entry[0] = Reference(Observation/obs-dx-icd9)
+
+* section[InquadramentoClinicoIniziale].title = "Inquadramento Clinico Iniziale"
+* section[InquadramentoClinicoIniziale].code = $loinc#47039-3
+* section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0
+* section[InquadramentoClinicoIniziale].section[anamnesi].title = "Anamnesi"
+* section[InquadramentoClinicoIniziale].section[anamnesi].entry[0] = Reference(Observation/obs-anamnesi-1)
+* section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2
+* section[InquadramentoClinicoIniziale].section[allergie].title = "Allergie"
+* section[InquadramentoClinicoIniziale].section[allergie].entry[0] = Reference(AllergyIntolerance/1360bd6a-3855-48d3-aa33-96a9d961bb94)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].title = "Terapia farmacologica in atto"
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry[0] = Reference(MedicationStatement/e62c9f1d-9c0b-4433-853b-06ec5074f19a)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].title = "Esame obiettivo"
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry[0] = Reference(Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865)
+
 
 * section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0
 * section[suggerimentiPerMedicoPrescrittore].title = "Suggerimenti per il Medico Prescrittore"
@@ -413,6 +444,19 @@ Description: "Anamnesi teleassistenza - mrossi."
 * effectiveDateTime = "2023-03-30T09:00:00+01:00"
 * valueString = "Paziente con BPCO lieve, nessuna riacutizzazione nell’ultimo mese."
 * performer = Reference(practrole-bianchi-gom)
+
+
+Instance: Observation-quesito
+InstanceOf: ObservationTeleassistenza
+Description: "Esempio di quesito diagnostico nel contesto della teleassistenza"
+Usage: #example
+* id = "Observation-quesito"
+* status = #final
+* code = http://hl7.it/fhir/teleconsulto/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
+* subject = Reference(Patient/patient-mrossi)
+* valueString = "Controllo post-COVID per tosse persistente"
+* performer = Reference(PractitionerRole/practrole-bianchi-gom)
+* effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 // --- CONFRONTO PRECEDENTI ESAMI
 Instance: obs-confronto-1
@@ -505,7 +549,7 @@ InstanceOf: AllergyIntoleranceTeleassistenza
 Title: "Esempio AllergyIntolerance per Teleassistenza"
 Description: "Esempio di allergia/intolleranza codificata per il contesto Telemedicina"
 Usage: #example
-
+* id = "1360bd6a-3855-48d3-aa33-96a9d961bb94"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * type = #allergy
@@ -522,6 +566,40 @@ Usage: #example
 * reaction[0].manifestation[0].text = "Eruzione cutanea"
 * reaction[0].severity = #severe
 
+Instance: MedicationStatement-terapia-corrente
+InstanceOf: MedicationStatementTeleassistenza
+Description: "Esempio di medicationStatement nel contesto della teleconsulto"
+Usage: #example
+* status = #active
+* subject = Reference(Patient/patient-mrossi)
+* medicationCodeableConcept = $sct#372729009 "Acyclovir"
+* effectivePeriod.start = "2025-06-01"
+* id = "e62c9f1d-9c0b-4433-853b-06ec5074f19a"
+
+Instance: Observation-anamnesi
+InstanceOf: ObservationTeleassistenzaNarrative
+Description: "Esempio di anamnesi nel contesto della teleconsulto"
+Usage: #example
+* id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
+* status = #final
+* code = $loinc#11329-0
+* subject = Reference(Patient/patient-mrossi)
+* valueString = "Paziente con anamnesi positiva per bronchite cronica, non fumatore."
+* performer = Reference(practrole-bianchi-gom)
+* effectiveDateTime = "2025-06-16T10:30:00+02:00"
+
+
+Instance: Observation-esame-obiettivo
+InstanceOf: ObservationTeleassistenzaNarrative
+Description: "Esempio di esame obiettivo nel contesto della teleconsulto"
+Usage: #example
+* status = #final
+* code = $loinc#29545-1
+* subject = Reference(Patient/patient-mrossi)
+* valueString = "Durante la conversazione si rileva tosse secca intermittente."
+* id = "c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
+* performer = Reference(practrole-bianchi-gom)
+* effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 Instance: PresidioSandroPertini
 InstanceOf: OrganizationT2
@@ -731,3 +809,76 @@ Description: "Esempio di Bundle transaction per la Relazione di Teleassistenza: 
 * entry[observation][6].resource = obs-precedenti-1
 * entry[observation][6].request.method = #POST
 * entry[observation][6].request.url = "Observation"
+
+
+
+Instance: ServiceRequestTeleassistenzaExample
+InstanceOf: ServiceRequestTeleassistenza
+Usage: #example
+Title: "ServiceRequest Teleassistenza - Esempio"
+Description: "Richiesta di teleassistenza domiciliare sincrona (video), con requisition impostato secondo l'invariante"
+// Identificativi
+* id = "ServiceRequestTeleassistenzaExample"
+* identifier[0].system = "http://example.org/fhir/id/servicerequest"
+* identifier[0].value = "SR-2025-000987"
+// Requisition (identificativo di gruppo) — rispetta l’invariante requisition-system
+* requisition.system = "http://www.acme.it/identifiers/requisition"
+* requisition.value = "REQ-2025-000123"
+// Tipologia di identificativo (slice tipoRicetta) — SOSTITUIRE il code con un valore valido da vs-tipo-ricetta
+* requisition.type.coding[0].system = "https://terminology.agenas.gov.it/CodeSystem/tipo-ricetta"
+* requisition.type.coding[0].code = #NRE
+* requisition.type.coding[0].display = "Numero Ricetta Elettronica"
+// Stato e intento
+* status = #active
+* intent = #order
+* priority = #routine
+// Classificazione del servizio (categoria/branca) — Esempio con ValueSet AGENAS (sostituire con codice reale se disponibile)
+* category = csspecialityPractitionerRole#07 "Cardiochirurgia"
+
+// Prestazione richiesta (code) — esempio locale; sostituire con catalogo ufficiale quando disponibile
+* code.coding[0].system = "http://example.org/fhir/CodeSystem/servizi-teleassistenza"
+* code.coding[0].code = #VID-CHK
+* code.coding[0].display = "Controllo in videochiamata (teleassistenza)"
+* code.text = "Teleassistenza sincrona via video per monitoraggio paziente cronico"
+
+// Dettagli ordine
+* orderDetail[0].text = "Controllo parametri e counselling per scompenso cardiaco; include verifica aderenza terapeutica."
+* quantityQuantity.value = 1
+
+// Soggetto, encounter, tempi
+* subject = Reference(Patient/patient-mrossi)
+* occurrencePeriod.start = "2025-10-27T10:00:00+01:00"
+* occurrencePeriod.end   = "2025-10-27T10:30:00+01:00"
+* authoredOn = "2025-10-25T14:15:00+02:00"
+
+// Richiedente ed esecutore
+* requester = Reference(practrole-bianchi-gom)
+* performer[0] = Reference(practrole-bianchi-gom)
+* reasonCode[0].text = "Scompenso cardiaco cronico - follow-up teleassistito"
+* note[0].text = "Paziente dotato di tablet aziendale; preferire fascia mattutina."
+
+
+Instance: Device-Pulsossimetro-Esempio
+InstanceOf: Deviceteleassistenza
+Usage: #example
+Title: "Pulsossimetro - Esempio"
+Description: "Device di teleassistenza per monitoraggio SpO2"
+* status = #active
+* identifier[0].system = "http://example.org/fhir/id/device"
+* identifier[0].value = "DEV-SPO2-0021"
+
+* udiCarrier.deviceIdentifier = "98765432109876"
+* udiCarrier.issuer = "http://hl7.org/fhir/NamingSystem/gs1-di"
+* udiCarrier.jurisdiction = "http://hl7.org/fhir/NamingSystem/fda-udi"
+* udiCarrier.carrierHRF = "(01)98765432109876(21)SNSPO20021(10)BATCH9"
+
+* manufacturer = "Meditech Italia S.r.l."
+* manufactureDate = "2023-11-02"
+* expirationDate = "2028-11-01"
+* lotNumber = "BATCH9"
+* serialNumber = "SNSPO20021"
+
+* deviceName[0].name = "Meditech OxiCare Pro"
+* deviceName[0].type = http://snomed.info/sct#24110008 "Blood pressure monitor, device"
+
+* type.text = "Pulsossimetro da dito"

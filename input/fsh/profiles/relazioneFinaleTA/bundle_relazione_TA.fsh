@@ -21,7 +21,10 @@ Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Tele
     observation 0..* and
     medicationRequest 0..* and
     encounter 0..1 and
-    activityDefinition 0..*
+    activityDefinition 0..* and
+    medicationStatement 0..1 and
+    allergyIntolerance 0..*
+
 
 * entry[composition].resource only CompositionRelazioneTeleassistenza
 * entry[carePlan].resource only CarePlanRelazioneTA
@@ -33,3 +36,5 @@ Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Tele
 * entry[practitioner].resource only PractitionerTeleassistenza
 * entry[activityDefinition].resource only ActivityDefinition
 * entry[encounter].resource only EncounterTeleassistenza
+* entry[medicationStatement].resource only MedicationStatementTeleassistenza
+* entry[allergyIntolerance].resource only AllergyIntoleranceTeleassistenza

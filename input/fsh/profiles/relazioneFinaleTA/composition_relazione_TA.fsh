@@ -58,7 +58,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[questitoDiagnostico].entry only Reference(ObservationTeleassistenza)
 * section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
-* section[InquadramentoClinicoIniziale].code = $loinc#11329-0 (exactly)
+* section[InquadramentoClinicoIniziale].code = $loinc#47039-3 (exactly)
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
@@ -67,6 +67,10 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     allergie 0..* and
     terapiaFarmacologicaInAtto 0..* and
     esameObiettivo 0..1
+* section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
+* section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0  
+* section[InquadramentoClinicoIniziale].section[anamnesi].entry only Reference(ObservationTeleassistenza)
+//* section[InquadramentoClinicoIniziale].section[anamnesi] obeys sec-obs-code-match
 * section[InquadramentoClinicoIniziale].section[allergie] ^sliceName = "allergie"
 * section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2 (exactly)
 * section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTeleassistenza)

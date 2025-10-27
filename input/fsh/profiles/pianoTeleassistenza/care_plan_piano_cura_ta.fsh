@@ -22,4 +22,4 @@ Description: "Profilo del CarePlan utilizzato nel contesto del Piano di Teleassi
 * activity.outcomeReference only Reference(ObservationTeleassistenza)
 * activity.outcomeReference ^short = "Parametro rilevato"
 * activity.reference only Reference(ServiceRequest)
-* activity.detail.instantiatesCanonical only Canonical(ActivityDefinition)
+* activity.detail.instantiatesCanonical only Canonical(ActivityDefinitionTeleassistenza)

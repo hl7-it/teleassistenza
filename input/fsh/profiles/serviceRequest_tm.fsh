@@ -3,7 +3,7 @@ Alias: $brancaPrestazione = https://terminology.agenas.gov.it/ValueSet/brancaPre
 Profile: ServiceRequestTeleassistenza
 Parent: ServiceRequest
 Id: ServiceRequestTeleassistenza
-Description: "Profilo base della ServiceRequest condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo della ServiceRequest utilizzato nel contesto della Teleassistenza."
 * ^version = "1.0.0"
 * ^status = #draft
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
