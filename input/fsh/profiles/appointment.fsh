@@ -3,7 +3,7 @@ Alias: $serviceRequest_tm = http://hl7.it/fhir/StructureDefinition/ServiceReques
 Profile: AppointmentTeleassistenza
 Parent: Appointment
 Id: AppointmentTeleassistenza
-Description: "Profilo base del Appointment condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo del Appointment utilizzato nel contesto della Teleassistenza."
 * ^status = #draft
 * identifier 1..
 * identifier ^short = "Codice della prenotazione"
@@ -22,4 +22,3 @@ Description: "Profilo base del Appointment condiviso in tutti i documenti di Tel
 
 * participant ^short = "Partecipanti coinvolti nell'appuntamento."
 * participant.actor ^short = "Partecipanti all'appuntamento per la richiesta di televisita."
-* participant.status ^definition = "Stato di partecipazione."

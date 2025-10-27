@@ -43,7 +43,7 @@ Description: "Profilo della ServiceRequest utilizzato nel contesto della Teleass
 * insurance ^short = "Copertura assicurativa associata."
 * note ^short = "Note."
 
-Invariant: requisition-system
-Description: "il system deve seguire questa struttura: \"http://www.[nome prodotto o fornitore].it/identifiers/requisition\""
-* severity = #error
-* expression = "startsWith('http://www') and endsWith('.it/identifiers/requisition')"
+// Invariant: requisition-system
+// Description: "il system deve seguire questa struttura: \"http://www.[nome prodotto o fornitore].it/identifiers/requisition\""
+// * severity = #error
+// * expression = "startsWith('http://www') and endsWith('.it/identifiers/requisition')"

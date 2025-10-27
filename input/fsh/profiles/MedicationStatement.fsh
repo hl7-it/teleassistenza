@@ -3,13 +3,12 @@ Profile: MedicationStatementTeleassistenza
 Parent: MedicationStatement
 Id: MedicationStatementTeleassistenza
 Title: "MedicationStatement Telemedicina"
-Description: "Profilo della MedicationStatement utilizzato nel contesto del Teleconsulto"
+Description: "Profilo della MedicationStatement utilizzato nel contesto della Teleassistenza."
 * ^status = #draft
 
 // Limit medication to CodeableConcept
 * medication[x] only CodeableConcept
 * medication[x] ^short = "Definizione farmaco"
-* medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
 * medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
 * medication[x] ^binding.strength = #preferred
 

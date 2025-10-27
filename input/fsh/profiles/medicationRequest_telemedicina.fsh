@@ -1,7 +1,7 @@
 Profile: MedicationRequestTeleassistenza
 Parent: MedicationRequest
 Id: MedicationRequestTeleassistenza
-Description: "Profilo base della MedicationRequest nel contesto della Teleassistenza" 
+Description: "Profilo della MedicationRequest nel contesto della Teleassistenza" 
 * ^status = #draft
 * status ^definition = "Stato della richiesta."
 
@@ -18,7 +18,6 @@ Description: "Profilo base della MedicationRequest nel contesto della Teleassist
 
 * dosageInstruction ^short = "Instuzioni di dosaggio e somministrazione."
 * dosageInstruction.timing ^short = "Tempistiche di somministrazione del farmaco."
-* dosageInstruction.timing ^definition = "Tempistiche di somministrazione del farmaco."
 * dosageInstruction.timing.repeat.bounds[x] only Period
 * dosageInstruction.timing.repeat.bounds[x] ^short = "Range temporale nel quale è valida la posologia."
 * dosageInstruction.site ^short = "Sito di somministrazione."
