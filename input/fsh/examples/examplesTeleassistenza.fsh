@@ -825,9 +825,8 @@ Description: "Richiesta di teleassistenza domiciliare sincrona (video), con requ
 * requisition.system = "http://www.acme.it/identifiers/requisition"
 * requisition.value = "REQ-2025-000123"
 // Tipologia di identificativo (slice tipoRicetta) — SOSTITUIRE il code con un valore valido da vs-tipo-ricetta
-* requisition.type.coding[0].system = "https://terminology.agenas.gov.it/CodeSystem/tipo-ricetta"
-* requisition.type.coding[0].code = #NRE
-* requisition.type.coding[0].display = "Numero Ricetta Elettronica"
+* requisition.type = cs-tipo-ricetta#ND "Assistiti SASN con visita domiciliare"
+
 // Stato e intento
 * status = #active
 * intent = #order
@@ -868,8 +867,6 @@ Description: "Device di teleassistenza per monitoraggio SpO2"
 * identifier[0].value = "DEV-SPO2-0021"
 
 * udiCarrier.deviceIdentifier = "98765432109876"
-* udiCarrier.issuer = "http://hl7.org/fhir/NamingSystem/gs1-di"
-* udiCarrier.jurisdiction = "http://hl7.org/fhir/NamingSystem/fda-udi"
 * udiCarrier.carrierHRF = "(01)98765432109876(21)SNSPO20021(10)BATCH9"
 
 * manufacturer = "Meditech Italia S.r.l."
