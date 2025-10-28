@@ -31,8 +31,8 @@ Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 * entry[6].resource = enc-tele-1
 * entry[7].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
 * entry[7].resource = obs-dx-icd9
-* entry[7].fullUrl = "http://example.org/fhir/'ServiceRequest/ServiceRequestTeleassistenzaExample"
-* entry[7].resource = ServiceRequestTeleassistenzaExample
+* entry[8].fullUrl = "http://example.org/fhir/ServiceRequest/ServiceRequestTeleassistenzaExample"
+* entry[8].resource = ServiceRequestTeleassistenzaExample
 
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-tm-card"
 // * entry[8].resource = actdef-tm-card
@@ -151,7 +151,7 @@ Usage: #example
 * id = "practrole-bianchi-gom"
 * organization = Reference(org-assistenza)
 * practitioner = Reference(pract-bianchi)
-//* specialty = CodeSystem_specialita_PractitionerRole#01 "Allergologia"
+* specialty = csspecialityPractitionerRole#07 "Cardiochirurgia"
 
 Instance: org-assistenza
 InstanceOf: OrganizationT1
@@ -322,7 +322,7 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 * entry[observation][8].fullUrl = "http://example.org/fhir/Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
 * entry[observation][8].resource = Observation-esame-obiettivo
 
-* entry[serviceRequest].fullUrl = "http://example.org/fhir/'ServiceRequest/ServiceRequestTeleassistenzaExample"
+* entry[serviceRequest].fullUrl = "http://example.org/fhir/ServiceRequest/ServiceRequestTeleassistenzaExample"
 * entry[serviceRequest].resource = ServiceRequestTeleassistenzaExample
 
 
@@ -578,7 +578,7 @@ Description: "Esempio di medicationStatement nel contesto della teleassistenza"
 Usage: #example
 * status = #active
 * subject = Reference(Patient/patient-mrossi)
-* medicationCodeableConcept = $sct#372729009 "Acyclovir"
+* medicationCodeableConcept = http://snomed.info/sct#372729009 "Acyclovir"
 * effectivePeriod.start = "2025-06-01"
 * id = "e62c9f1d-9c0b-4433-853b-06ec5074f19a"
 
@@ -613,10 +613,10 @@ Title: "Presidio Sandro Pertini"
 Description: "Presidio ospedaliero facente parte di ASL Roma 1"
 Usage: #example
 * id = "osp-pertini"
-* name = "Ospedale Sandro Pertini"
+* identifier[struttura].system = "http://hl7.it/sid/hsp"
+* identifier[struttura].value = "120267"
+* name = "OSPEDALE SANDRO PERTINI"
 * partOf = Reference(Organization/org-assistenza)
-* identifier.system = "http://hl7.it/sid/hsp"
-* identifier.value = "HSP00123"
 
 
 Instance: UOCardiologiaPertini
