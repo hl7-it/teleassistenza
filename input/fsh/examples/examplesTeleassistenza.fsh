@@ -827,7 +827,7 @@ Description: "Richiesta di teleassistenza domiciliare sincrona (video), con requ
 * id = "ServiceRequestTeleassistenzaExample"
 * identifier[0].system = "http://example.org/fhir/id/servicerequest"
 * identifier[0].value = "SR-2025-000987"
-* requisition.system = "http://www.acme.it/identifiers/requisition"
+//* requisition.system = "http://www.acme.it/identifiers/requisition"
 * requisition.value = "REQ-2025-000123"
 * requisition.type = cs-tipo-ricetta#ND "Assistiti SASN con visita domiciliare"
 
