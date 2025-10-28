@@ -80,7 +80,7 @@ Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
 * period.end = "2026-08-31"
 * activity[0].detail.kind = #ServiceRequest
 //* activity[=].detail.instantiatesCanonical = Reference(ActivityDefinition/actdef-tm-card)
-* activity[=].detail.code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
+* activity[=].detail.code = $prestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 2
 * activity[=].detail.scheduledTiming.repeat.period = 1
@@ -89,7 +89,7 @@ Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
 * activity[=].detail.performer = Reference(org-assistenza)
 * activity[+].detail.kind = #ServiceRequest
 * activity[=].detail.instantiatesCanonical = Canonical(actdef-teleass)
-* activity[=].detail.code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
+* activity[=].detail.code = $prestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 1
 * activity[=].detail.scheduledTiming.repeat.period = 1
@@ -100,7 +100,7 @@ Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
 
 Instance: patient-mrossi
 InstanceOf: PatientTeleassistenza
-Description: "Esempio di paziente nel contesto della televisita"
+Description: "Esempio di paziente nel contesto della Teleassistenza."
 Usage: #example
 * id = "patient-mrossi"
 * extension[luogoNascita].valueAddress.extension[residenza].valueBoolean = true
@@ -148,7 +148,7 @@ Usage: #example
 
 Instance: practrole-bianchi-gom
 InstanceOf: PractitionerRoleTeleassistenza
-Description: "Esempio di practitionerRole nel contesto della televisita"
+Description: "Esempio di practitionerRole nel contesto della Teleassistenza."
 Usage: #example
 * id = "practrole-bianchi-gom"
 * organization = Reference(org-assistenza)
@@ -173,7 +173,7 @@ Usage: #example
 
 Instance: pract-bianchi
 InstanceOf: PractitionerTeleassistenza
-Description: "Esempio di practitioner nel contesto della televisita"
+Description: "Esempio di practitioner nel contesto della Teleassistenza."
 Usage: #example
 * id = "pract-bianchi"
 * name.given = "John"
@@ -183,8 +183,8 @@ Usage: #example
 
 Instance: enc-tele-1
 InstanceOf: EncounterTeleassistenza
-Title: "Esempio di Encounter per televisita"
-Description: "Esempio di incontro conforme al profilo EncounterTelevisitaExample"
+Title: "Esempio di Encounter nel contesto della Teleassistenza."
+Description: "Esempio di incontro nel "
 Usage: #example
 * id = "enc-tele-1"
 * status = #finished
@@ -205,7 +205,7 @@ Usage: #example
 Instance: obs-dx-icd9
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Esempio di Observation nel contesto del piano di teleassistenza."
+Description: "Esempio di Observation nel contesto del piano di Teleassistenza."
 * id = "obs-dx-icd9"
 * status = #final
 * category = $observation-category#social-history
@@ -221,6 +221,7 @@ Description: "Esempio di Observation nel contesto del piano di teleassistenza."
 Instance: actdef-teleass
 InstanceOf: ActivityDefinitionTeleassistenza
 Usage: #example
+Description: "Esempio di ActivityDefinition nel contesto del piano di Teleassistenza."
 * id = "actdef-teleass"
 * status = #active
 * name = "TeleassistenzaInferm"
@@ -230,13 +231,13 @@ Usage: #example
 * timingTiming.repeat.frequency = 1
 * timingTiming.repeat.period = 1
 * timingTiming.repeat.periodUnit = #wk
-* code = $prestazioni#88.78.4 "ECOGRAFIA OSTETRICA per studio della traslucenza nucale. Incluso: consulenza pre e post test combinato"
+* code = http://snomed.info/sct#185347001 "Encounter for problem"
 
 
 Instance: AppointmentTeleassistenzaExample
 InstanceOf: AppointmentTeleassistenza
 Title: "Appuntamento Teleassistenza Cardiologica"
-Description: "Esempio di appuntamento per teleassistenza cardiologica del paziente Mario Rossi"
+Description: "Esempio di appuntamento per teleassistenza cardiologica."
 Usage: #example
 * id = "9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 * status = #booked
@@ -246,8 +247,8 @@ Usage: #example
 * end = "2025-07-09T10:30:00+01:00"
 * basedOn = Reference(ServiceRequestTeleassistenzaExample)
 * serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#8 "Counselling"
-* reasonCode = http://snomed.info/sct#3143004 "Visual field examination and evaluation, intermediate"
-* reasonCode.text = "Teleassistenza cardiologica per controllo post-operatorio"
+* reasonCode = http://snomed.info/sct#4914002 "Treatment planning for teletherapy"
+* reasonCode.text = "Treatment planning for teletherapy"
 * participant[0].actor = Reference(patient-mrossi)
 * participant[0].status = #accepted
 * participant[1].actor = Reference(practrole-bianchi-gom)
@@ -340,7 +341,7 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 Instance: careplan-rel-1
 InstanceOf: CarePlanRelazioneTA
 Usage: #example
-Description: "CarePlan per la Relazione di Teleassistenza (follow-up del piano)."
+Description: "CarePlan per la Relazione di Teleassistenza."
 * id = "careplan-rel-1"
 * status = #active
 * intent = #plan
@@ -366,7 +367,7 @@ Description: "CarePlan per la Relazione di Teleassistenza (follow-up del piano).
 Instance: composition-rel-1
 InstanceOf: CompositionRelazioneTeleassistenza
 Usage: #example
-Description: "Relazione di Teleassistenza finale riferita al piano di mrossi."
+Description: "Esempio di composition per la Relazione di Teleassistenza."
 * id = "composition-rel-1"
 * status = #final
 * type = $loinc#91531-4
@@ -446,7 +447,7 @@ Description: "Relazione di Teleassistenza finale riferita al piano di mrossi."
 Instance: obs-anamnesi-1
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Anamnesi teleassistenza - mrossi."
+Description: "Esempio di anamnesi nel contesto della Teleassistenza."
 * id = "obs-anamnesi-1"
 * status = #final
 * code.text = "Anamnesi sintetica del percorso di teleassistenza"
@@ -458,7 +459,7 @@ Description: "Anamnesi teleassistenza - mrossi."
 
 Instance: Observation-quesito
 InstanceOf: ObservationTeleassistenza
-Description: "Esempio di quesito diagnostico nel contesto della teleassistenza"
+Description: "Esempio di quesito diagnostico nel contesto della Teleassistenza."
 Usage: #example
 * id = "Observation-quesito"
 * status = #final
@@ -472,7 +473,7 @@ Usage: #example
 Instance: obs-confronto-1
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Confronto con precedenti esami."
+Description: "Esempio di confronto con precedenti esami eseguiti nel contesto della Teleassistenza."
 * id = "obs-confronto-1"
 * status = #final
 * code.text = "Confronto andamento SpO2/FC vs mese precedente"
@@ -490,7 +491,7 @@ Description: "Confronto con precedenti esami."
 Instance: obs-referto-1
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Referto conclusivo del percorso."
+Description: "Esempio di Referto conclusivo nel contesto della Teleassistenza."
 * id = "obs-referto-1"
 * status = #final
 * code.text = "Referto conclusivo teleassistenza"
@@ -503,7 +504,7 @@ Description: "Referto conclusivo del percorso."
 Instance: obs-suggerimenti-1
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Suggerimenti clinico-gestionali."
+Description: "Esempio di suggerimenti nel contesto della Teleassistenza."
 * id = "obs-suggerimenti-1"
 * status = #final
 * code.text = "Suggerimenti per MMG"
@@ -516,7 +517,7 @@ Description: "Suggerimenti clinico-gestionali."
 Instance: obs-accertamenti-1
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Accertamenti/controlli consigliati."
+Description: "Esempio di Accertamenti/controlli consigliati nel contesto della Teleassistenza."
 * id = "obs-accertamenti-1"
 * status = #final
 * code.text = "Controlli consigliati"
@@ -529,7 +530,7 @@ Description: "Accertamenti/controlli consigliati."
 Instance: obs-precedenti-1
 InstanceOf: ObservationTeleassistenzaNarrative
 Usage: #example
-Description: "Precedenti esami rilevanti."
+Description: "Esempio di Precedenti esami rilevanti nel contesto della Teleassistenza."
 * id = "obs-precedenti-1"
 * status = #final
 * code.text = "Esami precedenti"
@@ -542,7 +543,7 @@ Description: "Precedenti esami rilevanti."
 Instance: medreq-terapia-1
 InstanceOf: MedicationRequestTeleassistenza
 Usage: #example
-Description: "Terapia farmacologica consigliata nella relazione."
+Description: "Esempio di terapia farmacologica consigliata nel contesto della Teleassistenza."
 * id = "medreq-terapia-1"
 * status = #active
 * medicationCodeableConcept.text = "Broncodilatatore a lunga durata + corticosteroide inalatorio"
@@ -556,7 +557,7 @@ Description: "Terapia farmacologica consigliata nella relazione."
 
 Instance: AllergyIntoleranceTeleassistenzaExample
 InstanceOf: AllergyIntoleranceTeleassistenza
-Title: "Esempio AllergyIntolerance per Teleassistenza"
+Title: "Esempio AllergyIntolerance per Teleassistenza."
 Description: "Esempio di allergia/intolleranza codificata per il contesto Telemedicina"
 Usage: #example
 * id = "1360bd6a-3855-48d3-aa33-96a9d961bb94"
@@ -568,7 +569,7 @@ Usage: #example
 * code = http://snomed.info/sct#91936005 "Allergy to penicillin"
 * code.text = "Allergia alla penicillina"
 
-* patient = Reference(Patient/patient-mrossi) "Mario Rossi"
+* patient = Reference(Patient/patient-mrossi)
 * recordedDate = "2025-10-02T10:30:00+01:00"
 * recorder = Reference(pract-bianchi) "Dr. Bianchi (Telemedicina)"
 
@@ -578,7 +579,7 @@ Usage: #example
 
 Instance: MedicationStatement-terapia-corrente
 InstanceOf: MedicationStatementTeleassistenza
-Description: "Esempio di medicationStatement nel contesto della teleassistenza"
+Description: "Esempio di medicationStatement nel contesto della Teleassistenza."
 Usage: #example
 * status = #active
 * subject = Reference(Patient/patient-mrossi)
@@ -588,7 +589,7 @@ Usage: #example
 
 Instance: Observation-anamnesi
 InstanceOf: ObservationTeleassistenzaNarrative
-Description: "Esempio di anamnesi nel contesto della teleassistenza"
+Description: "Esempio di anamnesi nel contesto della Teleassistenza."
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
 * status = #final
@@ -601,7 +602,7 @@ Usage: #example
 
 Instance: Observation-esame-obiettivo
 InstanceOf: ObservationTeleassistenzaNarrative
-Description: "Esempio di esame obiettivo nel contesto della teleassistenza"
+Description: "Esempio di esame obiettivo nel contesto della Teleassistenza."
 Usage: #example
 * status = #final
 * code = $loinc#29545-1
@@ -637,19 +638,17 @@ Usage: #example
 
 Instance: ProcedureTeleassistenzaExample
 InstanceOf: ProcedureTeleassistenza
-Title: "Esempio ProcedureTeleassistenza - Telemonitoraggio"
-Description: "Esempio di procedura di teleassistenza: telemonitoraggio parametri vitali"
+Title: "Esempio ProcedureTeleassistenza"
+Description: "Esempio di procedura nel contesto della Teleassistenza."
 Usage: #example
 
 * extension[ModalitaEsecuzioneProcedura].url = "http://hl7.org/fhir/StructureDefinition/procedure-method"
-* extension[ModalitaEsecuzioneProcedura].valueCodeableConcept = http://snomed.info/sct#73761001 "Colonoscopy"
+* extension[ModalitaEsecuzioneProcedura].valueCodeableConcept = http://snomed.info/sct#448337001 "Telemedicine consultation with patient"
 
 //* partOf = Reference(Observation/ObservationTeleassistenzaExample)
 
 * status = #completed
-
-* code.coding[0] = CsCatalogoNazionalePrestazioni#45.23 "COLONSCOPIA TOTALE CON ENDOSCOPIO FLESSIBILE. Escluso: RETTOSIGMOIDOSCOPIA CON ENDOSCOPIO FLESSIBILE (45.24), PROCTOSIGMOIDOSCOPIA CON ENDOSCOPIO RIGIDO (48.23)"
-
+* code = CsCatalogoNazionalePrestazioni#89.01 "VISITA DI CONTROLLO (di routine o di follow up). Escluso: le visite di controllo specificamente codificate"
 
 * subject = Reference(Patient/patient-mrossi)
 
@@ -670,7 +669,7 @@ Usage: #example
 Instance: PianoDiTeleassistenzaTransaction
 InstanceOf: BundlePianoTeleassistenzaTransaction
 Usage: #example
-Description: "Esempio di Bundle transaction per il piano di teleassistenza: admin=PUT, cliniche=POST"
+Description: "Esempio di Bundle transaction per il piano di teleassistenza"
 * type = #transaction
 
 // --- ADMIN (PUT) ---
@@ -725,7 +724,7 @@ Description: "Esempio di Bundle transaction per il piano di teleassistenza: admi
 Instance: RelazioneDiTeleassistenzaTransaction
 InstanceOf: BundleRelazioneTeleassistenzaTransaction
 Usage: #example
-Description: "Esempio di Bundle transaction per la Relazione di Teleassistenza: risorse amministrative via PUT, cliniche via POST."
+Description: "Esempio di Bundle transaction per la Relazione di Teleassistenza."
 * type = #transaction
 
 // =====================
@@ -826,7 +825,7 @@ Instance: ServiceRequestTeleassistenzaExample
 InstanceOf: ServiceRequestTeleassistenza
 Usage: #example
 Title: "ServiceRequest Teleassistenza - Esempio"
-Description: "Richiesta di teleassistenza domiciliare sincrona (video), con requisition impostato secondo l'invariante"
+Description: "Richiesta di teleassistenza domiciliare sincrona."
 // Identificativi
 * id = "ServiceRequestTeleassistenzaExample"
 * identifier[0].system = "http://example.org/fhir/id/servicerequest"
@@ -864,7 +863,7 @@ Instance: Device-Pulsossimetro-Esempio
 InstanceOf: Deviceteleassistenza
 Usage: #example
 Title: "Pulsossimetro - Esempio"
-Description: "Device di teleassistenza per monitoraggio SpO2"
+Description: "Device di teleassistenza per monitoraggio SpO2."
 * status = #active
 * identifier[0].system = "http://example.org/fhir/id/device"
 * identifier[0].value = "DEV-SPO2-0021"
