@@ -5,7 +5,7 @@ Il flusso descritto in questa sezione illustra come vengono **prodotti, gestiti 
 - il **Piano di Teleassistenza**, redatto all’attivazione del servizio;
 - la **Relazione Finale di Teleassistenza**, compilata alla chiusura del percorso.
 
-Il processo coinvolge diversi attori — il **Medico Referente**, gli **Operatori Sanitari**, il **Paziente o Caregiver**, la **Piattaforma regionale di Telemedicina (IRT)** e il **FSE** — e si sviluppa in tre fasi principali: attivazione, erogazione e chiusura del percorso.
+Il processo coinvolge diversi attori — il **Medico Referente**, gli **Operatori Sanitari**, il **Paziente o Caregiver**, la **Infrastruttura Regionale di Telemedicina (IRT)** e il **FSE** — e si sviluppa in tre fasi principali: attivazione, erogazione e chiusura del percorso.
 
 ### Attivazione del percorso e Piano di Teleassistenza
 

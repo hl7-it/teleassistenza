@@ -6,6 +6,9 @@ Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation
 Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $istat-DUG-CS = https://www.hl7.it/fhir/terminology/CodeSystem/dug
 
+/*
+    PianoDiTeleassistenza di teleassistenza
+*/
 Instance: PianoDiTeleassistenza
 InstanceOf: BundlePianoTeleassistenza
 Usage: #example
@@ -33,7 +36,6 @@ Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 * entry[7].resource = obs-dx-icd9
 * entry[8].fullUrl = "http://example.org/fhir/ServiceRequest/ServiceRequestTeleassistenzaExample"
 * entry[8].resource = ServiceRequestTeleassistenzaExample
-
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-tm-card"
 // * entry[8].resource = actdef-tm-card
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-teleass"
@@ -219,7 +221,7 @@ Description: "Esempio di Observation nel contesto del piano di teleassistenza."
 Instance: actdef-teleass
 InstanceOf: ActivityDefinitionTeleassistenza
 Usage: #example
-* id = "2.16.840.1.113883.3.98765.10.20251028.1"
+* id = "actdef-teleass"
 * status = #active
 * name = "TeleassistenzaInferm"
 * title = "Teleassistenza infermieristica programmata"
@@ -252,7 +254,9 @@ Usage: #example
 * participant[1].status = #accepted
 
 // Relazione di teleassistenza esempio
-
+/*
+    Relazione finale di teleassistenza
+*/
 Instance: RelazioneDiTeleassistenza
 InstanceOf: BundleRelazioneTeleassistenza
 Usage: #example

@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: teleassistenza
 canonical: http://hl7.it/fhir/teleassistenza
-name: teleassistenza
+name: Teleassistenza
 title: teleassistenza
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
