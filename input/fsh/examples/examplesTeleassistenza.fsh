@@ -219,7 +219,7 @@ Description: "Esempio di Observation nel contesto del piano di teleassistenza."
 Instance: actdef-teleass
 InstanceOf: ActivityDefinitionTeleassistenza
 Usage: #example
-* id = "actdef-teleass"
+* id = "2.16.840.1.113883.3.98765.10.20251028.1"
 * status = #active
 * name = "TeleassistenzaInferm"
 * title = "Teleassistenza infermieristica programmata"

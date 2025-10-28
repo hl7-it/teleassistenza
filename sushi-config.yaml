@@ -78,6 +78,8 @@ menu:
   Home: index.html
   Artifacts: artifacts.html
   ModelMaps: teleassistenza.html  
+  Specifiche:
+    FlussoDocumentale: specifiche.html
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  

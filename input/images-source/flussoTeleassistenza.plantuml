@@ -1,0 +1,49 @@
+@startuml
+title Teleassistenza – Flusso documentale
+
+actor "Medico Referente" as OP
+actor "Operatori Sanitari" as OPS
+actor "Paziente/Caregiver" as PZ
+participant "Infrastruttura Regionale Telemedicina (IRT)" as PTF
+database "FSE" as FSE
+
+== Attivazione e Piano ==
+OP -> PTF: Inserisce dati Piano (obiettivi,\ndurata, frequenze, strumenti, indicatori)
+PTF -> PTF: Genera Piano (bozza)
+PTF --> OP: Bozza Piano
+
+alt Piano approvato
+  OP -> PTF: Firma/Approva Piano
+  PTF -> FSE: Pubblica Piano
+  FSE --> OP: Conferma disponibilità
+else Da correggere
+  OP -> PTF: Correzioni/integrazioni
+  PTF --> OP: Nuova bozza
+end
+
+== Erogazione ==
+OP -> OPS: Assegna attività / protocolli
+OPS -> PZ: Contatti/educazione/assistenza a distanza
+PZ -> OPS: Fornisce rilevazioni / feedback
+OPS -> PTF: Registra attività e dati clinici
+
+alt Pubblicare dati intermedi
+  PTF -> FSE: Pubblica episodi/dati intermedi (se previsto da policy)
+  FSE --> PTF: Esito pubblicazione
+else Non pubblicare
+  PTF -> PTF: Conserva e traccia internamente
+end
+
+== Chiusura e Relazione finale ==
+OP -> PTF: Richiede chiusura percorso
+PTF -> PTF: Genera Relazione finale (bozza)\n(esiti, obiettivi raggiunti, criticità, durata)
+PTF --> OP: Bozza Relazione
+
+alt Relazione approvata
+  OP -> PTF: Firma/Approva Relazione finale
+  PTF -> FSE: Pubblica Relazione finale
+  FSE --> OP: Documento disponibile su FSE
+else Integrazioni richieste
+  OP -> PTF: Integrazioni/Revisioni
+  PTF --> OP: Nuova
+@enduml
