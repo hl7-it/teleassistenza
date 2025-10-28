@@ -1,3 +1,5 @@
+### Contesto e scenario di riferimento
+
 L'Implementation Guide di Telemedicina nasce con l'obiettivo di favorire la standardizzazione dei dati scambiati tra i vari sistemi sanitari e la Piattaforma di Telemedicina. Questa guida si avvale del framework FHIR (Fast Healthcare Interoperability Resources), che garantisce un'interoperabilità strutturata e facilita l'integrazione delle informazioni sanitarie. 
 
 Secondo le normative nazionali, i servizi minimi di Telemedicina includono: 
@@ -8,10 +10,15 @@ Secondo le normative nazionali, i servizi minimi di Telemedicina includono:
 
 Questi servizi richiedono una gestione efficace del flusso di dati sanitari, garantendo sicurezza, integrità e tracciabilità delle informazioni trasmesse tra i diversi soggetti coinvolti. 
 
-### Contesto e scenario di riferimento
 La Telemedicina sta assumendo un ruolo sempre più centrale nell’evoluzione del sistema sanitario, rappresentando un’opportunità per migliorare l’accesso alle cure, ridurre i tempi di attesa e garantire una maggiore continuità assistenziale, in particolare per i pazienti con patologie croniche o residenti in aree geograficamente svantaggiate.
 
 L’integrazione della Telemedicina nel Sistema Sanitario Nazionale (SSN) prevede la creazione di infrastrutture digitali interoperabili, capaci di gestire in modo efficiente la raccolta, l’elaborazione e la trasmissione dei dati clinici tra i diversi attori coinvolti: pazienti, medici di medicina generale, specialisti, ospedali, farmacie e servizi di emergenza
+
+### Scopo
+Aggiungere testo
+
+### Definizione e funzionalità della Teleassistenza
+Aggiungere testo
 
 ### Integrazione con i sistemi Regionali e Nazionali
 L'integrazione con i sistemi sanitari regionali e nazionali è fondamentale per garantire un flusso di informazioni omogeneo e sicuro tra la Piattaforma di Telemedicina e le infrastrutture sanitarie esistenti.
