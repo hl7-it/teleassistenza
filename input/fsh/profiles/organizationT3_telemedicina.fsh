@@ -4,7 +4,7 @@ Alias: $uri-idAslRegione = https://www.hl7.it/fhir/terminology/ValueSet/uri-idAs
 Profile: OrganizationT3
 Parent: Organization
 Id: OrganizationT3
-Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, ambulatorio)"
+Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, ambulatorio)."
 
 * identifier ^short = "Identificativo dell'organizzazione."
 * identifier ^definition = "Identificativi di Organization usati per identificare l'Organization su diversi sistemi"

@@ -3,7 +3,7 @@ Alias: $loinc = http://loinc.org
 Profile: CompositionRelazioneTeleassistenza
 Parent: Composition
 Id: CompositionRelazioneTeleassistenza
-Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Teleassistenza"
+Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Teleassistenza."
 * ^status = #draft
 * title = "Relazione di Teleassistenza" (exactly)
 
@@ -38,7 +38,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     pianoDiCura 1..1 and
     questitoDiagnostico 1..1 and
     InquadramentoClinicoIniziale 0..1 and
-    anamnesi 0..1 and 
     //allergie 0..1 and 
     prestazioni 0..1 and
     confrontoPrecedentiEsamiEseguiti 0..1 and
@@ -100,13 +99,10 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTeleassistenza)
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
 * section[accertamentiControlliConsigliati].code = $loinc#80615-8 (exactly)
-* section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleassistenza)
+* section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleassistenzaNarrative)
 * section[referto] ^sliceName = "referto"
 * section[referto].entry only Reference(ObservationTeleassistenza)
 * section[referto].code = $loinc#47045-0  
-* section[anamnesi] ^sliceName = "anamnesi"
-* section[anamnesi].code = $loinc#11329-0 
-* section[anamnesi].entry only Reference(ObservationTeleassistenza)
 * section[allegati] ^sliceName = "allegati"
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)
 * section[allegati].code = $loinc#77599-9  

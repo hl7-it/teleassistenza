@@ -1,7 +1,7 @@
 Profile: MedicationRequestTeleassistenza
 Parent: MedicationRequest
 Id: MedicationRequestTeleassistenza
-Description: "Profilo della MedicationRequest nel contesto della Teleassistenza" 
+Description: "Profilo della MedicationRequest nel contesto della teleassistenza." 
 * ^status = #draft
 * status ^definition = "Stato della richiesta."
 
@@ -9,7 +9,9 @@ Description: "Profilo della MedicationRequest nel contesto della Teleassistenza"
 * intent ^definition = "Scopo della richiesta."
 
 * medication[x] ^short = "Definizione farmaco"
-* medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
+* medication[x] only CodeableConcept
+* medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
+* medication[x] ^binding.strength = #preferred
 
 * subject only Reference(PatientTeleassistenza)
 * subject ^short = "Soggetto per cui è ricchiesta la medication."

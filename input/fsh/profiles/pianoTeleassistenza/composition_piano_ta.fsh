@@ -5,7 +5,7 @@ Alias: $Observation = https://agenas.gov.it/fhir/StructureDefinition/Observation
 Profile: CompositionPianoTA
 Parent: Composition
 Id: CompositionPianoTA
-Description: "Profilo della Composition utilizzata nel contesto della Piano di Teleassistenza"
+Description: "Profilo della Composition utilizzata nel contesto della Piano di Teleassistenza."
 * ^status = #draft
 
 * subject only Reference(PatientTeleassistenza)

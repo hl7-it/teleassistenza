@@ -5,7 +5,7 @@ Il flusso descritto in questa sezione illustra come vengono **prodotti, gestiti 
 - il **Piano di Teleassistenza**, redatto all’attivazione del servizio;
 - la **Relazione Finale di Teleassistenza**, compilata alla chiusura del percorso.
 
-Il processo coinvolge diversi attori — il **Medico Referente**, gli **Operatori Sanitari**, il **Paziente o Caregiver**, la **Infrastruttura Regionale di Telemedicina (IRT)** e il **FSE** — e si sviluppa in tre fasi principali: attivazione, erogazione e chiusura del percorso.
+Il processo coinvolge diversi attori, il **Medico Referente**, gli **Operatori Sanitari**, il **Paziente o Caregiver**, la **Infrastruttura Regionale di Telemedicina (IRT)** e il **FSE**, e si sviluppa in tre fasi principali: attivazione, erogazione e chiusura del percorso.
 
 ### Attivazione del percorso e Piano di Teleassistenza
 
@@ -16,7 +16,6 @@ Una volta completata la compilazione, la piattaforma genera automaticamente una 
 Quando il contenuto è ritenuto corretto, il medico procede con la **firma digitale** del documento, che viene così validato.
 
 Dopo la firma, l’IRT trasmette il documento al **Fascicolo Sanitario Elettronico (FSE)**, dove viene archiviato e reso disponibile come **documento clinico ufficiale**.  
-In caso di necessità di correzioni, il piano può essere rigenerato e ripubblicato in una versione aggiornata.
 
 ### Erogazione della Teleassistenza
 
@@ -29,9 +28,6 @@ Durante questa fase, la piattaforma IRT registra tutte le interazioni:
 - note operative e osservazioni,  
 - eventuali criticità o variazioni rispetto al piano iniziale.
 
-In alcune regioni o configurazioni, la piattaforma può anche **pubblicare dati intermedi** nel FSE, ad esempio episodi di assistenza o report periodici di monitoraggio.  
-In altri casi, tali dati restano conservati all’interno dell’IRT, ma sempre tracciati e consultabili dagli operatori autorizzati.
-
 ### Chiusura del percorso e Relazione Finale
 
 Al termine del periodo di teleassistenza, il **Medico Referente** richiede la chiusura del percorso.  
@@ -39,8 +35,6 @@ A partire dai dati raccolti, la piattaforma genera in modo automatico una **bozz
 
 Anche in questo caso, il medico può rivedere e integrare la bozza prima di procedere con la **firma digitale**.  
 Una volta approvata, la Relazione Finale viene trasmessa e **pubblicata nel FSE**, dove diventa parte integrante della documentazione clinica del paziente, segnando la **chiusura formale del servizio** di teleassistenza.
-
-Se invece vengono richieste modifiche o aggiustamenti, la piattaforma mantiene la bozza in stato di revisione finché non viene firmata la versione definitiva.
 
 ### Sintesi del flusso
 

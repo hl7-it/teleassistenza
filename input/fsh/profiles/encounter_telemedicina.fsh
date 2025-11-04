@@ -1,7 +1,7 @@
 Profile: EncounterTeleassistenza
 Parent: Encounter
 Id: EncounterTeleassistenza
-Description: "Profilo dell'Encounter nel contesto della Teleassistenza"
+Description: "Profilo dell'Encounter nel contesto della Teleassistenza."
 * ^status = #draft
 
 * identifier ^slicing.discriminator.type = #value

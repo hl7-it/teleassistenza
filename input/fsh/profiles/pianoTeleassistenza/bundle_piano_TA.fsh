@@ -1,7 +1,7 @@
 Profile: BundlePianoTeleassistenza
 Parent: Bundle
 Id: BundlePianoTeleassistenza
-Description: "Profilo del Bundle utilizzato nel contesto della Piano di Teleassistenza"
+Description: "Profilo del Bundle utilizzato nel contesto della Piano di Teleassistenza."
 * ^status = #draft
 * type = #document (exactly)
 * entry ^slicing.discriminator[0].type = #type

@@ -2,7 +2,7 @@
 Profile: OrganizationT2
 Parent: Organization
 Id: OrganizationT2
-Description: "Profilo per Organization di tipo 2 (es. ospedale, distretto)"
+Description: "Profilo per Organization di tipo 2 (es. ospedale, distretto)."
 * identifier ^short = "Codice del presidio"
 
 * identifier ^slicing.discriminator[0].type = #pattern

@@ -1,7 +1,7 @@
 Profile: CarePlanRelazioneTA
 Parent: CarePlan
 Id: CarePlanRelazioneTA
-Description: "Profilo del CarePlan utilizzato nel contesto della Relazione di Teleassistenza"
+Description: "Profilo del CarePlan utilizzato nel contesto della Relazione di Teleassistenza."
 * ^status = #draft
 * identifier 1..
 * identifier ^short = "Codice identificativo del Piano"

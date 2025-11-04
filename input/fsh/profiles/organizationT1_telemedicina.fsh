@@ -4,7 +4,7 @@ Alias: $minsan-idStruttureInterne-vs = https://www.hl7.it/fhir/terminology/Value
 Profile: OrganizationT1
 Parent: Organization
 Id: OrganizationT1
-Description: "Profilo per Organization di tipo 1 (es. ASL, AO, IRCCS)"
+Description: "Profilo per Organization di tipo 1 (es. ASL, AO, IRCCS)."
 
 * identifier ^short = "Identificativo dell'organizzazione."
 

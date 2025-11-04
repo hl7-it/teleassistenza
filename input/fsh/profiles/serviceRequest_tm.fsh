@@ -39,6 +39,7 @@ Description: "Profilo della ServiceRequest utilizzato nel contesto della Teleass
 * requester only Reference(PractitionerRoleTeleassistenza)
 * requester ^short = "Medico prescrittore."
 * performer ^short = "Esecutori della richiesta."
+* performer only Reference(PractitionerRoleTeleassistenza)
 * reasonCode ^short = "Codice diagnosi/Quesito diagnostico."
 * insurance ^short = "Copertura assicurativa associata."
 * note ^short = "Note."

@@ -15,10 +15,12 @@ La Telemedicina sta assumendo un ruolo sempre più centrale nell’evoluzione de
 L’integrazione della Telemedicina nel Sistema Sanitario Nazionale (SSN) prevede la creazione di infrastrutture digitali interoperabili, capaci di gestire in modo efficiente la raccolta, l’elaborazione e la trasmissione dei dati clinici tra i diversi attori coinvolti: pazienti, medici di medicina generale, specialisti, ospedali, farmacie e servizi di emergenza
 
 ### Scopo
-Aggiungere testo
+Questa guida ha lo scopo di definire i profili [HL7 FHIR](https://hl7.org/fhir/R4B) da adottare per l’implementazione dei servizi di Teleassistenza, parte integrante dell’ecosistema della Telemedicina. Essa fornisce le specifiche necessarie per garantire l’interoperabilità, la gestione e la condivisione sicura dei dati clinico-assistenziali relativi alle prestazioni erogate a distanza.
 
 ### Definizione e funzionalità della Teleassistenza
-Aggiungere testo
+La teleassistenza rappresenta un’attività professionale propria delle figure sanitarie abilitate e consiste in un’interazione a distanza tra il professionista e il paziente o il caregiver. Il suo scopo è supportare la gestione della salute, favorire il benessere e assicurare continuità assistenziale nel contesto domestico o nei luoghi di vita della persona. Tale servizio è destinato in particolare a individui con patologie croniche, situazioni di fragilità o condizioni di vulnerabilità.
+
+Si tratta di un intervento solitamente pianificato e ripetuto nel tempo, secondo percorsi assistenziali personalizzati. L'incontro avviene prevalentemente tramite videochiamata e può includere la condivisione di dati clinici, esami, immagini e altri contenuti digitali. Il professionista può inoltre utilizzare piattaforme dedicate per proporre questionari, fornire materiali educativi o condividere video dimostrativi utili allo svolgimento di specifiche attività.
 
 ### Integrazione con i sistemi Regionali e Nazionali
 L'integrazione con i sistemi sanitari regionali e nazionali è fondamentale per garantire un flusso di informazioni omogeneo e sicuro tra la Piattaforma di Telemedicina e le infrastrutture sanitarie esistenti.
