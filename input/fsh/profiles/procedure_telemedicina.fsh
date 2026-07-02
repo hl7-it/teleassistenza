@@ -4,7 +4,7 @@ Id: ProcedureTeleassistenza
 Description:  "Profilo base della Procedure utilizzata nel contesto della Teleassistenza."
 
 * ^status = #draft
-* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method|5.2.0 named ModalitaEsecuzioneProcedura 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method named ModalitaEsecuzioneProcedura 0..1
 * extension[ModalitaEsecuzioneProcedura] ^short = "Modalità esecuzione procedura operativa."
 
 * basedOn ^short = "Richiesta su cui si basa questa procedura."
