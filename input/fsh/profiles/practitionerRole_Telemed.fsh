@@ -1,9 +1,4 @@
 
-Alias: $Organization_T1 = http://hl7.it/fhir/StructureDefinition/Organization_T1
-Alias: $Organization_T2 = http://hl7.it/fhir/StructureDefinition/Organization_T2
-Alias: $Organization_T3 = http://hl7.it/fhir/StructureDefinition/Organization_T3
-Alias: $specialityPractitionerRole = https://terminology.agenas.gov.it/ValueSet/specialityPractitionerRole
-
 Profile: PractitionerRoleTeleassistenza
 Parent: PractitionerRole
 Id: PractitionerRoleTeleassistenza

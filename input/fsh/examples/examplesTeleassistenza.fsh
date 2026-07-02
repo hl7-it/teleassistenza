@@ -1,10 +1,4 @@
-Alias: $loinc = http://loinc.org
 //Alias: $prestazioni = http://hl7.it/fhir/teleassistenza/CodeSystem/CsCatalogoNazionalePrestazioni
-Alias: $organization-type = http://terminology.hl7.org/CodeSystem/organization-type
-Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
-Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
-Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
-Alias: $istat-DUG-CS = https://www.hl7.it/fhir/terminology/CodeSystem/dug
 
 /*
     PianoDiTeleassistenza di teleassistenza

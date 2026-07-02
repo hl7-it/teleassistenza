@@ -1,4 +1,3 @@
-Alias: $serviceRequest_tm = http://hl7.it/fhir/StructureDefinition/ServiceRequestTeleassistenza
 
 Profile: AppointmentTeleassistenza
 Parent: Appointment

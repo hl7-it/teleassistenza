@@ -1,4 +1,3 @@
-Alias: $brancaPrestazione = https://terminology.agenas.gov.it/ValueSet/brancaPrestazione
 
 Profile: ServiceRequestTeleassistenza
 Parent: ServiceRequest

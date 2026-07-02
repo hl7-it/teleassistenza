@@ -1,4 +1,3 @@
-Alias: $loinc = http://loinc.org
 
 Profile: CompositionRelazioneTeleassistenza
 Parent: Composition

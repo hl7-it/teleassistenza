@@ -1,6 +1,3 @@
-Alias: $loinc = http://loinc.org
-Alias: $CarePlan_PianoDiCura_TM = https://agenas.gov.it/fhir/StructureDefinition/CarePlan_PianoDiCura_TM
-Alias: $Observation = https://agenas.gov.it/fhir/StructureDefinition/Observation
 
 Profile: CompositionPianoTA
 Parent: Composition

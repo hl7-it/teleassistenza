@@ -1,4 +1,3 @@
-Alias: $tipoCertificatore = https://www.hl7.it/fhir/terminology/ValueSet/tipoCertificatore
 
 Extension: ExtRecordCertification
 Id: recordCertification
