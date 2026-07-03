@@ -74,15 +74,28 @@ dependencies:
 # │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# menu:
+#   Home: index.html
+#   Artifacts: artifacts.html
+#   ModelMaps: teleassistenza.html  
+#   Specifiche:
+#     FlussoDocumentale: specifiche.html
+#   Support:
+#     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
+#     Downloads: downloads.html  
+
 menu:
   Home: index.html
-  Artifacts: artifacts.html
-  ModelMaps: teleassistenza.html  
-  Specifiche:
-    FlussoDocumentale: specifiche.html
+  Modello Funzionale:
+    Scenario: scenario.html
+    ModelMaps: teleassistenza.html  
+  Implementation:
+    Mapping to Profiles: modelmap.html    
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
+  Artifacts: artifacts.html
+
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
