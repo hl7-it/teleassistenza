@@ -165,20 +165,138 @@ menu:
 # URL when generating the IG JSON.
 #
 groups:
-  GroupF:
-    name: Profili Piano di Teleassistenza
-    description: Profili utilizzati nel contesto del Piano di Teleassistenza
+  # ── Profili ──────────────────────────────────────────────────────────────────
+  GroupPianoTA:
+    name: Profili - Piano di Teleassistenza
+    description: Profili FHIR utilizzati per la rappresentazione del Piano di Teleassistenza (documento di pianificazione del percorso assistenziale).
     resources:
     - StructureDefinition/BundlePianoTeleassistenza
+    - StructureDefinition/BundlePianoTeleassistenzaTransaction
     - StructureDefinition/CompositionPianoTA
-    - StructureDefinition/CarePlanPianoDiCuraTeleassistenza   
-  GroupI:
-    name: Profili Relazione di Teleassistenza
-    description: Profili utilizzati nel contesto della Relazione di Teleassistenza
+    - StructureDefinition/CarePlanPianoDiCuraTeleassistenza
+    - StructureDefinition/ActivityDefinitionTeleassistenza
+
+  GroupRelazioneTA:
+    name: Profili - Relazione di Teleassistenza
+    description: Profili FHIR utilizzati per la rappresentazione della Relazione di Teleassistenza (documento conclusivo del percorso assistenziale).
     resources:
     - StructureDefinition/BundleRelazioneTeleassistenza
+    - StructureDefinition/BundleRelazioneTeleassistenzaTransaction
     - StructureDefinition/CompositionRelazioneTeleassistenza
     - StructureDefinition/CarePlanRelazioneTA
+
+  GroupRisorseCliniche:
+    name: Profili - Risorse Correlate
+    description: Profili FHIR delle risorse cliniche e organizzative utilizzate nel contesto della Teleassistenza.
+    resources:
+    - StructureDefinition/PatientTeleassistenza
+    - StructureDefinition/PractitionerTeleassistenza
+    - StructureDefinition/PractitionerRoleTeleassistenza
+    - StructureDefinition/OrganizationT1
+    - StructureDefinition/OrganizationT2
+    - StructureDefinition/OrganizationT3
+    - StructureDefinition/EncounterTeleassistenza
+    - StructureDefinition/AppointmentTeleassistenza
+    - StructureDefinition/ObservationTeleassistenza
+    - StructureDefinition/ObservationTeleassistenzaNarrative
+    - StructureDefinition/ProcedureTeleassistenza
+    - StructureDefinition/ServiceRequestTeleassistenza
+    - StructureDefinition/MedicationRequestTeleassistenza
+    - StructureDefinition/MedicationStatementTeleassistenza
+    - StructureDefinition/AllergyIntoleranceTeleassistenza
+    - StructureDefinition/Deviceteleassistenza
+
+  # ── Tipi di dato ed Estensioni ───────────────────────────────────────────────
+  GroupTipiDatoEstensioni:
+    name: Tipi di Dato ed Estensioni
+    description: Profili di tipi di dato base ed estensioni FHIR utilizzati nel contesto della Teleassistenza.
+    resources:
+    - StructureDefinition/AddressItTelemedicina
+    - StructureDefinition/recordCertification
+    - StructureDefinition/birth-place-ita
+    - StructureDefinition/address-dug
+    - StructureDefinition/address-official
+
+  # ── Terminologie ─────────────────────────────────────────────────────────────
+  GroupValueSet:
+    name: ValueSet
+    description: Value set utilizzati nel contesto della Teleassistenza per la codifica delle informazioni cliniche e amministrative.
+    resources:
+    - ValueSet/VstipoIdentificatore
+    - ValueSet/minsan-asl
+    - ValueSet/minsan-idStrutture
+    - ValueSet/minsan-idStruttureInterne
+    - ValueSet/specialita-mediche
+    - ValueSet/vsspecialityPractitionerRole
+    - ValueSet/VsCatalogoNazionalePrestazioni
+    - ValueSet/ValueSetCatalogoNazionalePrestazioni
+    - ValueSet/diagnosi-icd9cm
+    - ValueSet/istat-dug
+    - ValueSet/tipologia-piano
+    - ValueSet/vs-tipo-ricetta
+
+  GroupCodeSystem:
+    name: CodeSystem
+    description: Code system utilizzati nel contesto della Teleassistenza per la definizione dei sistemi di codifica locali e nazionali.
+    resources:
+    - CodeSystem/CodesystemMinisteroSaluteASL
+    - CodeSystem/branca-prestazione
+    - CodeSystem/CodesystemCatalogoNazionalePrestazioni
+    - CodeSystem/CsCatalogoNazionalePrestazioni
+    - CodeSystem/diagnosi-icd9cm
+    - CodeSystem/dug
+    - CodeSystem/csspecialityPractitionerRole
+    - CodeSystem/csTipologiaPiano
+    - CodeSystem/cs-tipo-ricetta
+
+  # ── Esempi ───────────────────────────────────────────────────────────────────
+  GroupEsempiPiano:
+    name: Esempi - Piano di Teleassistenza
+    description: Esempi di risorse FHIR relativi al Piano di Teleassistenza.
+    resources:
+    - Bundle/EsempioPianoDiTeleassistenza
+    - Bundle/EsempioPianoDiTeleassistenzaTransaction
+    - Composition/composition-pta-1
+    - CarePlan/careplan-tele-1
+    - ActivityDefinition/actdef-teleass
+
+  GroupEsempiRelazione:
+    name: Esempi - Relazione di Teleassistenza
+    description: Esempi di risorse FHIR relativi alla Relazione di Teleassistenza e alle sezioni cliniche che la compongono.
+    resources:
+    - Bundle/EsempioRelazioneDiTeleassistenza
+    - Bundle/EsempioRelazioneDiTeleassistenzaTransaction
+    - Composition/composition-rel-1
+    - CarePlan/careplan-rel-1
+    - Observation/obs-anamnesi-1
+    - Observation/Observation-quesito
+    - Observation/obs-confronto-1
+    - Observation/obs-referto-1
+    - Observation/obs-suggerimenti-1
+    - Observation/obs-accertamenti-1
+    - Observation/obs-precedenti-1
+
+  GroupEsempiRisorse:
+    name: Esempi - Risorse Cliniche e Amministrative
+    description: Esempi di risorse FHIR cliniche e amministrative utilizzate nei documenti di Teleassistenza.
+    resources:
+    - Patient/patient-mrossi
+    - Practitioner/pract-bianchi
+    - PractitionerRole/practrole-bianchi-gom
+    - Organization/org-assistenza
+    - Organization/osp-pertini
+    - Organization/uo-cardiologia-pertini
+    - Encounter/enc-tele-1
+    - Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908
+    - Observation/obs-dx-icd9
+    - Observation/84f911ee-b09d-4325-a3f3-a973a0c5ad8f
+    - Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865
+    - ServiceRequest/ServiceRequestTeleassistenzaExample
+    - Procedure/EsempioProcedureTeleassistenza
+    - Device/EsempioDPulsossimetro
+    - MedicationRequest/medreq-terapia-1
+    - AllergyIntolerance/1360bd6a-3855-48d3-aa33-96a9d961bb94
+    - MedicationStatement/e62c9f1d-9c0b-4433-853b-06ec5074f19a
 #
 #
 # The ImplementationGuide resource defines several other properties
