@@ -2,7 +2,7 @@
 Profile: OrganizationT2
 Parent: Organization
 Id: OrganizationT2
-Description: "Profilo per Organization di tipo 2 (es. ospedale, distretto)."
+Description: "Profilo per Organization di tipo 2 (es. presidio ospedaliero, distretto) utilizzato nel contesto della Teleassistenza. Rappresenta la struttura sanitaria di riferimento all'interno dell'organizzazione di tipo 1 che partecipa al percorso di teleassistenza."
 * identifier ^short = "Codice del presidio"
 
 * identifier ^slicing.discriminator[0].type = #pattern

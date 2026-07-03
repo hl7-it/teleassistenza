@@ -1,7 +1,7 @@
 Profile: MedicationRequestTeleassistenza
 Parent: MedicationRequest
 Id: MedicationRequestTeleassistenza
-Description: "Profilo della MedicationRequest nel contesto della teleassistenza." 
+Description: "Profilo della MedicationRequest utilizzato nel contesto della Teleassistenza. Rappresenta la prescrizione farmacologica emessa a seguito di una televisita o teleconsulto, con l'indicazione del farmaco, del dosaggio e del tipo di ricetta."
 * ^status = #draft
 * status ^definition = "Stato della richiesta."
 

@@ -2,7 +2,7 @@
 Profile: OrganizationT3
 Parent: Organization
 Id: OrganizationT3
-Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, ambulatorio)."
+Description: "Profilo per Organization di tipo 3 (es. reparto, ambulatorio, unità operativa) utilizzato nel contesto della Teleassistenza. Rappresenta l'unità organizzativa interna che eroga direttamente la prestazione di teleassistenza al paziente."
 
 * identifier ^short = "Identificativo dell'organizzazione."
 * identifier ^definition = "Identificativi di Organization usati per identificare l'Organization su diversi sistemi"

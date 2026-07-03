@@ -2,7 +2,7 @@
 Profile: PatientTeleassistenza
 Parent: Patient
 Id: PatientTeleassistenza
-Description: "Profilo del Patient utilizzato nel contesto della Teleassistenza."
+Description: "Profilo del Patient utilizzato nel contesto della Teleassistenza. Definisce le informazioni anagrafiche e identificative del paziente assistito, inclusi codice fiscale, tessera TEAM, identificativi regionali (ENI, STP) e luogo di nascita."
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true

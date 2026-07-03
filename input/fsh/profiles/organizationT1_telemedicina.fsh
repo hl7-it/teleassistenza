@@ -2,7 +2,7 @@
 Profile: OrganizationT1
 Parent: Organization
 Id: OrganizationT1
-Description: "Profilo per Organization di tipo 1 (es. ASL, AO, IRCCS)."
+Description: "Profilo per Organization di tipo 1 (es. ASL, AziendaOspedaliera, IRCCS) utilizzato nel contesto della Teleassistenza. Rappresenta l'ente committente o erogatore del servizio di teleassistenza a livello aziendale/territoriale."
 
 * identifier ^short = "Identificativo dell'organizzazione."
 

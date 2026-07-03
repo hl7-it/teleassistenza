@@ -2,7 +2,7 @@
 Profile: CompositionRelazioneTeleassistenza
 Parent: Composition
 Id: CompositionRelazioneTeleassistenza
-Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Teleassistenza."
+Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Teleassistenza. Struttura il documento clinico conclusivo del percorso, comprendente anamnesi, esame obiettivo, quesito diagnostico, referto, suggerimenti e terapia."
 * ^status = #draft
 * title = "Relazione di Teleassistenza" (exactly)
 

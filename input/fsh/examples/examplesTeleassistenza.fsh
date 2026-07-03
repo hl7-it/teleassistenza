@@ -140,7 +140,7 @@ Usage: #example
 
 Instance: EsempioPractitionerRoleTeleassistenza
 InstanceOf: PractitionerRoleTeleassistenza
-Description: "Esempio di practitionerRole nel contesto della Teleassistenza."
+Description: "Esempio di practitionerRole (ruolo del professionista sanitario) nel contesto della Teleassistenza."
 Usage: #example
 * id = "practrole-bianchi-gom"
 * organization = Reference(org-assistenza)
@@ -150,7 +150,7 @@ Usage: #example
 Instance: EsempioOrganizationASL
 InstanceOf: OrganizationT1
 
-Description: "Esempio di Azienda Sanitaria Locale (ASL)"
+Description: "Esempio di Azienda Sanitaria Locale (ASL) nel contesto della Teleassistenza."
 Usage: #example
 * id = "org-assistenza"
 * name = "ASL Roma 1"
@@ -165,7 +165,7 @@ Usage: #example
 
 Instance: EsempioPractitionerTeleassistenza
 InstanceOf: PractitionerTeleassistenza
-Description: "Esempio di practitioner nel contesto della Teleassistenza."
+Description: "Esempio di practitioner (professionista sanitario) nel contesto della Teleassistenza."
 Usage: #example
 * id = "pract-bianchi"
 * name.given = "John"
@@ -176,7 +176,7 @@ Usage: #example
 Instance: EsempioEncointerTeleassistenza
 InstanceOf: EncounterTeleassistenza
 
-Description: "Esempio di incontro nel "
+Description: "Esempio di incontro (televisita) nel contesto della Teleassistenza."
 Usage: #example
 * id = "enc-tele-1"
 * status = #finished
@@ -548,7 +548,7 @@ Description: "Esempio di terapia farmacologica consigliata nel contesto della Te
 Instance: EsempioAllergyIntoleranceTeleassistenza
 InstanceOf: AllergyIntoleranceTeleassistenza
 
-Description: "Esempio di allergia/intolleranza codificata per il contesto Telemedicina"
+Description: "Esempio di allergia/intolleranza codificata nel contesto della Teleassistenza."
 Usage: #example
 * id = "1360bd6a-3855-48d3-aa33-96a9d961bb94"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active

@@ -1,7 +1,7 @@
 Profile: ProcedureTeleassistenza
 Parent: Procedure
 Id: ProcedureTeleassistenza
-Description:  "Profilo base della Procedure utilizzata nel contesto della Teleassistenza."
+Description: "Profilo della Procedure utilizzato nel contesto della Teleassistenza. Rappresenta la prestazione di teleassistenza eseguita (es. televisita, teleconsulto, teleriabilitazione), con la modalità di esecuzione e i professionisti coinvolti."
 
 * ^status = #draft
 * extension contains http://hl7.org/fhir/StructureDefinition/procedure-method named ModalitaEsecuzioneProcedura 0..1

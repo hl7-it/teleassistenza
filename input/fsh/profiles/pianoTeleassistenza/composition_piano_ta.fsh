@@ -2,7 +2,7 @@
 Profile: CompositionPianoTA
 Parent: Composition
 Id: CompositionPianoTA
-Description: "Profilo della Composition utilizzata nel contesto della Piano di Teleassistenza."
+Description: "Profilo della Composition utilizzata nel contesto del Piano di Teleassistenza. Struttura il documento clinico che raccoglie e organizza le informazioni del piano di cura per il paziente in teleassistenza."
 * ^status = #draft
 
 * subject only Reference(PatientTeleassistenza)

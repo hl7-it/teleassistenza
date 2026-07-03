@@ -2,7 +2,7 @@
 Profile: ServiceRequestTeleassistenza
 Parent: ServiceRequest
 Id: ServiceRequestTeleassistenza
-Description: "Profilo della ServiceRequest utilizzato nel contesto della Teleassistenza."
+Description: "Profilo della ServiceRequest utilizzato nel contesto della Teleassistenza. Rappresenta la richiesta di erogazione di una prestazione di teleassistenza (es. televisita, teleconsulto, telemonitoraggio), con l'indicazione della branca specialistica, del paziente e del richiedente."
 * ^version = "1.0.0"
 * ^status = #draft
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."

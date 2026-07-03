@@ -2,7 +2,7 @@ Profile: Deviceteleassistenza
 Parent: Device
 Id: Deviceteleassistenza
 Title: "Device"
-Description: "Profilo del Device utlilizzato nel contesto della Teleassistenza."
+Description: "Profilo del Device utilizzato nel contesto della Teleassistenza per il monitoraggio remoto del paziente."
 * ^status = #draft
 * ^experimental = false
 * ^date = "2024-04-29T16:08:42+02:00"

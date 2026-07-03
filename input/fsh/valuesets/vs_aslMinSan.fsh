@@ -1,7 +1,7 @@
 ValueSet: VsMinisteroSaluteAsl
 Id: minsan-asl
 Title: "MDS - ASL"
-Description: "MDS - ASL"
+Description: "Ministero della Salute - Identificativi delle Aziende Sanitarie Locali (ASL), utilizzati nel contesto della Teleassistenza per identificare l'ente committente territorialmente competente."
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false

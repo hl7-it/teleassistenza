@@ -1,7 +1,7 @@
 Profile: CarePlanPianoDiCuraTeleassistenza
 Parent: CarePlan
 Id: CarePlanPianoDiCuraTeleassistenza
-Description: "Profilo del CarePlan utilizzato nel contesto del Piano di Teleassisitenza."
+Description: "Profilo del CarePlan utilizzato nel contesto del Piano di Teleassistenza. Descrive il piano di cura programmato per il paziente nell'ambito del percorso di teleassistenza, includendo le attività, gli obiettivi e i professionisti coinvolti."
 * ^status = #draft
 * identifier 1..
 * identifier ^short = "Codice identificativo del Piano."

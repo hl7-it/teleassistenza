@@ -1,7 +1,7 @@
 CodeSystem: BrancaPrestazione
 Id: branca-prestazione
 Title: "Branca Prestazione"
-Description: "CodeSystem contenente le branche."
+Description: "CodeSystem contenente le branche specialistiche cliniche utilizzate per la classificazione e l'attribuzione delle prestazioni erogate nel contesto della Teleassistenza."
 * ^status = #active
 * ^content = #complete
 * ^experimental = true

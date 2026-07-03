@@ -2,7 +2,7 @@
 Profile: AppointmentTeleassistenza
 Parent: Appointment
 Id: AppointmentTeleassistenza
-Description: "Profilo del Appointment utilizzato nel contesto della Teleassistenza."
+Description: "Profilo dell'Appointment utilizzato nel contesto della Teleassistenza. Rappresenta la prenotazione di una prestazione di teleassistenza (es. televisita, telemonitoraggio, teleconsulto) collegata alla ServiceRequest corrispondente."
 * ^status = #draft
 * identifier 1..
 * identifier ^short = "Codice della prenotazione"

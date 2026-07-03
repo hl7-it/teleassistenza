@@ -3,7 +3,7 @@ Profile: MedicationStatementTeleassistenza
 Parent: MedicationStatement
 Id: MedicationStatementTeleassistenza
 Title: "MedicationStatement Telemedicina"
-Description: "Profilo della MedicationStatement utilizzato nel contesto della Teleassistenza."
+Description: "Profilo della MedicationStatement utilizzato nel contesto della Teleassistenza. Descrive la terapia farmacologica in atto del paziente, utile come informazione di contesto durante la valutazione clinica remota."
 * ^status = #draft
 
 // Limit medication to CodeableConcept

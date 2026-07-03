@@ -3,7 +3,7 @@ Profile: PractitionerRoleTeleassistenza
 Parent: PractitionerRole
 Id: PractitionerRoleTeleassistenza
 Title: "PractitionerRoleTeleassistenza"
-Description: "Profilo base del PractitionerRole utilizzato nel contesto della Teleassistenza."
+Description: "Profilo del PractitionerRole utilizzato nel contesto della Teleassistenza. Descrive il ruolo e la specialità del professionista sanitario (medico refertante, medico richiedente, infermiere) coinvolto nell'erogazione della prestazione di teleassistenza."
 * ^version = "0.1.0"
 * ^status = #active
 * ^jurisdiction = urn:iso:std:iso:3166#IT

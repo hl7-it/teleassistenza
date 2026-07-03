@@ -1,7 +1,7 @@
 Profile: EncounterTeleassistenza
 Parent: Encounter
 Id: EncounterTeleassistenza
-Description: "Profilo dell'Encounter nel contesto della Teleassistenza."
+Description: "Profilo dell'Encounter nel contesto della Teleassistenza. Rappresenta la singola sessione di erogazione della prestazione (televisita, teleconsulto, telemonitoraggio), con i partecipanti, la modalità di svolgimento e il periodo di esecuzione."
 * ^status = #draft
 
 * identifier ^slicing.discriminator.type = #value

@@ -1,7 +1,7 @@
 Profile: CarePlanRelazioneTA
 Parent: CarePlan
 Id: CarePlanRelazioneTA
-Description: "Profilo del CarePlan utilizzato nel contesto della Relazione di Teleassistenza."
+Description: "Profilo del CarePlan utilizzato nel contesto della Relazione di Teleassistenza. Riporta il riepilogo del percorso clinico svolto, le prestazioni erogate e gli esiti raggiunti al termine del periodo di teleassistenza."
 * ^status = #draft
 * identifier 1..
 * identifier ^short = "Codice identificativo del Piano"

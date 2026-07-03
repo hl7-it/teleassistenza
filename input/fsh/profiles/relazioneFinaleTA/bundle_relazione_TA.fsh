@@ -1,7 +1,7 @@
 Profile: BundleRelazioneTeleassistenza
 Parent: Bundle
 Id: BundleRelazioneTeleassistenza
-Description: "Profilo del Bundle utilizzato nel contesto della Relazione di Teleassistenza."
+Description: "Profilo del Bundle di tipo document utilizzato nel contesto della Relazione di Teleassistenza. Contiene il documento di chiusura del percorso, con la Composition, il CarePlan consuntivo e tutte le risorse cliniche prodotte durante la teleassistenza."
 * ^status = #draft
 * type = #document (exactly)
 * entry ^slicing.discriminator[0].type = #type

@@ -1,7 +1,7 @@
 Profile: PractitionerTeleassistenza
 Parent: Practitioner
 Id: PractitionerTeleassistenza
-Description: "Profilo base del Practitioner utilizzato nel contesto della Teleassistenza."
+Description: "Profilo del Practitioner utilizzato nel contesto della Teleassistenza. Rappresenta il professionista sanitario che eroga o richiede la prestazione di teleassistenza, con i relativi identificativi (codice fiscale, numero di iscrizione all'albo)."
 * ^version = "0.1.0"
 * ^status = #active
 

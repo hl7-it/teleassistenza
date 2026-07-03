@@ -1,7 +1,7 @@
 Profile: ObservationTeleassistenzaNarrative
 Parent: Observation
 Id: ObservationTeleassistenzaNarrative
-Description: "Profilo di Observation narrrativa utilizzato nel contesto della Teleassistenza."
+Description: "Profilo di Observation narrativa (testo libero) utilizzato nel contesto della Teleassistenza per la registrazione di referti, anamnesi ed esami obiettivi in forma discorsiva."
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true
