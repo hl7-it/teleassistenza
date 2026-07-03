@@ -86,11 +86,23 @@ dependencies:
 
 menu:
   Home: index.html
-  Modello Funzionale:
+  Functional:
     Scenario: scenario.html
     ModelMaps: teleassistenza.html  
   Implementation:
-    Mapping to Profiles: modelmap.html    
+    Mapping to Profiles: modelmap.html
+    Piano Mapping: map-piano-ta.html
+    Relazione Mapping: map-relazione-ta.html
+    Patient Mapping: map-patient-ta.html
+    Practitioner Mapping: map-practitioner-ta.html
+    Organization Mapping: map-organization-ta.html
+    Encounter Mapping: map-encounter-ta.html
+    Appointment Mapping: map-appointment-ta.html
+    Observation Mapping: map-observation-ta.html
+    Procedure Mapping: map-procedure-ta.html
+    MedicationRequest Mapping: map-medicationrequest-ta.html
+    AllergyIntolerance Mapping: map-allergy-ta.html
+    Device Mapping: map-device-ta.html
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
@@ -252,7 +264,12 @@ groups:
   # ── Esempi ───────────────────────────────────────────────────────────────────
   GroupEsempiPiano:
     name: Esempi - Piano di Teleassistenza
-    description: Esempi di risorse FHIR relativi al Piano di Teleassistenza.
+    description: >-
+      Esempi relativi al Piano di Teleassistenza della paziente Maria Rossi (CF: RSSMRA71E01H501E),
+      affetta da scompenso cardiaco cronico (CHF, NYHA II), presa in carico dal Dr. Mario Bianchi
+      (Cardiologo, U.O. Cardiologia, Osp. Sandro Pertini, ASL Roma 1).
+      Il piano copre il periodo 01/09/2025 – 31/08/2026 e prevede telemonitoraggio quotidiano dei
+      parametri vitali e contatti infermieristici settimanali via videochiamata.
     resources:
     - Bundle/EsempioPianoDiTeleassistenza
     - Bundle/EsempioPianoDiTeleassistenzaTransaction
@@ -262,7 +279,11 @@ groups:
 
   GroupEsempiRelazione:
     name: Esempi - Relazione di Teleassistenza
-    description: Esempi di risorse FHIR relativi alla Relazione di Teleassistenza e alle sezioni cliniche che la compongono.
+    description: >-
+      Esempi relativi alla Relazione di Teleassistenza del primo mese (01/09/2025 – 30/09/2025)
+      per la paziente Maria Rossi. La relazione documenta il buon controllo pressorio raggiunto
+      (PA media 128/82 mmHg), l'assenza di eventi avversi, la diagnosi di scompenso cardiaco
+      congestizio (ICD9 428.0) e le indicazioni cliniche per la prosecuzione del percorso.
     resources:
     - Bundle/EsempioRelazioneDiTeleassistenza
     - Bundle/EsempioRelazioneDiTeleassistenzaTransaction
@@ -278,7 +299,11 @@ groups:
 
   GroupEsempiRisorse:
     name: Esempi - Risorse Cliniche e Amministrative
-    description: Esempi di risorse FHIR cliniche e amministrative utilizzate nei documenti di Teleassistenza.
+    description: >-
+      Risorse cliniche e amministrative di supporto allo scenario di teleassistenza per scompenso
+      cardiaco: paziente Maria Rossi (ASL Roma 1), Dr. Mario Bianchi (U.O. Cardiologia, Osp. Pertini),
+      encounter del 10/09/2025, ServiceRequest, Procedure, dispositivo pulsossimetro, allergia a
+      penicillina, terapia corrente con Furosemide e terapia consigliata con Ramipril + Carvedilolo.
     resources:
     - Patient/patient-mrossi
     - Practitioner/pract-bianchi

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sui profili FHIR della Relazione di Teleassistenza.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Relazione di Teleassistenza</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi alla Relazione di Teleassistenza, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, siano rappresentati nei profili FHIR
+      <a href="StructureDefinition-BundleRelazioneTeleassistenza.html">BundleRelazioneTeleassistenza</a>,
+      <a href="StructureDefinition-CompositionRelazioneTeleassistenza.html">CompositionRelazioneTeleassistenza</a> e
+      <a href="StructureDefinition-CarePlanRelazioneTA.html">CarePlanRelazioneTA</a>.
+    </p>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> Relazione di Teleassistenza">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice identificativo della relazione</td>
+            <td>Codice identificativo univoco della relazione finale</td>
+            <td>Bundle / Composition</td>
+            <td>Bundle.identifier / Composition.identifier</td>
+          </tr>
+          <tr>
+            <td>Riferimento al piano di teleassistenza</td>
+            <td>Riferimento al Piano di Teleassistenza oggetto della relazione</td>
+            <td>CarePlan</td>
+            <td>CarePlan.basedOn.resolve().ofType(CarePlan)</td>
+          </tr>
+          <tr>
+            <td>Periodo di riferimento della relazione</td>
+            <td>Periodo coperto dalla relazione finale</td>
+            <td>CarePlan</td>
+            <td>CarePlan.period</td>
+          </tr>
+          <tr>
+            <td>Stato della relazione</td>
+            <td>Stato del documento (draft, active, completed)</td>
+            <td>Composition</td>
+            <td>Composition.status</td>
+          </tr>
+          <tr>
+            <td>Data firma</td>
+            <td>Data di firma del documento</td>
+            <td>Composition</td>
+            <td>Composition.attester.time</td>
+          </tr>
+          <tr>
+            <td>Codice fiscale medico firmatario</td>
+            <td>CF del medico firmatario</td>
+            <td>Practitioner</td>
+            <td>Composition.attester.party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td>
+          </tr>
+          <tr>
+            <td>Nome medico firmatario</td>
+            <td>Nome del medico firmatario</td>
+            <td>Practitioner</td>
+            <td>Composition.attester.party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td>
+          </tr>
+          <tr>
+            <td>Cognome medico firmatario</td>
+            <td>Cognome del medico firmatario</td>
+            <td>Practitioner</td>
+            <td>Composition.attester.party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td>
+          </tr>
+          <tr>
+            <td>Struttura medico firmatario</td>
+            <td>Struttura di appartenenza del medico firmatario</td>
+            <td>Organization</td>
+            <td>Composition.attester.party.resolve().ofType(PractitionerRole).organization.resolve()</td>
+          </tr>
+          <tr>
+            <td>Branca specialistica</td>
+            <td>Branca specialistica del medico firmatario</td>
+            <td>PractitionerRole</td>
+            <td>Composition.attester.party.resolve().ofType(PractitionerRole).specialty</td>
+          </tr>
+          <tr>
+            <td>Quesito diagnostico</td>
+            <td>Codice e descrizione del quesito diagnostico iniziale</td>
+            <td>Observation</td>
+            <td>Composition.section[questitoDiagnostico].entry.resolve().ofType(Observation).valueCodeableConcept</td>
+          </tr>
+          <tr>
+            <td>Anamnesi</td>
+            <td>Descrizione testuale dell'anamnesi del paziente</td>
+            <td>Observation</td>
+            <td>Composition.section[anamnesi].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Refertazione</td>
+            <td>Referto delle prestazioni erogate nel corso del periodo</td>
+            <td>Observation</td>
+            <td>Composition.section[referto].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Codice diagnosi</td>
+            <td>Codice della diagnosi formulata</td>
+            <td>Observation</td>
+            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione diagnosi</td>
+            <td>Descrizione della diagnosi formulata</td>
+            <td>Observation</td>
+            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).code.text</td>
+          </tr>
+          <tr>
+            <td>Conclusioni</td>
+            <td>Conclusioni cliniche del medico a seguito del periodo di teleassistenza</td>
+            <td>Observation</td>
+            <td>Composition.section[conclusioni].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Suggerimenti per il medico prescrittore</td>
+            <td>Indicazioni e suggerimenti per il medico prescrittore</td>
+            <td>Observation</td>
+            <td>Composition.section[suggerimentiPerMedicoPrescrittore].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Accertamenti e controlli consigliati</td>
+            <td>Accertamenti o prestazioni consigliati a seguito della teleassistenza</td>
+            <td>Observation</td>
+            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code</td>
+          </tr>
+          <tr>
+            <td>Terapia farmacologica consigliata</td>
+            <td>Terapia farmacologica raccomandata al termine del percorso</td>
+            <td>MedicationRequest</td>
+            <td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().ofType(MedicationRequest).medicationCodeableConcept</td>
+          </tr>
+          <tr>
+            <td>Confronto con precedenti esami</td>
+            <td>Confronto con quanto rilevato nei periodi precedenti</td>
+            <td>Observation</td>
+            <td>Composition.section[confrontoPrecedentiEsami].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

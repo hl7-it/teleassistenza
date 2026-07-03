@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-AllergyIntoleranceTeleassistenza.html">AllergyIntoleranceTeleassistenza</a>.
+        </div>
+      </div>
+    </div>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; AllergyIntoleranceTeleassistenza</p>
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> AllergyIntoleranceTeleassistenza">
+        <thead><tr><th>Contenuto informativo</th><th>Descrizione</th><th>Risorsa FHIR</th><th>FHIR path</th></tr></thead>
+        <tbody>
+          <tr><td>Sostanza allergizzante</td><td>Sostanza o farmaco causa dell'allergia o intolleranza</td><td>AllergyIntolerance</td><td>AllergyIntolerance.code</td></tr>
+          <tr><td>Tipo reazione</td><td>Tipo di reazione (allergy o intolerance)</td><td>AllergyIntolerance</td><td>AllergyIntolerance.type</td></tr>
+          <tr><td>Criticit&#224;</td><td>Grado di criticit&#224; della reazione (low, high, unable-to-assess)</td><td>AllergyIntolerance</td><td>AllergyIntolerance.criticality</td></tr>
+          <tr><td>Categoria</td><td>Categoria della sostanza (food, medication, environment, etc.)</td><td>AllergyIntolerance</td><td>AllergyIntolerance.category</td></tr>
+          <tr><td>Manifestazione clinica</td><td>Manifestazione clinica della reazione allergica</td><td>AllergyIntolerance</td><td>AllergyIntolerance.reaction.manifestation</td></tr>
+          <tr><td>Data insorgenza</td><td>Data di insorgenza nota dell'allergia o intolleranza</td><td>AllergyIntolerance</td><td>AllergyIntolerance.onsetDateTime</td></tr>
+          <tr><td>Paziente</td><td>Assistito affetto dall'allergia o intolleranza</td><td>Patient</td><td>AllergyIntolerance.patient.resolve().ofType(Patient)</td></tr>
+          <tr><td>Note</td><td>Note aggiuntive sull'allergia o intolleranza</td><td>AllergyIntolerance</td><td>AllergyIntolerance.note.text</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:2rem;color:#555;">Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a></p>
+  </body>
+</div>

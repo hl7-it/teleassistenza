@@ -10,8 +10,7 @@ Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 * type = #document
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:bfcf00e2-e2bb-4a7d-adaa-3de9d419d27e"
-* timestamp = "2023-02-25T14:30:00+01:00"
-* timestamp = "2023-02-25T14:30:00+01:00"
+* timestamp = "2025-09-01T08:00:00+02:00"
 * entry[0].fullUrl = "http://example.org/fhir/Composition/composition-pta-1"
 * entry[0].resource = EsempioCompositionPianoDiTeleassistenza
 * entry[1].fullUrl = "http://example.org/fhir/CarePlan/careplan-tele-1"
@@ -42,12 +41,12 @@ Description: "Esempio di Composition nel contesto del piano di teleassistenza."
 * id = "composition-pta-1"
 * status = #final
 * type = $loinc#75496-0 "Telehealth Note"
-* date = "2025-06-16T10:30:00+02:00"
+* date = "2025-09-01T08:00:00+02:00"
 * subject = Reference(Patient/patient-mrossi)
 * encounter = Reference(Encounter/enc-tele-1)
 * author = Reference(PractitionerRole/practrole-bianchi-gom)
 * attester[legalAuthenticator].mode = #legal
-* attester[legalAuthenticator].time = "2023-02-25T12:45:00+01:00"
+* attester[legalAuthenticator].time = "2025-09-01T08:30:00+02:00"
 * attester[legalAuthenticator].party = Reference(PractitionerRole/practrole-bianchi-gom)
 //* custodian = Reference(org-assistenza)
 * section[pianoDiCura].title = "pianoDiCura"
@@ -143,9 +142,9 @@ InstanceOf: PractitionerRoleTeleassistenza
 Description: "Esempio di practitionerRole (ruolo del professionista sanitario) nel contesto della Teleassistenza."
 Usage: #example
 * id = "practrole-bianchi-gom"
-* organization = Reference(org-assistenza)
+* organization = Reference(uo-cardiologia-pertini)
 * practitioner = Reference(pract-bianchi)
-* specialty = csspecialityPractitionerRole#07 "Cardiochirurgia"
+* specialty = csspecialityPractitionerRole#02 "Cardiologia"
 
 Instance: EsempioOrganizationASL
 InstanceOf: OrganizationT1
@@ -168,10 +167,10 @@ InstanceOf: PractitionerTeleassistenza
 Description: "Esempio di practitioner (professionista sanitario) nel contesto della Teleassistenza."
 Usage: #example
 * id = "pract-bianchi"
-* name.given = "John"
-* name.family = "Doe"
+* name.given = "Mario"
+* name.family = "Bianchi"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale"
-* identifier[codiceFiscale].value = "DOEMRA80A01H501Z"
+* identifier[codiceFiscale].value = "BNCMRA75A01H501Y"
 
 Instance: EsempioEncointerTeleassistenza
 InstanceOf: EncounterTeleassistenza
@@ -183,9 +182,8 @@ Usage: #example
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0#VR "Virtual"
 * subject = Reference(patient-mrossi)
 * basedOn = Reference(ServiceRequestTeleassistenzaExample)
-// * appointment = Reference(AppointmentTeleassistenzaExample)
-* period.start = "2025-06-16T09:00:00+02:00"
-* period.end = "2025-06-16T09:45:00+02:00"
+* period.start = "2025-09-10T09:00:00+02:00"
+* period.end = "2025-09-10T09:45:00+02:00"
 * identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico"
 * identifier[codiceNosologico].value = "POD.123e4567-e89b-12d3-a456-426614174000"
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActPriority"
@@ -200,12 +198,12 @@ Usage: #example
 Description: "Esempio di Observation nel contesto del piano di Teleassistenza."
 * id = "obs-dx-icd9"
 * status = #final
-* category = $observation-category#social-history
+* category = $observation-category#vital-signs
 * category.text = "Diagnosi"
 * code = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * code.text = "Diagnosi principale"
 * subject = Reference(patient-mrossi)
-* effectiveDateTime = "2024-03-15"
+* effectiveDateTime = "2025-08-15"
 * performer = Reference(practrole-bianchi-gom)
 * valueCodeableConcept = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * valueCodeableConcept.text = "Insufficienza cardiaca congestizia"
@@ -232,10 +230,10 @@ Description: "Esempio di appuntamento per teleassistenza cardiologica."
 Usage: #example
 * id = "9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 * status = #booked
-* identifier.value = "TV-20250709-001"
-* created = "2025-07-01T09:00:00+01:00"
-* start = "2025-07-09T10:00:00+01:00"
-* end = "2025-07-09T10:30:00+01:00"
+* identifier.value = "TV-20250910-001"
+* created = "2025-09-01T09:00:00+02:00"
+* start = "2025-09-10T09:00:00+02:00"
+* end = "2025-09-10T09:45:00+02:00"
 * basedOn = Reference(ServiceRequestTeleassistenzaExample)
 * serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#8 "Counselling"
 * reasonCode = http://snomed.info/sct#4914002 "Treatment planning for teletherapy"
@@ -256,7 +254,7 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 * type = #document
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:2e7fd4a4-d5a0-41db-96f9-8e9a45a6b4f2"
-* timestamp = "2023-03-20T09:00:00+01:00"
+* timestamp = "2025-09-30T10:00:00+02:00"
 
 * entry[composition].fullUrl = "http://example.org/fhir/Composition/composition-rel-1"
 * entry[composition].resource = composition-rel-1
@@ -288,23 +286,20 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 * entry[observation][1].fullUrl = "http://example.org/fhir/Observation/obs-confronto-1"
 * entry[observation][1].resource = obs-confronto-1
 
-* entry[observation][1].fullUrl = "http://example.org/fhir/Observation/obs-referto-1"
-* entry[observation][1].resource = obs-referto-1
+* entry[observation][2].fullUrl = "http://example.org/fhir/Observation/obs-referto-1"
+* entry[observation][2].resource = obs-referto-1
 
-* entry[observation][2].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
-* entry[observation][2].resource = obs-dx-icd9
+* entry[observation][3].fullUrl = "http://example.org/fhir/Observation/obs-dx-icd9"
+* entry[observation][3].resource = obs-dx-icd9
 
-* entry[observation][3].fullUrl = "http://example.org/fhir/Observation/obs-suggerimenti-1"
-* entry[observation][3].resource = obs-suggerimenti-1
+* entry[observation][4].fullUrl = "http://example.org/fhir/Observation/obs-suggerimenti-1"
+* entry[observation][4].resource = obs-suggerimenti-1
 
-* entry[observation][4].fullUrl = "http://example.org/fhir/Observation/obs-accertamenti-1"
-* entry[observation][4].resource = obs-accertamenti-1
+* entry[observation][5].fullUrl = "http://example.org/fhir/Observation/obs-accertamenti-1"
+* entry[observation][5].resource = obs-accertamenti-1
 
-* entry[observation][5].fullUrl = "http://example.org/fhir/Observation/obs-precedenti-1"
-* entry[observation][5].resource = obs-precedenti-1
-
-* entry[observation][6].fullUrl = "http://example.org/fhir/Observation/obs-confronto-1"
-* entry[observation][6].resource = obs-confronto-1
+* entry[observation][6].fullUrl = "http://example.org/fhir/Observation/obs-precedenti-1"
+* entry[observation][6].resource = obs-precedenti-1
 
 * entry[observation][7].fullUrl = "http://example.org/fhir/Observation/Observation-quesito"
 * entry[observation][7].resource = Observation-quesito
@@ -334,15 +329,15 @@ InstanceOf: CarePlanRelazioneTA
 Usage: #example
 Description: "Esempio di CarePlan per la Relazione di Teleassistenza."
 * id = "careplan-rel-1"
-* status = #active
+* status = #completed
 * intent = #plan
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:5c8a6df2-5b7a-4f7f-8b2e-1f7f6b1c2d3e"
 * category = csTipologiaPiano#02 "Piano di Teleassistenza"
 * subject = Reference(Patient/patient-mrossi)
 * author = Reference(PractitionerRole/practrole-bianchi-gom)
-* period.start = "2023-03-01"
-* period.end   = "2023-03-31"
+* period.start = "2025-09-01"
+* period.end   = "2025-09-30"
 
 // attività principali ricondotte a ServiceRequest/Task come tipo di attività
 * activity[0].detail.kind = #ServiceRequest
@@ -362,12 +357,12 @@ Description: "Esempio di composition per la Relazione di Teleassistenza."
 * id = "composition-rel-1"
 * status = #final
 * type = $loinc#91531-4
-* date = "2023-03-31T10:30:00+01:00"
+* date = "2025-09-30T10:30:00+02:00"
 * subject = Reference(Patient/patient-mrossi)
 * encounter = Reference(Encounter/enc-tele-1)
 * author[0] = Reference(PractitionerRole/practrole-bianchi-gom)
 * attester[legalAuthenticator].mode = #legal
-* attester[legalAuthenticator].time = "2023-02-25T12:45:00+01:00"
+* attester[legalAuthenticator].time = "2025-09-30T11:00:00+02:00"
 * attester[legalAuthenticator].party = Reference(PractitionerRole/practrole-bianchi-gom)
 * section[pianoDiCura].code = $loinc#18776-5
 * section[pianoDiCura].title = "Piano di cura"
@@ -443,7 +438,7 @@ Description: "Esempio di anamnesi nel contesto della Teleassistenza."
 * code.text = "Anamnesi sintetica del percorso di teleassistenza"
 * subject = Reference(Patient/patient-mrossi)
 * effectiveDateTime = "2023-03-30T09:00:00+01:00"
-* valueString = "Paziente con BPCO lieve, nessuna riacutizzazione nell’ultimo mese."
+* valueString = "Paziente con scompenso cardiaco cronico (CHF, NYHA II), in follow-up cardiologico. Cardiopatia ischemica nota dal 2018 (IMA anteriore). Portatore di ICD dal 2019. Ex fumatore (cessato 2018). Nessuna ospedalizzazione nell'ultimo mese."
 * performer = Reference(practrole-bianchi-gom)
 
 
@@ -453,11 +448,11 @@ Description: "Esempio di quesito diagnostico nel contesto della Teleassistenza."
 Usage: #example
 * id = "Observation-quesito"
 * status = #final
-* code = diagnosi-icd9cm#786.2 "TOSSE"
+* code = diagnosi-icd9cm#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA"
 * subject = Reference(Patient/patient-mrossi)
-* valueString = "Controllo post-COVID per tosse persistente"
+* valueString = "Controllo periodico scompenso cardiaco cronico - verifica aderenza terapeutica, PA e FC."
 * performer = Reference(PractitionerRole/practrole-bianchi-gom)
-* effectiveDateTime = "2025-06-16T10:30:00+02:00"
+* effectiveDateTime = "2025-09-10T09:30:00+02:00"
 
 // --- CONFRONTO PRECEDENTI ESAMI
 Instance: EsempioConfrontoTeleassistenza
@@ -466,15 +461,15 @@ Usage: #example
 Description: "Esempio di confronto con precedenti esami eseguiti nel contesto della Teleassistenza."
 * id = "obs-confronto-1"
 * status = #final
-* code.text = "Confronto andamento SpO2/FC vs mese precedente"
+* code.text = "Confronto andamento PA/FC vs mese precedente"
 * subject = Reference(Patient/patient-mrossi)
-* effectiveDateTime = "2023-03-31T09:30:00+01:00"
-* component[0].code.text = "Media SpO2 ultimi 14 giorni"
-* component[0].valueQuantity.value = 96
-* component[0].valueQuantity.unit = "%"
-* component[1].code.text = "Media SpO2 mese precedente"
-* component[1].valueQuantity.value = 95
-* component[1].valueQuantity.unit = "%"
+* effectiveDateTime = "2025-09-30T09:30:00+02:00"
+* component[0].code.text = "Media PA sistolica ultimi 14 giorni"
+* component[0].valueQuantity.value = 128
+* component[0].valueQuantity.unit = "mmHg"
+* component[1].code.text = "Media PA sistolica mese precedente"
+* component[1].valueQuantity.value = 145
+* component[1].valueQuantity.unit = "mmHg"
 * performer = Reference(practrole-bianchi-gom)
 
 // --- REFERTO
@@ -486,8 +481,8 @@ Description: "Esempio di Referto conclusivo nel contesto della Teleassistenza."
 * status = #final
 * code.text = "Referto conclusivo teleassistenza"
 * subject = Reference(Patient/patient-mrossi)
-* effectiveDateTime = "2023-03-31T10:00:00+01:00"
-* valueString = "Parametri nella norma. Non evidenza di desaturazioni notturne significative."
+* effectiveDateTime = "2025-09-30T10:00:00+02:00"
+* valueString = "Buon controllo pressorio raggiunto (PA media 128/82 mmHg). FC media 68 bpm. Assenza di edemi declivi. Aderenza terapeutica confermata. Percorso proseguito per ulteriori 3 mesi."
 * performer = Reference(practrole-bianchi-gom)
 
 // --- SUGGERIMENTI PER IL MEDICO PRESCRITTORE
@@ -499,8 +494,8 @@ Description: "Esempio di suggerimenti nel contesto della Teleassistenza."
 * status = #final
 * code.text = "Suggerimenti per MMG"
 * subject = Reference(Patient/patient-mrossi)
-* effectiveDateTime = "2023-03-31T10:05:00+01:00"
-* valueString = "Rivalutare terapia inalatoria in prossima visita; mantenere telemonitoraggio trimestrale."
+* effectiveDateTime = "2025-09-30T10:05:00+02:00"
+* valueString = "Rivalutare dose Ramipril nella prossima visita in presenza; continuare telemonitoraggio mensile per i successivi 3 mesi; considerare riabilitazione cardiologica."
 * performer = Reference(practrole-bianchi-gom)
 
 // --- ACCERTAMENTI E CONTROLLI CONSIGLIATI
@@ -512,8 +507,8 @@ Description: "Esempio di Accertamenti/controlli consigliati nel contesto della T
 * status = #final
 * code.text = "Controlli consigliati"
 * subject = Reference(Patient/patient-mrossi)
-* effectiveDateTime = "2023-03-31T10:10:00+01:00"
-* valueString = "Spirometria di controllo tra 6 mesi; valutazione fisioterapica respiratoria."
+* effectiveDateTime = "2025-09-30T10:10:00+02:00"
+* valueString = "ECG di controllo entro 30 giorni; dosaggio BNP a 3 mesi; visita cardiologica in presenza a 6 mesi."
 * performer = Reference(practrole-bianchi-gom)
 
 // --- PRECEDENTI ESAMI ESEGUITI
@@ -525,8 +520,8 @@ Description: "Esempio di Precedenti esami rilevanti nel contesto della Teleassis
 * status = #final
 * code.text = "Esami precedenti"
 * subject = Reference(Patient/patient-mrossi)
-* effectiveDateTime = "2023-02-15T11:00:00+01:00"
-* valueString = "RX torace (negativo), Emogas analisi (nella norma)."
+* effectiveDateTime = "2025-08-15T11:00:00+02:00"
+* valueString = "Ecocardiogramma (luglio 2025): FE 40%, ipocinesia settale. BNP (agosto 2025): 420 pg/mL."
 * performer = Reference(practrole-bianchi-gom)
 
 // --- TERAPIA FARMACOLOGICA CONSIGLIATA
@@ -536,11 +531,11 @@ Usage: #example
 Description: "Esempio di terapia farmacologica consigliata nel contesto della Teleassistenza."
 * id = "medreq-terapia-1"
 * status = #active
-* medicationCodeableConcept.text = "Broncodilatatore a lunga durata + corticosteroide inalatorio"
+* medicationCodeableConcept.text = "ACE-inibitore (Ramipril 5 mg) + Beta-bloccante (Carvedilolo 6.25 mg)"
 * subject = Reference(Patient/patient-mrossi)
-* authoredOn = "2023-03-31T10:15:00+01:00"
+* authoredOn = "2025-09-30T10:15:00+02:00"
 * requester = Reference(PractitionerRole/practrole-bianchi-gom)
-* dosageInstruction[0].text = "1 inalazione mattino e sera; istruire su tecnica inalatoria."
+* dosageInstruction[0].text = "Ramipril 5 mg: 1 cp al mattino. Carvedilolo 6.25 mg: 1 cp mattino e sera. Monitorare PA e FC prima di ogni assunzione."
 
 
 //AllergyIntolerance
@@ -560,7 +555,7 @@ Usage: #example
 * code.text = "Allergia alla penicillina"
 
 * patient = Reference(Patient/patient-mrossi)
-* recordedDate = "2025-10-02T10:30:00+01:00"
+* recordedDate = "2025-09-05T10:30:00+02:00"
 * recorder = Reference(pract-bianchi) "Dr. Bianchi (Telemedicina)"
 
 * reaction[0].manifestation[0] = http://snomed.info/sct#271807003 "Rash"
@@ -573,8 +568,8 @@ Description: "Esempio di medicationStatement nel contesto della Teleassistenza."
 Usage: #example
 * status = #active
 * subject = Reference(Patient/patient-mrossi)
-* medicationCodeableConcept = http://snomed.info/sct#372729009 "Acyclovir"
-* effectivePeriod.start = "2025-06-01"
+* medicationCodeableConcept = http://snomed.info/sct#372744001 "Furosemide"
+* effectivePeriod.start = "2025-09-01"
 * id = "e62c9f1d-9c0b-4433-853b-06ec5074f19a"
 
 Instance: EsempioObservationAnamnesi
@@ -585,9 +580,9 @@ Usage: #example
 * status = #final
 * code = $loinc#11329-0
 * subject = Reference(Patient/patient-mrossi)
-* valueString = "Paziente con anamnesi positiva per bronchite cronica, non fumatore."
+* valueString = "Paziente con anamnesi positiva per cardiopatia ischemica (IMA anteriore 2018), portatore di ICD (2019). Ex fumatore. In terapia cronica con Ramipril e Carvedilolo."
 * performer = Reference(practrole-bianchi-gom)
-* effectiveDateTime = "2025-06-16T10:30:00+02:00"
+* effectiveDateTime = "2025-09-10T10:30:00+02:00"
 
 
 Instance: EsempioEsameObiettivo
@@ -597,10 +592,10 @@ Usage: #example
 * status = #final
 * code = $loinc#29545-1
 * subject = Reference(Patient/patient-mrossi)
-* valueString = "Durante la conversazione si rileva tosse secca intermittente."
+* valueString = "Paziente orientata, collaborante. Assenza di dispnea a riposo (NYHA II). All'ispezione video: lieve pallore cutaneo. Edemi declivi assenti. Frequenza respiratoria nella norma."
 * id = "c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
 * performer = Reference(practrole-bianchi-gom)
-* effectiveDateTime = "2025-06-16T10:30:00+02:00"
+* effectiveDateTime = "2025-09-10T10:30:00+02:00"
 
 Instance: EsempioPresidio
 InstanceOf: OrganizationT2
@@ -639,8 +634,8 @@ Usage: #example
 
 * subject = Reference(Patient/patient-mrossi)
 
-* performedPeriod.start = "2025-10-02T08:30:00+02:00"
-* performedPeriod.end = "2025-10-02T08:45:00+02:00"
+* performedPeriod.start = "2025-09-10T09:00:00+02:00"
+* performedPeriod.end = "2025-09-10T09:45:00+02:00"
 
 * recorder = Reference(pract-bianchi)
 * performer[0].actor = Reference(pract-bianchi)
@@ -823,7 +818,7 @@ Description: "Esempio di Richiesta di teleassistenza domiciliare."
 * status = #active
 * intent = #order
 * priority = #routine
-* category = csspecialityPractitionerRole#07 "Cardiochirurgia"
+* category = csspecialityPractitionerRole#02 "Cardiologia"
 
 * code = http://snomed.info/sct#4914002 "Treatment planning for teletherapy"
 * code.text = "Teleassistenza sincrona via video per monitoraggio paziente cronico"
@@ -834,9 +829,9 @@ Description: "Esempio di Richiesta di teleassistenza domiciliare."
 
 // Soggetto, encounter, tempi
 * subject = Reference(Patient/patient-mrossi)
-* occurrencePeriod.start = "2025-10-27T10:00:00+01:00"
-* occurrencePeriod.end   = "2025-10-27T10:30:00+01:00"
-* authoredOn = "2025-10-25T14:15:00+02:00"
+* occurrencePeriod.start = "2025-09-10T09:00:00+02:00"
+* occurrencePeriod.end   = "2025-09-10T09:45:00+02:00"
+* authoredOn = "2025-08-20T14:15:00+02:00"
 
 // Richiedente ed esecutore
 * requester = Reference(practrole-bianchi-gom)

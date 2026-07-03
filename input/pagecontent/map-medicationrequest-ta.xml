@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-MedicationRequestTeleassistenza.html">MedicationRequestTeleassistenza</a>.
+        </div>
+      </div>
+    </div>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; MedicationRequestTeleassistenza</p>
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> MedicationRequestTeleassistenza">
+        <thead><tr><th>Contenuto informativo</th><th>Descrizione</th><th>Risorsa FHIR</th><th>FHIR path</th></tr></thead>
+        <tbody>
+          <tr><td>Codice AIC/ATC farmaco</td><td>Codice AIC o ATC del farmaco prescritto</td><td>MedicationRequest</td><td>MedicationRequest.medicationCodeableConcept.coding.code</td></tr>
+          <tr><td>Descrizione farmaco</td><td>Denominazione del farmaco prescritto</td><td>MedicationRequest</td><td>MedicationRequest.medicationCodeableConcept.text</td></tr>
+          <tr><td>Dosaggio</td><td>Dosaggio e frequenza di somministrazione</td><td>MedicationRequest</td><td>MedicationRequest.dosageInstruction</td></tr>
+          <tr><td>Dose</td><td>Quantit&#224; per singola somministrazione</td><td>MedicationRequest</td><td>MedicationRequest.dosageInstruction.doseAndRate.dose[x]</td></tr>
+          <tr><td>Data prescrizione</td><td>Data della prescrizione farmacologica</td><td>MedicationRequest</td><td>MedicationRequest.authoredOn</td></tr>
+          <tr><td>Stato prescrizione</td><td>Stato della prescrizione (active, completed, etc.)</td><td>MedicationRequest</td><td>MedicationRequest.status</td></tr>
+          <tr><td>Medico prescrittore</td><td>Medico che ha effettuato la prescrizione</td><td>PractitionerRole</td><td>MedicationRequest.requester.resolve().ofType(PractitionerRole)</td></tr>
+          <tr><td>Paziente</td><td>Assistito per cui &#232; prescritta la terapia</td><td>Patient</td><td>MedicationRequest.subject.resolve().ofType(Patient)</td></tr>
+          <tr><td>Note</td><td>Note o istruzioni aggiuntive sulla prescrizione</td><td>MedicationRequest</td><td>MedicationRequest.note.text</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:2rem;color:#555;">Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a></p>
+  </body>
+</div>

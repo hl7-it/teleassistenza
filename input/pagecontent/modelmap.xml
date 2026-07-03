@@ -4,148 +4,153 @@
         <div class="callout-wrapper">
             <div class="callout-box">
                 <p>
-                    Le informazioni rappresentate all'interno delle risorse FHIR descritte nella presente guida derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina". Tali elementi costituiscono il riferimento principale per l'identificazione, la strutturazione e la rappresentazione delle informazioni cliniche e amministrative associate ai servizi di telemedicina.
+                    Le informazioni rappresentate all'interno delle risorse FHIR descritte nella presente guida derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina". Tali elementi costituiscono il riferimento principale per l'identificazione, la strutturazione e la rappresentazione delle informazioni cliniche e amministrative associate ai servizi di teleassistenza.
                     La definizione dei profili FHIR e delle relative modalità di scambio è stata effettuata a partire da tali requisiti informativi.
                 </p>
             </div>
         </div>
         <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Informazioni Allegato 1 Telemedicina - Profili FHIR</p>
         <p>
-         Questa pagina illustra la mappatura tra gli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e i profili FHIR utilizzati nella presente Implementation Guide per la rappresentazione del referto di televisita.</p>
-        <p>Per ciascun elemento informativo vengono riportati:</p>
-        <ul>
-            <li>l'elemento informativo previsto dal D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina";</li>
-            <li>la risorsa, il profilo o il datatype FHIR utilizzato nella presente guida;</li>
-            <li>il collegamento ai dettagli della mappatura e alle relative regole di implementazione.</li>
-        </ul>
-        <p style="font-size:1.1em;font-weight:bold;margin-top:1.5rem;">Profili core della guida di Televisita</p>
-        <div class="table-wrapper">
-            <table class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>FHIR Profile / Type in this IG</th>
-                        <th>Dettagli</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-BundleRefertodiTelevisita.html">
-                                <code>BundleRefertodiTelevisita</code>
-                            </a>,
-                            <a href="StructureDefinition-CompositionRefertoTelevisita.html">
-                                <code>CompositionRefertoTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                           <a class="pill" href="map-composition.html">Composition Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-ServiceRequestTelevisita.html">
-                                <code>ServiceRequestTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-servicerequest.html">ServiceRequest Mapping</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="font-size:1.1em;font-weight:bold;margin-top:1.5rem;">Modelli correlati presenti nella guida di Televisita</p>
-        <div class="table-wrapper">
-            <table class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>FHIR Profile / Type in this IG</th>
-                        <th>Dettagli</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-PatientTelevisita.html">
-                                <code>PatientTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-patient.html">Patient Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-EncounterTelevisita.html">
-                                <code>EncounterTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-encounter.html">Encounter Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-AppointmentTelevisita.html">
-                                <code>AppointmentTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-appointment.html">Appointment Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-AllergyIntoleranceTelevisita.html">
-                                <code>AllergyIntoleranceTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-allergy.html">Allergy Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-MedicationRequestTelevisita.html">
-                                <code>MedicationRequestTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-medicationrequest.html">MedicationRequest Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-ProcedureTelevisita.html">
-                                <code>ProcedureTelevisita</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-procedure.html">Procedure Mapping</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="StructureDefinition-OrganizationT1.html">
-                                <code>OrganizationT1</code>
-                            </a>,
-                            <a href="StructureDefinition-OrganizationT2.html">
-                                <code>OrganizationT2</code>
-                            </a>,
-                            <a href="StructureDefinition-OrganizationT3.html">
-                                <code>OrganizationT3</code>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="pill" href="map-organization.html">Organization Mapping</a>
-                        </td>
-                    </tr>
+            Questa pagina illustra la mappatura tra gli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e i profili FHIR utilizzati nella presente Implementation Guide.
+            I profili sono organizzati nelle stesse tre macro-aree degli artefatti: Piano di Teleassistenza, Relazione di Teleassistenza e Risorse Correlate.
+        </p>
 
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <p style="font-size:1.1em;font-weight:bold;margin-top:1.5rem;">Profili - Piano di Teleassistenza</p>
+        <div class="table-wrapper">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Profilo FHIR</th>
+                        <th>Descrizione</th>
+                        <th>Mapping</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="StructureDefinition-BundlePianoTeleassistenza.html"><code>BundlePianoTeleassistenza</code></a></td>
+                        <td>Bundle documento che raccoglie tutte le risorse del Piano di Teleassistenza.</td>
+                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-CompositionPianoTA.html"><code>CompositionPianoTA</code></a></td>
+                        <td>Composition che struttura il documento del Piano di Teleassistenza.</td>
+                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-CarePlanPianoDiCuraTeleassistenza.html"><code>CarePlanPianoDiCuraTeleassistenza</code></a></td>
+                        <td>Piano di cura che descrive obiettivi e attività previste per il paziente.</td>
+                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-ActivityDefinitionTeleassistenza.html"><code>ActivityDefinitionTeleassistenza</code></a></td>
+                        <td>Definizione delle attività (sessioni) di teleassistenza previste nel piano.</td>
+                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-ServiceRequestTeleassistenza.html"><code>ServiceRequestTeleassistenza</code></a></td>
+                        <td>Richiesta/prescrizione del servizio di teleassistenza.</td>
+                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <p style="font-size:1.1em;font-weight:bold;margin-top:1.5rem;">Supporting Models mapped in HL7 Europe Base/Core</p>
-        <div class="callout-wrapper">
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <p style="font-size:1.1em;font-weight:bold;margin-top:1.5rem;">Profili - Relazione di Teleassistenza</p>
+        <div class="table-wrapper">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Profilo FHIR</th>
+                        <th>Descrizione</th>
+                        <th>Mapping</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="StructureDefinition-BundleRelazioneTeleassistenza.html"><code>BundleRelazioneTeleassistenza</code></a></td>
+                        <td>Bundle documento che raccoglie tutte le risorse della Relazione Finale di Teleassistenza.</td>
+                        <td><a class="pill" href="map-relazione-ta.html">Relazione Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-CompositionRelazioneTeleassistenza.html"><code>CompositionRelazioneTeleassistenza</code></a></td>
+                        <td>Composition che struttura il documento della Relazione Finale di Teleassistenza.</td>
+                        <td><a class="pill" href="map-relazione-ta.html">Relazione Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-CarePlanRelazioneTA.html"><code>CarePlanRelazioneTA</code></a></td>
+                        <td>Piano di cura aggiornato con l'esito delle sessioni di teleassistenza erogate.</td>
+                        <td><a class="pill" href="map-relazione-ta.html">Relazione Mapping</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <p style="font-size:1.1em;font-weight:bold;margin-top:1.5rem;">Profili - Risorse Correlate</p>
+        <div class="table-wrapper">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Profilo FHIR</th>
+                        <th>Descrizione</th>
+                        <th>Mapping</th>
+                    </tr>
+                </thead>
+                                <tbody>
+                    <tr>
+                        <td><a href="StructureDefinition-PatientTeleassistenza.html"><code>PatientTeleassistenza</code></a></td>
+                        <td>Paziente destinatario del servizio di teleassistenza.</td>
+                        <td><a class="pill" href="map-patient-ta.html">Patient Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-PractitionerTeleassistenza.html"><code>PractitionerTeleassistenza</code></a> / <a href="StructureDefinition-PractitionerRoleTeleassistenza.html"><code>PractitionerRoleTeleassistenza</code></a></td>
+                        <td>Professionista sanitario erogatore e relativo ruolo/specialita.</td>
+                        <td><a class="pill" href="map-practitioner-ta.html">Practitioner Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-OrganizationT1.html"><code>OrganizationT1</code></a> / <a href="StructureDefinition-OrganizationT2.html"><code>T2</code></a> / <a href="StructureDefinition-OrganizationT3.html"><code>T3</code></a></td>
+                        <td>ASL/ente committente (T1), struttura erogante (T2), unita operativa (T3).</td>
+                        <td><a class="pill" href="map-organization-ta.html">Organization Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-EncounterTeleassistenza.html"><code>EncounterTeleassistenza</code></a></td>
+                        <td>Sessione di teleassistenza erogata al paziente.</td>
+                        <td><a class="pill" href="map-encounter-ta.html">Encounter Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-AppointmentTeleassistenza.html"><code>AppointmentTeleassistenza</code></a></td>
+                        <td>Appuntamento programmato per una sessione di teleassistenza.</td>
+                        <td><a class="pill" href="map-appointment-ta.html">Appointment Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-ObservationTeleassistenza.html"><code>ObservationTeleassistenza</code></a></td>
+                        <td>Parametro vitale o osservazione clinica rilevata durante la teleassistenza.</td>
+                        <td><a class="pill" href="map-observation-ta.html">Observation Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-ProcedureTeleassistenza.html"><code>ProcedureTeleassistenza</code></a></td>
+                        <td>Prestazione clinica eseguita durante le sessioni di teleassistenza.</td>
+                        <td><a class="pill" href="map-procedure-ta.html">Procedure Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-MedicationRequestTeleassistenza.html"><code>MedicationRequestTeleassistenza</code></a></td>
+                        <td>Prescrizione farmacologica nel percorso di teleassistenza.</td>
+                        <td><a class="pill" href="map-medicationrequest-ta.html">MedicationRequest Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-AllergyIntoleranceTeleassistenza.html"><code>AllergyIntoleranceTeleassistenza</code></a></td>
+                        <td>Allergie e intolleranze rilevanti del paziente in teleassistenza.</td>
+                        <td><a class="pill" href="map-allergy-ta.html">AllergyIntolerance Mapping</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="StructureDefinition-Deviceteleassistenza.html"><code>Deviceteleassistenza</code></a></td>
+                        <td>Dispositivo medico per la rilevazione dei parametri in teleassistenza.</td>
+                        <td><a class="pill" href="map-device-ta.html">Device Mapping</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

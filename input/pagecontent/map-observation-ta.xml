@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-ObservationTeleassistenza.html">ObservationTeleassistenza</a>.
+        </div>
+      </div>
+    </div>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; ObservationTeleassistenza</p>
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> ObservationTeleassistenza">
+        <thead><tr><th>Contenuto informativo</th><th>Descrizione</th><th>Risorsa FHIR</th><th>FHIR path</th></tr></thead>
+        <tbody>
+          <tr><td>Codice parametro rilevato</td><td>Codice LOINC del parametro clinico rilevato</td><td>Observation</td><td>Observation.code</td></tr>
+          <tr><td>Valore parametro</td><td>Valore numerico o codificato della rilevazione</td><td>Observation</td><td>Observation.value[x]</td></tr>
+          <tr><td>Unit&#224; di misura</td><td>Unit&#224; di misura del parametro rilevato</td><td>Observation</td><td>Observation.valueQuantity.unit</td></tr>
+          <tr><td>Data e ora rilevazione</td><td>Data e ora della rilevazione</td><td>Observation</td><td>Observation.effective[x]</td></tr>
+          <tr><td>Stato rilevazione</td><td>Stato della rilevazione (final, preliminary, etc.)</td><td>Observation</td><td>Observation.status</td></tr>
+          <tr><td>Categoria rilevazione</td><td>Categoria della rilevazione (vital-signs, survey, etc.)</td><td>Observation</td><td>Observation.category</td></tr>
+          <tr><td>Nota testuale</td><td>Testo libero associato alla rilevazione</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Dispositivo utilizzato</td><td>Dispositivo medico che ha effettuato la rilevazione</td><td>Device</td><td>Observation.device.resolve().ofType(Device)</td></tr>
+          <tr><td>Paziente</td><td>Assistito per cui &#232; stata effettuata la rilevazione</td><td>Patient</td><td>Observation.subject.resolve().ofType(Patient)</td></tr>
+          <tr><td>Sessione di riferimento</td><td>Encounter a cui si riferisce la rilevazione</td><td>Encounter</td><td>Observation.encounter.resolve().ofType(Encounter)</td></tr>
+          <tr><td>Parametri</td><td>Parametri rilevati (ObservationDefinition di riferimento)</td><td>ObservationDefinition</td><td>ObservationDefinition.code</td></tr>
+          <tr><td>Tipo di rilevazione</td><td>Tipo rilevazione</td><td>ObservationDefinition</td><td>ObservationDefinition.category</td></tr>
+          <tr><td>SogliaAllarme</td><td>Soglia di allarme per il parametro</td><td>ObservationDefinition</td><td>ObservationDefinition.qualifiedInterval.range</td></tr>
+          <tr><td>Regole</td><td>Regole di comportamento associate al parametro</td><td>ObservationDefinition</td><td>ObservationDefinition.qualifiedInterval.condition</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:2rem;color:#555;">Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a></p>
+  </body>
+</div>

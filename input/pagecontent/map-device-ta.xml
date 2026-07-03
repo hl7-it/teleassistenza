@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-Deviceteleassistenza.html">Deviceteleassistenza</a>.
+        </div>
+      </div>
+    </div>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Deviceteleassistenza</p>
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> Deviceteleassistenza">
+        <thead><tr><th>Contenuto informativo</th><th>Descrizione</th><th>Risorsa FHIR</th><th>FHIR path</th></tr></thead>
+        <tbody>
+          <tr><td>CodiceUDI</td><td>Codice UDI del dispositivo medico</td><td>Device</td><td>Device.udiCarrier.deviceIdentifier</td></tr>
+          <tr><td>Identificativo dispositivo</td><td>Identificativo interno del dispositivo</td><td>Device</td><td>Device.identifier</td></tr>
+          <tr><td>Tipo dispositivo</td><td>Tipo e descrizione del dispositivo medico</td><td>Device</td><td>Device.type</td></tr>
+          <tr><td>Produttore</td><td>Produttore del dispositivo</td><td>Device</td><td>Device.manufacturer</td></tr>
+          <tr><td>Numero di serie</td><td>Numero di serie del dispositivo</td><td>Device</td><td>Device.serialNumber</td></tr>
+          <tr><td>Versione firmware/software</td><td>Versione del software o firmware del dispositivo</td><td>Device</td><td>Device.version.value</td></tr>
+          <tr><td>Stato dispositivo</td><td>Stato operativo del dispositivo (active, inactive, etc.)</td><td>Device</td><td>Device.status</td></tr>
+          <tr><td>Paziente</td><td>Assistito a cui &#232; associato il dispositivo</td><td>Patient</td><td>Device.patient.resolve().ofType(Patient)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:2rem;color:#555;">Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a></p>
+  </body>
+</div>

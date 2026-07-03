@@ -1,0 +1,27 @@
+ValueSet: VsAnagrafiRegionali
+Id: vs-anagrafi-regionali
+Title: "VS - Anagrafi Regionali"
+Description: "ValueSet con gli identificativi OID delle anagrafi regionali italiane."
+* ^experimental = false
+* ^status = #active
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.10.4.1. "Anagrafi Regionali - Piemonte"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.20.4.1 "Anagrafi Regionali - Valle d'Aosta"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.30.4.1 "Anagrafi Regionali - Lombardia"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.41.4.1 "Anagrafi Regionali - Prov. Auton. Bolzano"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.42.4.1 "Anagrafi Regionali - Prov. Auton. Trento"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.50.4.1 "Anagrafi Regionali - Veneto"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.60.4.1 "Anagrafi Regionali - Friuli Venezia Giulia"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.70.4.1 "Anagrafi Regionali - Liguria"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.80.4.1 "Anagrafi Regionali - Emilia Romagna"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.90.4.1 "Anagrafi Regionali - Toscana"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.100.4.1 "Anagrafi Regionali - Umbria"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.110.4.1 "Anagrafi Regionali - Marche"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.120.4.1 "Anagrafi Regionali - Lazio"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.130.4.1 "Anagrafi Regionali - Abruzzo"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.140.4.1 "Anagrafi Regionali - Molise"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.150.4.1 "Anagrafi Regionali - Campania"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.160.4.1 "Anagrafi Regionali - Puglia"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.170.4.1 "Anagrafi Regionali - Basilicata"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.180.4.1 "Anagrafi Regionali - Calabria"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.190.4.1 "Anagrafi Regionali - Sicilia"
+* urn:ietf:rfc:3986#urn:oid:2.16.840.1.113883.2.9.2.200.4.1 "Anagrafi Regionali - Sardegna"
