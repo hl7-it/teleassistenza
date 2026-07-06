@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul profilo FHIR CarePlanPianoDiCuraTeleassistenza.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; CarePlan Piano di Teleassistenza</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi al Piano di Cura, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, siano rappresentati nel profilo FHIR
+      <a href="StructureDefinition-CarePlanPianoDiCuraTeleassistenza.html">CarePlanPianoDiCuraTeleassistenza</a>.
+    </p>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> CarePlan Piano di Teleassistenza">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice identificativo del piano</td>
+            <td>Codice identificativo univoco del piano di cura</td>
+            <td>CarePlan</td>
+            <td>CarePlan.identifier</td>
+          </tr>
+          <tr>
+            <td>Tipologia di piano</td>
+            <td>Categoria/tipologia del piano di teleassistenza</td>
+            <td>CarePlan</td>
+            <td>CarePlan.category</td>
+          </tr>
+          <tr>
+            <td>Diagnosi</td>
+            <td>Codice/i e descrizione/i delle diagnosi associate al piano</td>
+            <td>Observation</td>
+            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).valueCodeableConcept</td>
+          </tr>
+          <tr>
+            <td>Medico prescrittore</td>
+            <td>Nome e Cognome del Medico autore del piano</td>
+            <td>Practitioner</td>
+            <td>CarePlan.author.resolve().ofType(PractitionerRole).practitioner.resolve()</td>
+          </tr>
+          <tr>
+            <td>Codice e descrizione struttura medico prescrittore</td>
+            <td>Struttura di appartenenza del medico prescrittore</td>
+            <td>Organization</td>
+            <td>CarePlan.author.resolve().ofType(PractitionerRole).organization.resolve()</td>
+          </tr>
+          <tr>
+            <td>Tipo struttura medico prescrittore</td>
+            <td>Tipologia della struttura di appartenenza del medico</td>
+            <td>Organization</td>
+            <td>CarePlan.author.resolve().ofType(PractitionerRole).organization.resolve().type</td>
+          </tr>
+          <tr>
+            <td>Codice fiscale medico prescrittore</td>
+            <td>Codice fiscale del medico autore del piano</td>
+            <td>Practitioner</td>
+            <td>CarePlan.author.resolve().ofType(PractitionerRole).practitioner.resolve().identifier</td>
+          </tr>
+          <tr>
+            <td>Durata prevista del piano delle attivit&#224;</td>
+            <td>Periodo di validit&#224; del piano (data inizio - data fine)</td>
+            <td>CarePlan</td>
+            <td>CarePlan.period</td>
+          </tr>
+          <tr>
+            <td>Prima programmazione</td>
+            <td>Indica che si tratta della prima stesura del piano</td>
+            <td>CarePlan</td>
+            <td>CarePlan.note</td>
+          </tr>
+          <tr>
+            <td>Riprogrammazione</td>
+            <td>Indica un rinnovo o una modifica del piano precedente</td>
+            <td>CarePlan</td>
+            <td>CarePlan.note</td>
+          </tr>
+          <tr>
+            <td>Stato del piano</td>
+            <td>Stato corrente del piano (active, completed, revoked, ecc.)</td>
+            <td>CarePlan</td>
+            <td>CarePlan.status</td>
+          </tr>
+          <tr>
+            <td>Paziente</td>
+            <td>Paziente destinatario del piano di teleassistenza</td>
+            <td>Patient</td>
+            <td>CarePlan.subject.resolve().ofType(Patient)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

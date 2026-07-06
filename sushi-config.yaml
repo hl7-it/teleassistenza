@@ -91,8 +91,12 @@ menu:
     ModelMaps: teleassistenza.html  
   Implementation:
     Mapping to Profiles: modelmap.html
-    Piano Mapping: map-piano-ta.html
-    Relazione Mapping: map-relazione-ta.html
+    Piano - Bundle/Composition: map-bundle-composition-piano-ta.html
+    Piano - CarePlan: map-careplan-piano-ta.html
+    Piano - ActivityDefinition: map-activitydefinition-ta.html
+    Piano - ServiceRequest: map-servicerequest-ta.html
+    Relazione - Bundle/Composition: map-bundle-composition-relazione-ta.html
+    Relazione - CarePlan: map-careplan-relazione-ta.html
     Patient Mapping: map-patient-ta.html
     Practitioner Mapping: map-practitioner-ta.html
     Organization Mapping: map-organization-ta.html

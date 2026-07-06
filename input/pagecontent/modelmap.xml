@@ -28,29 +28,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="StructureDefinition-BundlePianoTeleassistenza.html"><code>BundlePianoTeleassistenza</code></a></td>
-                        <td>Bundle documento che raccoglie tutte le risorse del Piano di Teleassistenza.</td>
-                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="StructureDefinition-CompositionPianoTA.html"><code>CompositionPianoTA</code></a></td>
-                        <td>Composition che struttura il documento del Piano di Teleassistenza.</td>
-                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                        <td>
+                            <a href="StructureDefinition-BundlePianoTeleassistenza.html"><code>BundlePianoTeleassistenza</code></a>
+                            / <a href="StructureDefinition-CompositionPianoTA.html"><code>CompositionPianoTA</code></a>
+                        </td>
+                        <td>Bundle documento e Composition che strutturano il Piano di Teleassistenza (identificativo, sezioni, firma).</td>
+                        <td><a class="pill" href="map-bundle-composition-piano-ta.html">Bundle/Composition Mapping</a></td>
                     </tr>
                     <tr>
                         <td><a href="StructureDefinition-CarePlanPianoDiCuraTeleassistenza.html"><code>CarePlanPianoDiCuraTeleassistenza</code></a></td>
-                        <td>Piano di cura che descrive obiettivi e attività previste per il paziente.</td>
-                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                        <td>Piano di cura che descrive obiettivi, durata, diagnosi e attività previste per il paziente.</td>
+                        <td><a class="pill" href="map-careplan-piano-ta.html">CarePlan Mapping</a></td>
                     </tr>
                     <tr>
                         <td><a href="StructureDefinition-ActivityDefinitionTeleassistenza.html"><code>ActivityDefinitionTeleassistenza</code></a></td>
-                        <td>Definizione delle attività (sessioni) di teleassistenza previste nel piano.</td>
-                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                        <td>Definizione delle attività (parametri, soglie, frequenza, orario) previste nel piano.</td>
+                        <td><a class="pill" href="map-activitydefinition-ta.html">ActivityDefinition Mapping</a></td>
                     </tr>
                     <tr>
                         <td><a href="StructureDefinition-ServiceRequestTeleassistenza.html"><code>ServiceRequestTeleassistenza</code></a></td>
-                        <td>Richiesta/prescrizione del servizio di teleassistenza.</td>
-                        <td><a class="pill" href="map-piano-ta.html">Piano Mapping</a></td>
+                        <td>Richiesta/prescrizione del servizio di teleassistenza (richiedente, esecutore, tipologia).</td>
+                        <td><a class="pill" href="map-servicerequest-ta.html">ServiceRequest Mapping</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -69,19 +67,17 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="StructureDefinition-BundleRelazioneTeleassistenza.html"><code>BundleRelazioneTeleassistenza</code></a></td>
-                        <td>Bundle documento che raccoglie tutte le risorse della Relazione Finale di Teleassistenza.</td>
-                        <td><a class="pill" href="map-relazione-ta.html">Relazione Mapping</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="StructureDefinition-CompositionRelazioneTeleassistenza.html"><code>CompositionRelazioneTeleassistenza</code></a></td>
-                        <td>Composition che struttura il documento della Relazione Finale di Teleassistenza.</td>
-                        <td><a class="pill" href="map-relazione-ta.html">Relazione Mapping</a></td>
+                        <td>
+                            <a href="StructureDefinition-BundleRelazioneTeleassistenza.html"><code>BundleRelazioneTeleassistenza</code></a>
+                            / <a href="StructureDefinition-CompositionRelazioneTeleassistenza.html"><code>CompositionRelazioneTeleassistenza</code></a>
+                        </td>
+                        <td>Bundle documento e Composition che strutturano la Relazione Finale: firma, sezioni cliniche (anamnesi, referto, diagnosi, suggerimenti, terapia).</td>
+                        <td><a class="pill" href="map-bundle-composition-relazione-ta.html">Bundle/Composition Mapping</a></td>
                     </tr>
                     <tr>
                         <td><a href="StructureDefinition-CarePlanRelazioneTA.html"><code>CarePlanRelazioneTA</code></a></td>
-                        <td>Piano di cura aggiornato con l'esito delle sessioni di teleassistenza erogate.</td>
-                        <td><a class="pill" href="map-relazione-ta.html">Relazione Mapping</a></td>
+                        <td>Piano di cura aggiornato con il riferimento al piano originario, il periodo e le attività erogate.</td>
+                        <td><a class="pill" href="map-careplan-relazione-ta.html">CarePlan Mapping</a></td>
                     </tr>
                 </tbody>
             </table>

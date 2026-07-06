@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul profilo FHIR ActivityDefinitionTeleassistenza.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; ActivityDefinition</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi alla definizione delle attivit&#224; di teleassistenza, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, siano rappresentati nel profilo FHIR
+      <a href="StructureDefinition-ActivityDefinitionTeleassistenza.html">ActivityDefinitionTeleassistenza</a>.
+    </p>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> ActivityDefinition">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice attivit&#224;</td>
+            <td>Codice della prestazione pianificata (es. catalogo nazionale prestazioni)</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione attivit&#224;</td>
+            <td>Descrizione testuale della prestazione pianificata</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.description</td>
+          </tr>
+          <tr>
+            <td>Numero di cicli</td>
+            <td>Numero totale di cicli previsti per l&#39;attivit&#224;</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.timing.ofType(Timing).repeat.count</td>
+          </tr>
+          <tr>
+            <td>Durata del ciclo</td>
+            <td>Durata di ogni singolo ciclo di attivit&#224;</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.timing.ofType(Timing).repeat.duration</td>
+          </tr>
+          <tr>
+            <td>Numero di attivit&#224; per ciclo</td>
+            <td>Quante volte viene eseguita l&#39;attivit&#224; all&#39;interno di ogni ciclo</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.timing.ofType(Timing).repeat.count</td>
+          </tr>
+          <tr>
+            <td>Frequenza</td>
+            <td>Periodicit&#224; dell&#39;attivit&#224; (es. giornaliera, settimanale)</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.timing.ofType(Timing).repeat.frequency</td>
+          </tr>
+          <tr>
+            <td>Orario</td>
+            <td>Fascia oraria programmata per l&#39;esecuzione dell&#39;attivit&#224;</td>
+            <td>ActivityDefinition</td>
+            <td>ActivityDefinition.timing.ofType(Timing).repeat.timeOfDay</td>
+          </tr>
+          <tr>
+            <td>Codice UDI dispositivo</td>
+            <td>Codice UDI del dispositivo medico utilizzato per la rilevazione</td>
+            <td>Device</td>
+            <td>Observation.device.resolve().ofType(Device).identifier</td>
+          </tr>
+          <tr>
+            <td>Parametri</td>
+            <td>Parametri fisiologici da rilevare (es. PA, FC, SpO2)</td>
+            <td>ObservationDefinition</td>
+            <td>ObservationDefinition.code</td>
+          </tr>
+          <tr>
+            <td>Tipo di rilevazione</td>
+            <td>Categoria della rilevazione (es. parametri vitali, laboratorio)</td>
+            <td>ObservationDefinition</td>
+            <td>ObservationDefinition.category</td>
+          </tr>
+          <tr>
+            <td>Soglia di allarme</td>
+            <td>Intervallo di normalit&#224; e soglia oltre la quale scatta l&#39;allarme</td>
+            <td>ObservationDefinition</td>
+            <td>ObservationDefinition.qualifiedInterval.range</td>
+          </tr>
+          <tr>
+            <td>Regole</td>
+            <td>Regole di comportamento associate al superamento della soglia</td>
+            <td>ObservationDefinition</td>
+            <td>ObservationDefinition.qualifiedInterval.condition</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

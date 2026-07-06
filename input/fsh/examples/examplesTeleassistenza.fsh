@@ -6,7 +6,7 @@
 Instance: EsempioPianoDiTeleassistenza
 InstanceOf: BundlePianoTeleassistenza
 Usage: #example
-Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
+Description: "Bundle documento del Piano di Teleassistenza per Maria Rossi, paziente con scompenso cardiaco cronico (CHF NYHA II), presa in carico dal Dr. Mario Bianchi (ASL Roma 1) per monitoraggio remoto cardiologico (settembre 2025 - agosto 2026)."
 * type = #document
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:bfcf00e2-e2bb-4a7d-adaa-3de9d419d27e"
@@ -37,7 +37,7 @@ Description: "Esempio di Bundle nel contesto del piano di teleassistenza."
 Instance: EsempioCompositionPianoDiTeleassistenza
 InstanceOf: CompositionPianoTA
 Usage: #example
-Description: "Esempio di Composition nel contesto del piano di teleassistenza."
+Description: "Composition che struttura il Piano di Teleassistenza di Maria Rossi: include la sezione Piano di Cura (CarePlan cardiologico) e la sezione Diagnosi (insufficienza cardiaca congestizia, ICD-9 428.0), firmata digitalmente dal Dr. Bianchi."
 * id = "composition-pta-1"
 * status = #final
 * type = $loinc#75496-0 "Telehealth Note"
@@ -59,7 +59,7 @@ Description: "Esempio di Composition nel contesto del piano di teleassistenza."
 Instance: EsempioPianoDiCuraTeleassistenza
 InstanceOf: CarePlanPianoDiCuraTeleassistenza
 Usage: #example
-Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
+Description: "CarePlan attivo (TM-2025-000123) per il monitoraggio teleassistito di Maria Rossi (scompenso cardiaco, NYHA II): prevede rilevazione PA/FC/SpO2 due volte al giorno e contatto infermieristico settimanale via video, per un anno (settembre 2025 – agosto 2026)."
 * id = "careplan-tele-1"
 //* identifier.system = "http://hl7.it/identifiers/careplan"
 * identifier.value = "TM-2025-000123"
@@ -91,7 +91,7 @@ Description: "Esempio di CarePlan nel contesto del piano di teleassistenza."
 
 Instance: EsempioPazienteTeleassistenza
 InstanceOf: PatientTeleassistenza
-Description: "Esempio di paziente nel contesto della Teleassistenza."
+Description: "Paziente Maria Rossi (CF: RSSMRA71E01F205E, nata 01/05/1971), residente a Milano, affetta da scompenso cardiaco cronico, arruolata nel programma di teleassistenza cardiologica dell'ASL Roma 1. Contatti di emergenza: Luigi Rossi e Maria Bianchi."
 Usage: #example
 * id = "patient-mrossi"
 * extension[luogoNascita].valueAddress.extension[residenza].valueBoolean = true
@@ -139,7 +139,7 @@ Usage: #example
 
 Instance: EsempioPractitionerRoleTeleassistenza
 InstanceOf: PractitionerRoleTeleassistenza
-Description: "Esempio di practitionerRole (ruolo del professionista sanitario) nel contesto della Teleassistenza."
+Description: "Ruolo del Dr. Mario Bianchi come Cardiologo (specialità 02) presso l'U.O. Cardiologia dell'Ospedale Sandro Pertini, responsabile del programma di teleassistenza e della presa in carico di Maria Rossi."
 Usage: #example
 * id = "practrole-bianchi-gom"
 * organization = Reference(uo-cardiologia-pertini)
@@ -149,7 +149,7 @@ Usage: #example
 Instance: EsempioOrganizationASL
 InstanceOf: OrganizationT1
 
-Description: "Esempio di Azienda Sanitaria Locale (ASL) nel contesto della Teleassistenza."
+Description: "Azienda Sanitaria Locale ASL Roma 1 (cod. FLS 120201, P.IVA 12345678901), erogatore del servizio di teleassistenza cardiologica per pazienti cronici nella Regione Lazio."
 Usage: #example
 * id = "org-assistenza"
 * name = "ASL Roma 1"
@@ -164,7 +164,7 @@ Usage: #example
 
 Instance: EsempioPractitionerTeleassistenza
 InstanceOf: PractitionerTeleassistenza
-Description: "Esempio di practitioner (professionista sanitario) nel contesto della Teleassistenza."
+Description: "Dr. Mario Bianchi (CF: BNCMRA75A01H501Y), medico cardiologo responsabile della presa in carico clinica e del monitoraggio remoto di Maria Rossi nell'ambito del percorso di teleassistenza."
 Usage: #example
 * id = "pract-bianchi"
 * name.given = "Mario"
@@ -175,7 +175,7 @@ Usage: #example
 Instance: EsempioEncointerTeleassistenza
 InstanceOf: EncounterTeleassistenza
 
-Description: "Esempio di incontro (televisita) nel contesto della Teleassistenza."
+Description: "Incontro virtuale (classe VR – Virtual) di teleassistenza cardiologica del 10/09/2025 (09:00–09:45), condotto dal Dr. Bianchi per follow-up scompenso cardiaco di Maria Rossi, basato sulla richiesta SR-2025-000987."
 Usage: #example
 * id = "enc-tele-1"
 * status = #finished
@@ -195,7 +195,7 @@ Usage: #example
 Instance: EsempioObservationTeleassistenza
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Esempio di Observation nel contesto del piano di Teleassistenza."
+Description: "Diagnosi principale codificata (ICD-9 428.0 – Insufficienza cardiaca congestizia non specificata) rilevata il 15/08/2025 dal Dr. Bianchi, utilizzata come quesito diagnostico nel Piano di Teleassistenza e nella Relazione."
 * id = "obs-dx-icd9"
 * status = #final
 * category = $observation-category#vital-signs
@@ -211,7 +211,7 @@ Description: "Esempio di Observation nel contesto del piano di Teleassistenza."
 Instance: EsempioAttivitaTeleassistenza
 InstanceOf: ActivityDefinitionTeleassistenza
 Usage: #example
-Description: "Esempio di ActivityDefinition nel contesto del piano di Teleassistenza."
+Description: "ActivityDefinition per il contatto infermieristico settimanale (via telefono/video) con cadenza 1×/settimana, finalizzato a valutazione clinica, educazione terapeutica e triage remoto nell'ambito del percorso cardiologico."
 * id = "actdef-teleass"
 * status = #active
 * name = "TeleassistenzaInferm"
@@ -226,7 +226,7 @@ Description: "Esempio di ActivityDefinition nel contesto del piano di Teleassist
 Instance: EsempioAppointmentTeleassistenza
 InstanceOf: AppointmentTeleassistenza
 
-Description: "Esempio di appuntamento per teleassistenza cardiologica."
+Description: "Appuntamento prenotato (TV-20250910-001) per la seduta di teleassistenza cardiologica del 10/09/2025 (09:00–09:45), con partecipazione confermata di paziente e cardiologo, basato sulla richiesta SR-2025-000987."
 Usage: #example
 * id = "9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 * status = #booked
@@ -250,7 +250,7 @@ Usage: #example
 Instance: EsempioRelazioneDiTeleassistenza
 InstanceOf: BundleRelazioneTeleassistenza
 Usage: #example
-Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
+Description: "Bundle documento della Relazione di Fine Percorso di Teleassistenza (30/09/2025) per Maria Rossi: include la Composition clinica strutturata, il CarePlan completato, osservazioni cliniche (anamnesi, referto, diagnosi, confronto), terapia farmacologica e allergie."
 * type = #document
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:2e7fd4a4-d5a0-41db-96f9-8e9a45a6b4f2"
@@ -327,7 +327,7 @@ Description: "Esempio di Bundle nel contesto della Relazione di Teleassistenza."
 Instance: EsempioCarePlanRelazioneTeleassistenza
 InstanceOf: CarePlanRelazioneTA
 Usage: #example
-Description: "Esempio di CarePlan per la Relazione di Teleassistenza."
+Description: "CarePlan completato al termine del mese di teleassistenza cardiologica (settembre 2025): include revisione dei parametri domiciliari degli ultimi 14 giorni, video-consulto conclusivo ed educazione all'aderenza terapeutica per Maria Rossi."
 * id = "careplan-rel-1"
 * status = #completed
 * intent = #plan
@@ -353,7 +353,7 @@ Description: "Esempio di CarePlan per la Relazione di Teleassistenza."
 Instance: EsempioCompositionRelazioneTeleassistenza
 InstanceOf: CompositionRelazioneTeleassistenza
 Usage: #example
-Description: "Esempio di composition per la Relazione di Teleassistenza."
+Description: "Composition della Relazione di Fine Percorso di Teleassistenza (LOINC 91531-4): struttura le sezioni cliniche della relazione (inquadramento iniziale, referto, diagnosi, confronto con esami precedenti, suggerimenti al MMG, accertamenti consigliati, terapia farmacologica), firmata dal Dr. Bianchi il 30/09/2025."
 * id = "composition-rel-1"
 * status = #final
 * type = $loinc#91531-4
@@ -432,7 +432,7 @@ Description: "Esempio di composition per la Relazione di Teleassistenza."
 Instance: EsempioAnamnesiTeleassistenza
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Esempio di anamnesi nel contesto della Teleassistenza."
+Description: "Anamnesi sintetica di Maria Rossi: scompenso cardiaco cronico (CHF NYHA II), cardiopatia ischemica (IMA anteriore 2018), portatore di ICD dal 2019, ex fumatore (cessato 2018), nessuna ospedalizzazione nell'ultimo mese, in terapia cronica con Ramipril e Carvedilolo."
 * id = "obs-anamnesi-1"
 * status = #final
 * code.text = "Anamnesi sintetica del percorso di teleassistenza"
@@ -444,7 +444,7 @@ Description: "Esempio di anamnesi nel contesto della Teleassistenza."
 
 Instance: EsempioQuesitoTeleassistenza
 InstanceOf: ObservationTeleassistenza
-Description: "Esempio di quesito diagnostico nel contesto della Teleassistenza."
+Description: "Quesito diagnostico del 10/09/2025: controllo periodico scompenso cardiaco cronico (ICD-9 428.0) con verifica aderenza terapeutica, pressione arteriosa e frequenza cardiaca per Maria Rossi."
 Usage: #example
 * id = "Observation-quesito"
 * status = #final
@@ -458,7 +458,7 @@ Usage: #example
 Instance: EsempioConfrontoTeleassistenza
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Esempio di confronto con precedenti esami eseguiti nel contesto della Teleassistenza."
+Description: "Confronto andamento PA sistolica di Maria Rossi: riduzione da 145 mmHg (mese precedente) a 128 mmHg (media ultimi 14 giorni), indicante miglioramento significativo del controllo pressorio nel corso del percorso di teleassistenza."
 * id = "obs-confronto-1"
 * status = #final
 * code.text = "Confronto andamento PA/FC vs mese precedente"
@@ -476,7 +476,7 @@ Description: "Esempio di confronto con precedenti esami eseguiti nel contesto de
 Instance: EsempioRefertoTeleassistenza
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Esempio di Referto conclusivo nel contesto della Teleassistenza."
+Description: "Referto conclusivo del percorso di teleassistenza (30/09/2025): buon controllo pressorio (PA media 128/82 mmHg), FC 68 bpm, assenza di edemi declivi, aderenza terapeutica confermata per Maria Rossi; percorso prorogato per ulteriori 3 mesi."
 * id = "obs-referto-1"
 * status = #final
 * code.text = "Referto conclusivo teleassistenza"
@@ -489,7 +489,7 @@ Description: "Esempio di Referto conclusivo nel contesto della Teleassistenza."
 Instance: EsempioSuggerimentiTeleassistenza
 InstanceOf: ObservationTeleassistenza
 Usage: #example
-Description: "Esempio di suggerimenti nel contesto della Teleassistenza."
+Description: "Suggerimenti del Dr. Bianchi per il MMG di Maria Rossi: rivalutare dose Ramipril alla prossima visita in presenza, continuare telemonitoraggio mensile per 3 mesi, considerare avvio di riabilitazione cardiologica."
 * id = "obs-suggerimenti-1"
 * status = #final
 * code.text = "Suggerimenti per MMG"
@@ -502,7 +502,7 @@ Description: "Esempio di suggerimenti nel contesto della Teleassistenza."
 Instance: EsempioAccertamentiTeleassistenza
 InstanceOf: ObservationTeleassistenzaNarrative
 Usage: #example
-Description: "Esempio di Accertamenti/controlli consigliati nel contesto della Teleassistenza."
+Description: "Accertamenti e controlli consigliati per Maria Rossi: ECG di controllo entro 30 giorni, dosaggio BNP a 3 mesi, visita cardiologica in presenza a 6 mesi per rivalutazione clinica complessiva."
 * id = "obs-accertamenti-1"
 * status = #final
 * code.text = "Controlli consigliati"
@@ -515,7 +515,7 @@ Description: "Esempio di Accertamenti/controlli consigliati nel contesto della T
 Instance: EsempioPrecedentiEsamiTeleassistenza
 InstanceOf: ObservationTeleassistenzaNarrative
 Usage: #example
-Description: "Esempio di Precedenti esami rilevanti nel contesto della Teleassistenza."
+Description: "Precedenti esami strumentali rilevanti di Maria Rossi: ecocardiogramma (luglio 2025, FE 40%, ipocinesia settale) e dosaggio BNP (agosto 2025, 420 pg/mL), utilizzati come baseline per il monitoraggio remoto."
 * id = "obs-precedenti-1"
 * status = #final
 * code.text = "Esami precedenti"
@@ -528,7 +528,7 @@ Description: "Esempio di Precedenti esami rilevanti nel contesto della Teleassis
 Instance: EsempioMedicationRequestTeleassistenza
 InstanceOf: MedicationRequestTeleassistenza
 Usage: #example
-Description: "Esempio di terapia farmacologica consigliata nel contesto della Teleassistenza."
+Description: "Terapia farmacologica consigliata dal Dr. Bianchi per Maria Rossi: ACE-inibitore Ramipril 5 mg (1 cp al mattino) e Beta-bloccante Carvedilolo 6.25 mg (1 cp mattino e sera), con indicazione a monitorare PA e FC prima di ogni assunzione."
 * id = "medreq-terapia-1"
 * status = #active
 * medicationCodeableConcept.text = "ACE-inibitore (Ramipril 5 mg) + Beta-bloccante (Carvedilolo 6.25 mg)"
@@ -543,7 +543,7 @@ Description: "Esempio di terapia farmacologica consigliata nel contesto della Te
 Instance: EsempioAllergyIntoleranceTeleassistenza
 InstanceOf: AllergyIntoleranceTeleassistenza
 
-Description: "Esempio di allergia/intolleranza codificata nel contesto della Teleassistenza."
+Description: "Allergia confermata ad alto rischio (criticality: high) alla penicillina (SNOMED 91936005) con manifestazione cutanea severa (eruzione cutanea), registrata il 05/09/2025 dal Dr. Bianchi all'ingresso nel percorso di teleassistenza di Maria Rossi."
 Usage: #example
 * id = "1360bd6a-3855-48d3-aa33-96a9d961bb94"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
@@ -564,7 +564,7 @@ Usage: #example
 
 Instance: EsempioMedicationStatementTerapiaCorrente
 InstanceOf: MedicationStatementTeleassistenza
-Description: "Esempio di medicationStatement nel contesto della Teleassistenza."
+Description: "Terapia farmacologica in atto di Maria Rossi al momento della presa in carico: Furosemide (SNOMED 372744001) in corso dall'inizio del percorso di teleassistenza cardiologica (settembre 2025)."
 Usage: #example
 * status = #active
 * subject = Reference(Patient/patient-mrossi)
@@ -574,7 +574,7 @@ Usage: #example
 
 Instance: EsempioObservationAnamnesi
 InstanceOf: ObservationTeleassistenzaNarrative
-Description: "Esempio di anamnesi nel contesto della Teleassistenza."
+Description: "Raccolta anamnestica strutturata (LOINC 11329-0) di Maria Rossi al 10/09/2025: cardiopatia ischemica (IMA anteriore 2018), ICD impiantato nel 2019, ex fumatore, terapia cronica con Ramipril e Carvedilolo."
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
 * status = #final
@@ -587,7 +587,7 @@ Usage: #example
 
 Instance: EsempioEsameObiettivo
 InstanceOf: ObservationTeleassistenzaNarrative
-Description: "Esempio di esame obiettivo nel contesto della Teleassistenza."
+Description: "Esame obiettivo in videochiamata di Maria Rossi (10/09/2025): paziente orientata e collaborante, NYHA II, lieve pallore cutaneo, assenza di edemi declivi e dispnea a riposo, frequenza respiratoria nella norma."
 Usage: #example
 * status = #final
 * code = $loinc#29545-1
@@ -599,7 +599,7 @@ Usage: #example
 
 Instance: EsempioPresidio
 InstanceOf: OrganizationT2
-Description: "Esempio di Presidio ospedaliero facente parte di ASL Roma 1."
+Description: "Presidio ospedaliero Ospedale Sandro Pertini (cod. HSP 120267), struttura di 2° livello afferente all'ASL Roma 1, sede dell'U.O. Cardiologia che eroga il programma di teleassistenza."
 Usage: #example
 * id = "osp-pertini"
 * identifier[struttura].system = "http://hl7.it/sid/hsp"
@@ -610,7 +610,7 @@ Usage: #example
 
 Instance: EsempioUnitaOperativa
 InstanceOf: OrganizationT3
-Description: "Esempio di Unità Operativa di Cardiologia."
+Description: "Unità Operativa di Cardiologia (cod. UO12345) dell'Ospedale Sandro Pertini, responsabile dell'erogazione del programma di teleassistenza cardiologica per pazienti con scompenso cardiaco cronico."
 Usage: #example
 * id = "uo-cardiologia-pertini"
 * name = "U.O. Cardiologia"
@@ -621,7 +621,7 @@ Usage: #example
 
 Instance: EsempioProcedureTeleassistenza
 InstanceOf: ProcedureTeleassistenza
-Description: "Esempio di procedura nel contesto della Teleassistenza."
+Description: "Visita di controllo cardiologica in telemedicina (codice 89.01) svolta il 10/09/2025 via videochiamata (SNOMED 448337001 – Telemedicine consultation): durata 45 minuti, parametri nella norma, nessun evento avverso, misurazioni guidate a distanza."
 Usage: #example
 
 * extension[ModalitaEsecuzioneProcedura].url = "http://hl7.org/fhir/StructureDefinition/procedure-method"
@@ -651,7 +651,7 @@ Usage: #example
 Instance: EsempioPianoDiTeleassistenzaTransaction
 InstanceOf: BundlePianoTeleassistenzaTransaction
 Usage: #example
-Description: "Esempio di Bundle transaction per il piano di teleassistenza"
+Description: "Bundle transaction per l'invio del Piano di Teleassistenza sul server FHIR: aggiornamento (PUT) delle risorse amministrative (Patient, Practitioner, Organization, PractitionerRole) e creazione (POST) delle risorse cliniche (Composition, CarePlan, Encounter, Observation diagnosi)."
 * type = #transaction
 
 // --- ADMIN (PUT) ---
@@ -706,7 +706,7 @@ Description: "Esempio di Bundle transaction per il piano di teleassistenza"
 Instance: EsempioRelazioneDiTeleassistenzaTransaction
 InstanceOf: BundleRelazioneTeleassistenzaTransaction
 Usage: #example
-Description: "Esempio di Bundle transaction per la Relazione di Teleassistenza."
+Description: "Bundle transaction per l'invio della Relazione di Fine Percorso di Teleassistenza sul server FHIR: aggiornamento (PUT) delle risorse amministrative e creazione (POST) delle risorse cliniche (Composition, CarePlan, Encounter, MedicationRequest, Observations cliniche)."
 * type = #transaction
 
 // =====================
@@ -806,7 +806,7 @@ Description: "Esempio di Bundle transaction per la Relazione di Teleassistenza."
 Instance: EsempioServiceRequestTeleassistenza
 InstanceOf: ServiceRequestTeleassistenza
 Usage: #example
-Description: "Esempio di Richiesta di teleassistenza domiciliare."
+Description: "Richiesta di teleassistenza domiciliare sincrona (SR-2025-000987, REQ-2025-000123) per monitoraggio cardiologico di Maria Rossi (scompenso cardiaco cronico): sessione via video del 10/09/2025, finalizzata a controllo parametri e counselling, preferibilmente in fascia mattutina."
 // Identificativi
 * id = "ServiceRequestTeleassistenzaExample"
 * identifier[0].system = "http://example.org/fhir/id/servicerequest"
@@ -844,7 +844,7 @@ Instance: EsempioDPulsossimetro
 InstanceOf: Deviceteleassistenza
 Usage: #example
 
-Description: "Esempio di device di teleassistenza per monitoraggio SpO2."
+Description: "Pulsossimetro Meditech OxiCare Pro (S/N: SNSPO20021, lotto BATCH9, scad. 11/2028) assegnato a Maria Rossi per il monitoraggio domiciliare della saturazione di ossigeno (SpO2) e della frequenza cardiaca nell'ambito del percorso di teleassistenza cardiologica."
 * status = #active
 * identifier[0].system = "http://example.org/fhir/id/device"
 * identifier[0].value = "DEV-SPO2-0021"
