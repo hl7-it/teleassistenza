@@ -91,22 +91,6 @@ menu:
     ModelMaps: teleassistenza.html  
   Implementation:
     Mapping to Profiles: modelmap.html
-    Piano - Bundle/Composition: map-bundle-composition-piano-ta.html
-    Piano - CarePlan: map-careplan-piano-ta.html
-    Piano - ActivityDefinition: map-activitydefinition-ta.html
-    Piano - ServiceRequest: map-servicerequest-ta.html
-    Relazione - Bundle/Composition: map-bundle-composition-relazione-ta.html
-    Relazione - CarePlan: map-careplan-relazione-ta.html
-    Patient Mapping: map-patient-ta.html
-    Practitioner Mapping: map-practitioner-ta.html
-    Organization Mapping: map-organization-ta.html
-    Encounter Mapping: map-encounter-ta.html
-    Appointment Mapping: map-appointment-ta.html
-    Observation Mapping: map-observation-ta.html
-    Procedure Mapping: map-procedure-ta.html
-    MedicationRequest Mapping: map-medicationrequest-ta.html
-    AllergyIntolerance Mapping: map-allergy-ta.html
-    Device Mapping: map-device-ta.html
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
