@@ -29,6 +29,8 @@ Description: "Bundle documento del Piano di Teleassistenza per Maria Rossi, pazi
 * entry[7].resource = obs-dx-icd9
 * entry[8].fullUrl = "http://example.org/fhir/ServiceRequest/ServiceRequestTeleassistenzaExample"
 * entry[8].resource = ServiceRequestTeleassistenzaExample
+* entry[9].fullUrl = "http://example.org/fhir/Organization/uo-cardiologia-pertini"
+* entry[9].resource = EsempioUnitaOperativa
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-tm-card"
 // * entry[8].resource = actdef-tm-card
 // * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-teleass"
@@ -139,12 +141,12 @@ Usage: #example
 
 Instance: EsempioPractitionerRoleTeleassistenza
 InstanceOf: PractitionerRoleTeleassistenza
-Description: "Ruolo del Dr. Mario Bianchi come Cardiologo (specialità 02) presso l'U.O. Cardiologia dell'Ospedale Sandro Pertini, responsabile del programma di teleassistenza e della presa in carico di Maria Rossi."
+Description: "Ruolo del Dr. Mario Bianchi come Cardiologo (specialità 08) presso l'U.O. Cardiologia dell'Ospedale Sandro Pertini, responsabile del programma di teleassistenza e della presa in carico di Maria Rossi."
 Usage: #example
 * id = "practrole-bianchi-gom"
 * organization = Reference(uo-cardiologia-pertini)
 * practitioner = Reference(pract-bianchi)
-* specialty = csspecialityPractitionerRole#02 "Cardiologia"
+* specialty = csspecialityPractitionerRole#08 "Cardiologia"
 
 Instance: EsempioOrganizationASL
 InstanceOf: OrganizationT1
@@ -179,7 +181,7 @@ Description: "Incontro virtuale (classe VR – Virtual) di teleassistenza cardio
 Usage: #example
 * id = "enc-tele-1"
 * status = #finished
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0#VR "Virtual"
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode|10.0.0#VR "Virtual"
 * subject = Reference(patient-mrossi)
 * basedOn = Reference(ServiceRequestTeleassistenzaExample)
 * period.start = "2025-09-10T09:00:00+02:00"
@@ -268,8 +270,10 @@ Description: "Bundle documento della Relazione di Fine Percorso di Teleassistenz
 * entry[practitionerRole].fullUrl = "http://example.org/fhir/PractitionerRole/practrole-bianchi-gom"
 * entry[practitionerRole].resource = practrole-bianchi-gom
 
-* entry[organization].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
-* entry[organization].resource = org-assistenza
+* entry[organization][0].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
+* entry[organization][0].resource = org-assistenza
+* entry[organization][1].fullUrl = "http://example.org/fhir/Organization/uo-cardiologia-pertini"
+* entry[organization][1].resource = EsempioUnitaOperativa
 
 * entry[practitioner].fullUrl = "http://example.org/fhir/Practitioner/pract-bianchi"
 * entry[practitioner].resource = pract-bianchi
@@ -448,7 +452,7 @@ Description: "Quesito diagnostico del 10/09/2025: controllo periodico scompenso 
 Usage: #example
 * id = "Observation-quesito"
 * status = #final
-* code = diagnosi-icd9cm#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA"
+* code = diagnosi-icd9cm#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * subject = Reference(Patient/patient-mrossi)
 * valueString = "Controllo periodico scompenso cardiaco cronico - verifica aderenza terapeutica, PA e FC."
 * performer = Reference(PractitionerRole/practrole-bianchi-gom)
@@ -670,6 +674,11 @@ Description: "Bundle transaction per l'invio del Piano di Teleassistenza sul ser
 * entry[=].request.method = #PUT
 * entry[=].request.url = "Organization/org-assistenza"
 
+* entry[+].fullUrl = "http://example.org/fhir/Organization/uo-cardiologia-pertini"
+* entry[=].resource = EsempioUnitaOperativa
+* entry[=].request.method = #PUT
+* entry[=].request.url = "Organization/uo-cardiologia-pertini"
+
 * entry[+].fullUrl = "http://example.org/fhir/PractitionerRole/practrole-bianchi-gom"
 * entry[=].resource = practrole-bianchi-gom
 * entry[=].request.method = #PUT
@@ -723,10 +732,15 @@ Description: "Bundle transaction per l'invio della Relazione di Fine Percorso di
 * entry[practitionerRole].request.method = #PUT
 * entry[practitionerRole].request.url = "PractitionerRole/practrole-bianchi-gom"
 
-* entry[organization].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
-* entry[organization].resource = org-assistenza
-* entry[organization].request.method = #PUT
-* entry[organization].request.url = "Organization/org-assistenza"
+* entry[organization][0].fullUrl = "http://example.org/fhir/Organization/org-assistenza"
+* entry[organization][0].resource = org-assistenza
+* entry[organization][0].request.method = #PUT
+* entry[organization][0].request.url = "Organization/org-assistenza"
+
+* entry[organization][1].fullUrl = "http://example.org/fhir/Organization/uo-cardiologia-pertini"
+* entry[organization][1].resource = EsempioUnitaOperativa
+* entry[organization][1].request.method = #PUT
+* entry[organization][1].request.url = "Organization/uo-cardiologia-pertini"
 
 * entry[practitioner].fullUrl = "http://example.org/fhir/Practitioner/pract-bianchi"
 * entry[practitioner].resource = pract-bianchi
@@ -818,7 +832,7 @@ Description: "Richiesta di teleassistenza domiciliare sincrona (SR-2025-000987, 
 * status = #active
 * intent = #order
 * priority = #routine
-* category = csspecialityPractitionerRole#02 "Cardiologia"
+* category = csspecialityPractitionerRole#08 "Cardiologia"
 
 * code = http://snomed.info/sct#4914002 "Treatment planning for teletherapy"
 * code.text = "Teleassistenza sincrona via video per monitoraggio paziente cronico"

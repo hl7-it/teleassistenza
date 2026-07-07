@@ -4,20 +4,16 @@
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box">
-          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sui profili FHIR BundleRelazioneTeleassistenza e CompositionRelazioneTeleassistenza.
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sui profili FHIR della Relazione di Teleassistenza.
         </div>
       </div>
     </div>
-
-    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Bundle / Composition Relazione di Teleassistenza</p>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Relazione di Teleassistenza</p>
     <p>
-      Questa pagina illustra come gli elementi strutturali e clinici della Relazione di Fine Percorso di Teleassistenza, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, siano rappresentati nei profili FHIR
-      <a href="StructureDefinition-BundleRelazioneTeleassistenza.html">BundleRelazioneTeleassistenza</a> e
-      <a href="StructureDefinition-CompositionRelazioneTeleassistenza.html">CompositionRelazioneTeleassistenza</a>.
+      Questa pagina illustra come gli elementi informativi della Relazione di Fine Percorso di Teleassistenza, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, siano rappresentati nei profili FHIR della presente IG.
     </p>
-
     <div class="table-wrap">
-      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> Bundle / Composition Relazione di Teleassistenza">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 - Relazione di Teleassistenza">
         <thead>
           <tr>
             <th>Contenuto informativo</th>
@@ -27,136 +23,84 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Codice identificativo della relazione</td>
-            <td>Identificativo univoco del Bundle/documento Relazione di Teleassistenza</td>
-            <td>Bundle / Composition</td>
-            <td>Bundle.identifier / Composition.identifier</td>
-          </tr>
-          <tr>
-            <td>Stato della relazione</td>
-            <td>Stato del documento (preliminary, final, amended, ecc.)</td>
-            <td>Composition</td>
-            <td>Composition.status</td>
-          </tr>
-          <tr>
-            <td>Data firma</td>
-            <td>Data e ora di firma del documento da parte del medico</td>
-            <td>Composition</td>
-            <td>Composition.attester[legalAuthenticator].time</td>
-          </tr>
-          <tr>
-            <td>Codice fiscale medico firmatario</td>
-            <td>CF del professionista che ha firmato la relazione</td>
-            <td>Practitioner</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td>
-          </tr>
-          <tr>
-            <td>Nome medico firmatario</td>
-            <td>Nome del medico firmatario della relazione</td>
-            <td>Practitioner</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td>
-          </tr>
-          <tr>
-            <td>Cognome medico firmatario</td>
-            <td>Cognome del medico firmatario della relazione</td>
-            <td>Practitioner</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td>
-          </tr>
-          <tr>
-            <td>Struttura medico firmatario</td>
-            <td>Struttura di appartenenza del medico firmatario</td>
-            <td>Organization</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).organization.resolve()</td>
-          </tr>
-          <tr>
-            <td>Branca specialistica</td>
-            <td>Specialit&#224; del medico firmatario</td>
-            <td>PractitionerRole</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).specialty</td>
-          </tr>
-          <tr>
-            <td>Quesito diagnostico</td>
-            <td>Codice e descrizione del quesito diagnostico iniziale</td>
-            <td>Observation</td>
-            <td>Composition.section[questitoDiagnostico].entry.resolve().ofType(Observation).valueCodeableConcept</td>
-          </tr>
-          <tr>
-            <td>Anamnesi</td>
-            <td>Descrizione testuale dell&#39;anamnesi del paziente</td>
-            <td>Observation</td>
-            <td>Composition.section[InquadramentoClinicoIniziale].section[anamnesi].entry.resolve().ofType(Observation).valueString</td>
-          </tr>
-          <tr>
-            <td>Esame obiettivo</td>
-            <td>Esame obiettivo effettuato in videochiamata</td>
-            <td>Observation</td>
-            <td>Composition.section[InquadramentoClinicoIniziale].section[esameObiettivo].entry.resolve().ofType(Observation).valueString</td>
-          </tr>
-          <tr>
-            <td>Allergie</td>
-            <td>Allergie e intolleranze rilevanti del paziente</td>
-            <td>AllergyIntolerance</td>
-            <td>Composition.section[InquadramentoClinicoIniziale].section[allergie].entry.resolve().ofType(AllergyIntolerance)</td>
-          </tr>
-          <tr>
-            <td>Terapia farmacologica in atto</td>
-            <td>Farmaci assunti dal paziente al momento della presa in carico</td>
-            <td>MedicationStatement</td>
-            <td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement)</td>
-          </tr>
-          <tr>
-            <td>Refertazione</td>
-            <td>Referto delle prestazioni erogate nel corso del periodo</td>
-            <td>Observation</td>
-            <td>Composition.section[referto].entry.resolve().ofType(Observation).valueString</td>
-          </tr>
-          <tr>
-            <td>Codice diagnosi</td>
-            <td>Codice della diagnosi formulata al termine del percorso</td>
-            <td>Observation</td>
-            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).code.coding.code</td>
-          </tr>
-          <tr>
-            <td>Descrizione diagnosi</td>
-            <td>Descrizione testuale della diagnosi formulata</td>
-            <td>Observation</td>
-            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).code.text</td>
-          </tr>
-          <tr>
-            <td>Confronto con precedenti esami</td>
-            <td>Confronto con i parametri rilevati nei periodi precedenti</td>
-            <td>Observation</td>
-            <td>Composition.section[confrontoPrecedentiEsamiEseguiti].entry.resolve().ofType(Observation).component</td>
-          </tr>
-          <tr>
-            <td>Conclusioni</td>
-            <td>Conclusioni cliniche del medico a seguito del periodo di teleassistenza</td>
-            <td>Observation</td>
-            <td>Composition.section[referto].entry.resolve().ofType(Observation).valueString</td>
-          </tr>
-          <tr>
-            <td>Suggerimenti per il medico prescrittore</td>
-            <td>Indicazioni e suggerimenti per il medico di riferimento</td>
-            <td>Observation</td>
-            <td>Composition.section[suggerimentiPerMedicoPrescrittore].entry.resolve().ofType(Observation).valueString</td>
-          </tr>
-          <tr>
-            <td>Accertamenti e controlli consigliati</td>
-            <td>Accertamenti o prestazioni consigliati a seguito della teleassistenza</td>
-            <td>Observation</td>
-            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).valueString</td>
-          </tr>
-          <tr>
-            <td>Terapia farmacologica consigliata</td>
-            <td>Terapia farmacologica raccomandata al termine del percorso</td>
-            <td>MedicationRequest</td>
-            <td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().ofType(MedicationRequest).medicationCodeableConcept</td>
-          </tr>
+          <tr><td>Codice identificativo del piano</td><td>Codice identificativo del piano</td><td>CarePlan</td><td>CarePlan.identifier</td></tr>
+          <tr><td>Cognome assistito</td><td>Cognome dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).name.family</td></tr>
+          <tr><td>Nome assistito</td><td>Nome completo dell'assistito (come risulta in anagrafe)</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).name.given</td></tr>
+          <tr><td>Codice fiscale assistito</td><td>Codice Fiscale/STP/ENI/altro che rappresenta l'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).identifier</td></tr>
+          <tr><td>Sesso assistito</td><td>Genere dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).gender</td></tr>
+          <tr><td>Data di nascita assistito</td><td>Data di nascita dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).birthDate</td></tr>
+          <tr><td>Comune di nascita assistito</td><td>Comune di nascita dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.extension('patient-birthPlace')</td></tr>
+          <tr><td>Indirizzo di residenza dell'assistito</td><td>Indirizzo della residenza dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.extension('address-official')</td></tr>
+          <tr><td>CAP residenza assistito</td><td>CAP di residenza dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.postalCode</td></tr>
+          <tr><td>Indirizzo di domicilio assistito</td><td>Indirizzo del domicilio dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address</td></tr>
+          <tr><td>CAP domicilio assistito</td><td>CAP di domicilio dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.postalCode</td></tr>
+          <tr><td>Comune di domicilio assistito</td><td>Comune del domicilio dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.city</td></tr>
+          <tr><td>Descrizione Comune di residenza dell'assistito</td><td>Comune di residenza dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.city</td></tr>
+          <tr><td>Provincia dell'assistito</td><td>Provincia di residenza dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.district</td></tr>
+          <tr><td>Regione dell'assistito</td><td>Regione di residenza dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.extension</td></tr>
+          <tr><td>Stato di residenza dell'assistito</td><td>Stato di residenza dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).address.country</td></tr>
+          <tr><td>Recapito telefonico assistito</td><td>Recapito telefonico dell'assistito (fisso e/o mobile)</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).telecom.where(system='phone')</td></tr>
+          <tr><td>e-mail assistito</td><td>Indirizzo e-mail dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).telecom.where(system='email')</td></tr>
+          <tr><td>PEC assistito</td><td>Indirizzo PEC dell'assistito</td><td>Patient</td><td>CarePlan.subject.resolve().ofType(Patient).telecom.where(system='other')</td></tr>
+          <tr><td>Cognome medico/professionista sanitario redigente</td><td>Cognome del medico/professionista sanitario redigente</td><td>Practitioner</td><td>Composition.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td></tr>
+          <tr><td>Nome medico/professionista sanitario redigente</td><td>Nome del medico/professionista sanitario redigente</td><td>Practitioner</td><td>Composition.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td></tr>
+          <tr><td>Codice fiscale medico/professionista sanitario redigente</td><td>Codice Fiscale del medico/professionista sanitario redigente</td><td>Practitioner</td><td>Composition.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td></tr>
+          <tr><td>Cognome medico/professionista sanitario firmatario</td><td>Cognome del medico/professionista sanitario firmatario</td><td>Practitioner</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td></tr>
+          <tr><td>Nome medico/professionista sanitario firmatario</td><td>Nome del medico/professionista sanitario firmatario</td><td>Practitioner</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td></tr>
+          <tr><td>Codice fiscale medico/professionista sanitario firmatario</td><td>Codice Fiscale del medico/professionista sanitario firmatario</td><td>Practitioner</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td></tr>
+          <tr><td>Codice e descrizione dell'azienda sanitaria</td><td>Codice e descrizione dell'azienda sanitaria</td><td>Organization</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).organization.resolve().identifier / Organization.type.text</td></tr>
+          <tr><td>Codice e descrizione del presidio</td><td>Codice e descrizione del presidio</td><td>Organization</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).organization.resolve().partOf.resolve().identifier / Organization.type.text</td></tr>
+          <tr><td>Codice e descrizione dell'unit&#224; operativa</td><td>Codice e descrizione dell'unit&#224; operativa</td><td>Organization</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).organization.resolve().partOf.resolve().partOf.resolve().identifier / Organization.type.text</td></tr>
+          <tr><td>Numero telefono Unit&#224; Operativa / CUP / Azienda Sanitaria</td><td>Numero di telefono dell'Unit&#224; Operativa / CUP / Azienda Sanitaria</td><td>Organization</td><td>Composition.attester.party.resolve().ofType(PractitionerRole).organization.resolve().telecom</td></tr>
+          <tr><td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td><td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td><td>Practitioner</td><td>Encounter.participant.individual.resolve().ofType(Practitioner).name.family</td></tr>
+          <tr><td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td><td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td><td>Practitioner</td><td>Encounter.participant.individual.resolve().ofType(Practitioner).name.given</td></tr>
+          <tr><td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td><td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td><td>Practitioner</td><td>Encounter.participant.individual.resolve().ofType(Practitioner).identifier</td></tr>
+          <tr><td>Cognome del medico prescrittore</td><td>Cognome del medico prescrittore (medico del ruolo unico di assistenza primaria/PLS o Specialista)</td><td>Practitioner</td><td>ServiceRequest.requester.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td></tr>
+          <tr><td>Nome medico prescrittore</td><td>Nome del medico prescrittore (medico del ruolo unico di assistenza primaria/PLS o Specialista)</td><td>Practitioner</td><td>ServiceRequest.requester.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td></tr>
+          <tr><td>Codice fiscale medico prescrittore</td><td>Codice fiscale del medico prescrittore (medico del ruolo unico di assistenza primaria/PLS o Specialista)</td><td>Practitioner</td><td>ServiceRequest.requester.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td></tr>
+          <tr><td>Numero della ricetta medica</td><td>Numero della ricetta medica</td><td>ServiceRequest</td><td>ServiceRequest.identifier</td></tr>
+          <tr><td>Data firma relazione</td><td>Data di firma della relazione</td><td>Composition</td><td>Composition.attester.time</td></tr>
+          <tr><td>Codice CUP</td><td>Codice CUP della prenotazione</td><td>Appointment / Encounter</td><td>Appointment.identifier / Encounter.identifier</td></tr>
+          <tr><td>Codici identificazione oggetti correlati</td><td>Codici per identificare eventuali oggetti associati al referto (es. ID PACS, Accession number, Studio DICOM)</td><td>Observation</td><td>Observation.identifier / ImagingStudy.identifier</td></tr>
+          <tr><td>Codice nosologico</td><td>Codice nosologico</td><td>Encounter</td><td>Encounter.hospitalization.admitSource / Encounter.serviceProvider</td></tr>
+          <tr><td>Provenienza</td><td>Provenienza (es. PS, Reparto)</td><td>Encounter</td><td>Encounter.hospitalization.admitSource / Encounter.serviceProvider</td></tr>
+          <tr><td>Tipologia Accesso</td><td>Tipologia di accesso (programmata / ad accesso diretto)</td><td>Encounter</td><td>Encounter.priority / Encounter.type</td></tr>
+          <tr><td>Disciplina specialistica ambulatoriale</td><td>Disciplina specialistica ambulatoriale</td><td>Encounter</td><td>Encounter.serviceType</td></tr>
+          <tr><td>Codice del quesito diagnostico</td><td>Codice del quesito diagnostico</td><td>Condition / ServiceRequest</td><td>ServiceRequest.reasonCode.code / Condition.code.text</td></tr>
+          <tr><td>Descrizione quesito diagnostico</td><td>Descrizione del quesito diagnostico</td><td>Condition / ServiceRequest</td><td>ServiceRequest.reasonCode.text / Condition.code.text</td></tr>
+          <tr><td>Anamnesi</td><td>Informazioni testuali dell'anamnesi (quadro clinico)</td><td>Observation</td><td>Composition.section[InquadramentoClinicoIniziale].section[anamnesi].entry.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Allergie</td><td>Eventuali allergie e fonti dichiarate</td><td>AllergyIntolerance</td><td>Composition.section[InquadramentoClinicoIniziale].section[allergie].entry.resolve().ofType(AllergyIntolerance).code / AllergyIntolerance.note</td></tr>
+          <tr><td>Precedenti esami eseguiti</td><td>Raccolta, descrizione, notizie e data di eventuali esami precedenti eseguiti dal paziente e rilievi rilevanti al fine della formulazione diagnostica</td><td>Observation</td><td>Composition.section[precedentiEsamiEseguiti].entry.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Codice AIC/ATC farmaco</td><td>Codice AIC/ATC del farmaco o dei farmaci assunti nella terapia in atto</td><td>MedicationStatement</td><td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement).medication.ofType(CodeableConcept).coding.code</td></tr>
+          <tr><td>Descrizione terapia farmacologica</td><td>Descrizione terapia farmacologica</td><td>MedicationStatement</td><td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement).medication.ofType(CodeableConcept).text</td></tr>
+          <tr><td>Esame obiettivo</td><td>Esame obiettivo</td><td>Observation</td><td>Composition.section[InquadramentoClinicoIniziale].section[esameObiettivo].entry.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Codice prestazione eseguita</td><td>Codice della prestazione eseguita</td><td>Observation</td><td>Composition.section[prestazioni].entry.resolve().ofType(Observation).code</td></tr>
+          <tr><td>Descrizione prestazione eseguita</td><td>Descrizione della prestazione eseguita (indicare quale tipologia di prestazioni in teleassistenza sono state eseguite e nello specifico se si tratta di teleriabilitazione)</td><td>Encounter</td><td>Composition.section[prestazioni].entry.resolve().ofType(Encounter).type</td></tr>
+          <tr><td>Data prestazione eseguita</td><td>Data e ora della prestazione eseguita</td><td>Encounter</td><td>Composition.section[prestazioni].entry.resolve().ofType(Encounter).period.start</td></tr>
+          <tr><td>Codice procedura operativa</td><td>Codice della procedura operativa eseguita</td><td>Procedure</td><td>Encounter.reasonReference.resolve().ofType(Procedure).code</td></tr>
+          <tr><td>Descrizione procedura operativa</td><td>Descrizione procedura operativa eseguita</td><td>Procedure</td><td>Encounter.reasonReference.resolve().ofType(Procedure).code.text</td></tr>
+          <tr><td>Quantit&#224;</td><td>Quantit&#224;</td><td>Procedure</td><td>Encounter.reasonReference.resolve().ofType(Procedure).extension</td></tr>
+          <tr><td>Modalit&#224; esecuzione procedura operativa</td><td>Descrizione modalit&#224; di esecuzione della procedura operativa</td><td>Procedure</td><td>Encounter.reasonReference.resolve().ofType(Procedure).extension("http://hl7.org/fhir/StructureDefinition/procedure-method")</td></tr>
+          <tr><td>Strumentazione utilizzata</td><td>Strumentazione utilizzata nel corso della procedura</td><td>Device</td><td>Encounter.reasonReference.resolve().ofType(Procedure).performer.actor.resolve().ofType(Device).type</td></tr>
+          <tr><td>Parametri descrittivi della procedura</td><td>Parametri rilevanti al fine di caratterizzare la procedura</td><td>Observation</td><td>Encounter.reasonReference.resolve().ofType(Procedure).partOf.resolve().ofType(Observation).component</td></tr>
+          <tr><td>Note</td><td>Note</td><td>Observation</td><td>Encounter.reasonReference.resolve().ofType(Procedure).partOf.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Confronto con precedenti esami eseguiti</td><td>Confronto con precedenti esami eseguiti. Permette di riportare in modo agevole il riscontro di precedenti esami eseguiti e quanto rilevato nel corso della procedura oggetto del referto</td><td>Observation</td><td>Composition.section[confrontoPrecedentiEsamiEseguiti].entry.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Relazione</td><td>Referto della prestazione / oggetto principale del referto</td><td>Observation</td><td>Composition.section[referto].entry.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Codice diagnosi</td><td>Codice diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td><td>Observation</td><td>Composition.section[diagnosi].entry.resolve().ofType(Observation).valueCodeableConcept.code</td></tr>
+          <tr><td>Descrizione diagnosi</td><td>Descrizione diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td><td>Observation</td><td>Composition.section[diagnosi].entry.resolve().ofType(Observation).valueCodeableConcept.display</td></tr>
+          <tr><td>Conclusioni</td><td>Conclusioni</td><td>Observation</td><td>Composition.section[referto].text</td></tr>
+          <tr><td>Suggerimenti per il medico prescrittore</td><td>Suggerimenti per il medico prescrittore</td><td>Observation</td><td>Composition.section[suggerimentiPerMedicoPrescrittore].entry.resolve().ofType(Observation).note.text</td></tr>
+          <tr><td>Codice accertamento consigliato</td><td>Codice accertamento/i o prestazione/i consigliate da eseguire a seguito della prestazione</td><td>Observation</td><td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code</td></tr>
+          <tr><td>Descrizione accertamento consigliato</td><td>Descrizione accertamento/i o prestazione/i consigliate da eseguire a seguito della prestazione</td><td>Observation</td><td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code.text</td></tr>
+          <tr><td>Codice AIC/ATC farmaco consigliato</td><td>Codice AIC/ATC del farmaco o dei farmaci consigliati per la terapia farmacologica</td><td>MedicationRequest</td><td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().ofType(MedicationRequest).medication.ofType(CodeableConcept).coding.code</td></tr>
+          <tr><td>Descrizione terapia farmacologica consigliata</td><td>Descrizione della terapia farmacologica consigliata</td><td>MedicationRequest</td><td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().ofType(MedicationRequest).medication.ofType(CodeableConcept).text</td></tr>
+          <tr><td>Tipo struttura professionista richiedente</td><td>Tipo struttura richiedente (ASL/AO etc)</td><td>Organization</td><td>ServiceRequest.requester.resolve().ofType(PractitionerRole).organization.resolve().type</td></tr>
+          <tr><td>Tipo struttura professionista erogante</td><td>Tipo struttura erogante (ASL/AO etc)</td><td>Organization</td><td>Encounter.serviceProvider.resolve().ofType(Organization).type</td></tr>
+          <tr><td>Data e ora di inizio erogazione</td><td>Data e ora di inizio erogazione della prestazione</td><td>Encounter</td><td>Encounter.period.start</td></tr>
+          <tr><td>Data e ora di fine erogazione</td><td>Data e ora di fine erogazione della prestazione</td><td>Encounter</td><td>Encounter.period.end</td></tr>
         </tbody>
       </table>
     </div>
-
     <p style="margin-top:2rem;color:#555;">
       Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
     </p>
