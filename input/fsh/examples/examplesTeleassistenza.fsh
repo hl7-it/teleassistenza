@@ -121,7 +121,7 @@ Usage: #example
 * address.use = #home
 * address.state = "Italia"
 * address.extension[residenza].valueBoolean = true
-* address.extension[certificazioneIndirizzo].extension[who].valueCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/it-tipoEntita#gov
+* address.extension[certificazioneIndirizzo].extension[who].valueCodeableConcept = http://hl7.it/fhir/teleassistenza/CodeSystem/it-tipoEntita#gov
 * address.line.extension[dugCode].valueCodeableConcept  = $istat-DUG-CS#67 "via"
 * contact[0].name.family = "Rossi"
 * contact[0].name.given = "Luigi"

@@ -28,8 +28,6 @@ Alias: $Organization_T1        = http://hl7.it/fhir/teleassistenza/StructureDefi
 Alias: $Organization_T2        = http://hl7.it/fhir/teleassistenza/StructureDefinition/OrganizationT2
 Alias: $Organization_T3        = http://hl7.it/fhir/teleassistenza/StructureDefinition/OrganizationT3
 Alias: $serviceRequest_tm      = http://hl7.it/fhir/teleassistenza/StructureDefinition/ServiceRequestTeleassistenza
-Alias: $CarePlan_PianoDiCura_TM = https://agenas.gov.it/fhir/StructureDefinition/CarePlan_PianoDiCura_TM
-Alias: $Observation             = https://agenas.gov.it/fhir/StructureDefinition/Observation
 
 // ── ValueSets IT ──────────────────────────────────────────────────────────────
 Alias: $uri-idRegionali             = http://hl7.it/fhir/teleassistenza/ValueSet/vs-anagrafi-regionali

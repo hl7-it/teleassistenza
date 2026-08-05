@@ -43,14 +43,51 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
+pages:
+  index.md:
+    title: Home
+  scenario.md:
+    title: Scenario Funzionale
+  specifiche.md:
+    title: Specifiche - Flusso Documentale
+  teleassistenza.md:
+    title: Model Map - Legenda
+  modelmap.xml:
+    title: Mapping to Profiles
+    map-bundle-composition-piano-ta.xml:
+      title: Bundle/Composition Mapping (Piano)
+    map-careplan-piano-ta.xml:
+      title: CarePlan Mapping (Piano)
+    map-activitydefinition-ta.xml:
+      title: ActivityDefinition Mapping
+    map-servicerequest-ta.xml:
+      title: ServiceRequest Mapping
+    map-bundle-composition-relazione-ta.xml:
+      title: Bundle/Composition Mapping (Relazione)
+    map-careplan-relazione-ta.xml:
+      title: CarePlan Mapping (Relazione)
+    map-patient-ta.xml:
+      title: Patient Mapping
+    map-practitioner-ta.xml:
+      title: Practitioner Mapping
+    map-organization-ta.xml:
+      title: Organization Mapping
+    map-encounter-ta.xml:
+      title: Encounter Mapping
+    map-appointment-ta.xml:
+      title: Appointment Mapping
+    map-observation-ta.xml:
+      title: Observation Mapping
+    map-procedure-ta.xml:
+      title: Procedure Mapping
+    map-medicationrequest-ta.xml:
+      title: MedicationRequest Mapping
+    map-allergy-ta.xml:
+      title: AllergyIntolerance Mapping
+    map-device-ta.xml:
+      title: Device Mapping
+  downloads.md:
+    title: Downloads
 #
 #
 # The parameters property represents IG.definition.parameter. Rather

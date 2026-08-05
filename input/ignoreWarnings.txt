@@ -49,3 +49,6 @@ The valueSet reference https://www.hl7.it/fhir/terminology/ValueSet/minsan-idAzi
 The valueSet reference https://www.hl7.it/fhir/terminology/ValueSet/minsan-idStrutture
 No definition could be found for URL value 'https://www.hl7.it/fhir/terminology/CodeSystem/cs-asl'
 java.net.SocketTimeoutException: timeout
+# Errore di cache su tx.fhir.org - il server ha perso la sessione di validazione; i codici (es. 'd', 'wk' in UnitsOfTime) sono validi ma non confermabili in questo build
+Error from https://tx.fhir.org/r4: Error: The cache
+Error from https://tx.fhir.org/r4: Unable to provide support for code system
