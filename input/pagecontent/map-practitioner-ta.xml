@@ -17,10 +17,10 @@
           <tr><td>Nome medico</td><td>Nome del medico</td><td>Practitioner</td><td>Practitioner.name.given</td></tr>
           <tr><td>Cognome medico</td><td>Cognome del medico</td><td>Practitioner</td><td>Practitioner.name.family</td></tr>
           <tr><td>Branca specialistica</td><td>Branca specialistica del medico</td><td>PractitionerRole</td><td>PractitionerRole.specialty</td></tr>
-          <tr><td>Struttura di appartenenza</td><td>Organizzazione di appartenenza del medico</td><td>Organization</td><td>PractitionerRole.organization.resolve()</td></tr>
-          <tr><td>Codice medico prescrittore</td><td>Identificativo del medico prescrittore del piano</td><td>Practitioner</td><td>CarePlan.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td></tr>
-          <tr><td>Struttura medico prescrittore</td><td>Struttura del medico prescrittore</td><td>Organization</td><td>CarePlan.author.resolve().ofType(PractitionerRole).organization.resolve()</td></tr>
-          <tr><td>Tipo struttura medico prescrittore</td><td>Tipologia della struttura</td><td>Organization</td><td>CarePlan.author.resolve().ofType(PractitionerRole).organization.resolve().type</td></tr>
+          <tr><td>Struttura di appartenenza</td><td>Organizzazione di appartenenza del medico</td><td>Organization</td><td>Organization</td></tr>
+          <tr><td>Codice medico prescrittore</td><td>Identificativo del medico prescrittore del piano</td><td>Practitioner</td><td>Practitioner.identifier</td></tr>
+          <tr><td>Struttura medico prescrittore</td><td>Struttura del medico prescrittore</td><td>Organization</td><td>Organization</td></tr>
+          <tr><td>Tipo struttura medico prescrittore</td><td>Tipologia della struttura</td><td>Organization</td><td>Organization.type</td></tr>
         </tbody>
       </table>
     </div>

@@ -19,9 +19,9 @@
           <tr><td>Modalit&#224; di erogazione</td><td>Modalit&#224; di erogazione (videochiamata, telefonica, etc.)</td><td>Encounter</td><td>Encounter.class</td></tr>
           <tr><td>Data e ora inizio sessione</td><td>Data e ora di inizio della sessione</td><td>Encounter</td><td>Encounter.period.start</td></tr>
           <tr><td>Data e ora fine sessione</td><td>Data e ora di fine della sessione</td><td>Encounter</td><td>Encounter.period.end</td></tr>
-          <tr><td>Paziente</td><td>Riferimento all'assistito</td><td>Patient</td><td>Encounter.subject.resolve().ofType(Patient)</td></tr>
-          <tr><td>Medico erogatore</td><td>Riferimento al professionista erogante</td><td>PractitionerRole</td><td>Encounter.participant.individual.resolve().ofType(PractitionerRole)</td></tr>
-          <tr><td>Riferimento al piano</td><td>Riferimento al Piano di Teleassistenza</td><td>CarePlan</td><td>Encounter.basedOn.resolve().ofType(CarePlan)</td></tr>
+          <tr><td>Paziente</td><td>Riferimento all'assistito</td><td>Patient</td><td>Patient</td></tr>
+          <tr><td>Medico erogatore</td><td>Riferimento al professionista erogante</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
+          <tr><td>Riferimento al piano</td><td>Riferimento al Piano di Teleassistenza</td><td>CarePlan</td><td>CarePlan</td></tr>
         </tbody>
       </table>
     </div>

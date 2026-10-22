@@ -30,7 +30,7 @@
             <td>Riferimento al piano di teleassistenza</td>
             <td>Collegamento al Piano di Teleassistenza originario a cui fa riferimento la relazione</td>
             <td>CarePlan</td>
-            <td>CarePlan.basedOn.resolve().ofType(CarePlan)</td>
+            <td>CarePlan</td>
           </tr>
           <tr>
             <td>Periodo di riferimento della relazione</td>
@@ -54,13 +54,13 @@
             <td>Paziente</td>
             <td>Paziente destinatario del percorso di teleassistenza concluso</td>
             <td>Patient</td>
-            <td>CarePlan.subject.resolve().ofType(Patient)</td>
+            <td>Patient</td>
           </tr>
           <tr>
             <td>Autore della relazione</td>
             <td>Professionista responsabile della stesura della relazione finale</td>
             <td>PractitionerRole</td>
-            <td>CarePlan.author.resolve().ofType(PractitionerRole)</td>
+            <td>PractitionerRole</td>
           </tr>
           <tr>
             <td>Attivit&#224; eseguite - tipo</td>
@@ -84,13 +84,13 @@
             <td>Prestazioni eseguite</td>
             <td>Riferimento all&#39;Encounter che documenta le sessioni erogate</td>
             <td>Encounter</td>
-            <td>Composition.section[prestazioni].entry.resolve().ofType(Encounter)</td>
+            <td>Encounter</td>
           </tr>
           <tr>
             <td>Precedenti esami eseguiti</td>
             <td>Esami strumentali o di laboratorio precedenti usati come baseline</td>
             <td>Observation</td>
-            <td>Composition.section[precedentiEsamiEseguiti].entry.resolve().ofType(Observation).valueString</td>
+            <td>Observation.valueString</td>
           </tr>
         </tbody>
       </table>

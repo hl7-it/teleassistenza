@@ -72,7 +72,7 @@
             <td>Codice UDI dispositivo</td>
             <td>Codice UDI del dispositivo medico utilizzato per la rilevazione</td>
             <td>Device</td>
-            <td>Observation.device.resolve().ofType(Device).identifier</td>
+            <td>Device.identifier</td>
           </tr>
           <tr>
             <td>Parametri</td>

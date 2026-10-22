@@ -19,8 +19,8 @@
           <tr><td>Data e ora fine appuntamento</td><td>Data e ora di fine della sessione programmata</td><td>Appointment</td><td>Appointment.end</td></tr>
           <tr><td>Tipo di servizio</td><td>Tipologia del servizio di teleassistenza programmato</td><td>Appointment</td><td>Appointment.serviceType</td></tr>
           <tr><td>Motivazione</td><td>Motivazione dell'appuntamento</td><td>Appointment</td><td>Appointment.reasonCode</td></tr>
-          <tr><td>Paziente</td><td>Assistito coinvolto nell'appuntamento</td><td>Patient</td><td>Appointment.participant.actor.resolve().ofType(Patient)</td></tr>
-          <tr><td>Medico</td><td>Professionista coinvolto nell'appuntamento</td><td>PractitionerRole</td><td>Appointment.participant.actor.resolve().ofType(PractitionerRole)</td></tr>
+          <tr><td>Paziente</td><td>Assistito coinvolto nell'appuntamento</td><td>Patient</td><td>Patient</td></tr>
+          <tr><td>Medico</td><td>Professionista coinvolto nell'appuntamento</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
         </tbody>
       </table>
     </div>

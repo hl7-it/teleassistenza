@@ -19,8 +19,8 @@
           <tr><td>Dose</td><td>Quantit&#224; per singola somministrazione</td><td>MedicationRequest</td><td>MedicationRequest.dosageInstruction.doseAndRate.dose[x]</td></tr>
           <tr><td>Data prescrizione</td><td>Data della prescrizione farmacologica</td><td>MedicationRequest</td><td>MedicationRequest.authoredOn</td></tr>
           <tr><td>Stato prescrizione</td><td>Stato della prescrizione (active, completed, etc.)</td><td>MedicationRequest</td><td>MedicationRequest.status</td></tr>
-          <tr><td>Medico prescrittore</td><td>Medico che ha effettuato la prescrizione</td><td>PractitionerRole</td><td>MedicationRequest.requester.resolve().ofType(PractitionerRole)</td></tr>
-          <tr><td>Paziente</td><td>Assistito per cui &#232; prescritta la terapia</td><td>Patient</td><td>MedicationRequest.subject.resolve().ofType(Patient)</td></tr>
+          <tr><td>Medico prescrittore</td><td>Medico che ha effettuato la prescrizione</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
+          <tr><td>Paziente</td><td>Assistito per cui &#232; prescritta la terapia</td><td>Patient</td><td>Patient</td></tr>
           <tr><td>Note</td><td>Note o istruzioni aggiuntive sulla prescrizione</td><td>MedicationRequest</td><td>MedicationRequest.note.text</td></tr>
         </tbody>
       </table>

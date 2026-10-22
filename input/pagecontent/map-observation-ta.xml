@@ -20,9 +20,9 @@
           <tr><td>Stato rilevazione</td><td>Stato della rilevazione (final, preliminary, etc.)</td><td>Observation</td><td>Observation.status</td></tr>
           <tr><td>Categoria rilevazione</td><td>Categoria della rilevazione (vital-signs, survey, etc.)</td><td>Observation</td><td>Observation.category</td></tr>
           <tr><td>Nota testuale</td><td>Testo libero associato alla rilevazione</td><td>Observation</td><td>Observation.note.text</td></tr>
-          <tr><td>Dispositivo utilizzato</td><td>Dispositivo medico che ha effettuato la rilevazione</td><td>Device</td><td>Observation.device.resolve().ofType(Device)</td></tr>
-          <tr><td>Paziente</td><td>Assistito per cui &#232; stata effettuata la rilevazione</td><td>Patient</td><td>Observation.subject.resolve().ofType(Patient)</td></tr>
-          <tr><td>Sessione di riferimento</td><td>Encounter a cui si riferisce la rilevazione</td><td>Encounter</td><td>Observation.encounter.resolve().ofType(Encounter)</td></tr>
+          <tr><td>Dispositivo utilizzato</td><td>Dispositivo medico che ha effettuato la rilevazione</td><td>Device</td><td>Device</td></tr>
+          <tr><td>Paziente</td><td>Assistito per cui &#232; stata effettuata la rilevazione</td><td>Patient</td><td>Patient</td></tr>
+          <tr><td>Sessione di riferimento</td><td>Encounter a cui si riferisce la rilevazione</td><td>Encounter</td><td>Encounter</td></tr>
           <tr><td>Parametri</td><td>Parametri rilevati (ObservationDefinition di riferimento)</td><td>ObservationDefinition</td><td>ObservationDefinition.code</td></tr>
           <tr><td>Tipo di rilevazione</td><td>Tipo rilevazione</td><td>ObservationDefinition</td><td>ObservationDefinition.category</td></tr>
           <tr><td>SogliaAllarme</td><td>Soglia di allarme per il parametro</td><td>ObservationDefinition</td><td>ObservationDefinition.qualifiedInterval.range</td></tr>

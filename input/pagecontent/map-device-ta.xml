@@ -20,7 +20,7 @@
           <tr><td>Numero di serie</td><td>Numero di serie del dispositivo</td><td>Device</td><td>Device.serialNumber</td></tr>
           <tr><td>Versione firmware/software</td><td>Versione del software o firmware del dispositivo</td><td>Device</td><td>Device.version.value</td></tr>
           <tr><td>Stato dispositivo</td><td>Stato operativo del dispositivo (active, inactive, etc.)</td><td>Device</td><td>Device.status</td></tr>
-          <tr><td>Paziente</td><td>Assistito a cui &#232; associato il dispositivo</td><td>Patient</td><td>Device.patient.resolve().ofType(Patient)</td></tr>
+          <tr><td>Paziente</td><td>Assistito a cui &#232; associato il dispositivo</td><td>Patient</td><td>Patient</td></tr>
         </tbody>
       </table>
     </div>

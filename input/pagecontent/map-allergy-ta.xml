@@ -19,7 +19,7 @@
           <tr><td>Categoria</td><td>Categoria della sostanza (food, medication, environment, etc.)</td><td>AllergyIntolerance</td><td>AllergyIntolerance.category</td></tr>
           <tr><td>Manifestazione clinica</td><td>Manifestazione clinica della reazione allergica</td><td>AllergyIntolerance</td><td>AllergyIntolerance.reaction.manifestation</td></tr>
           <tr><td>Data insorgenza</td><td>Data di insorgenza nota dell'allergia o intolleranza</td><td>AllergyIntolerance</td><td>AllergyIntolerance.onsetDateTime</td></tr>
-          <tr><td>Paziente</td><td>Assistito affetto dall'allergia o intolleranza</td><td>Patient</td><td>AllergyIntolerance.patient.resolve().ofType(Patient)</td></tr>
+          <tr><td>Paziente</td><td>Assistito affetto dall'allergia o intolleranza</td><td>Patient</td><td>Patient</td></tr>
           <tr><td>Note</td><td>Note aggiuntive sull'allergia o intolleranza</td><td>AllergyIntolerance</td><td>AllergyIntolerance.note.text</td></tr>
         </tbody>
       </table>

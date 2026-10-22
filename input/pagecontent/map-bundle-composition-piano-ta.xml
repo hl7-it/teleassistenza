@@ -49,7 +49,7 @@
             <td>Autore del documento</td>
             <td>Professionista sanitario che ha redatto il Piano</td>
             <td>PractitionerRole</td>
-            <td>Composition.author.resolve().ofType(PractitionerRole)</td>
+            <td>PractitionerRole</td>
           </tr>
           <tr>
             <td>Firma legale</td>
@@ -61,7 +61,7 @@
             <td>Paziente destinatario</td>
             <td>Paziente a cui si riferisce il Piano di Teleassistenza</td>
             <td>Patient</td>
-            <td>Composition.subject.resolve().ofType(Patient)</td>
+            <td>Patient</td>
           </tr>
           <tr>
             <td>Sezione Piano di cura</td>
@@ -79,7 +79,7 @@
             <td>Encounter di riferimento</td>
             <td>Sessione di teleassistenza associata alla stesura del Piano</td>
             <td>Encounter</td>
-            <td>Composition.encounter.resolve().ofType(Encounter)</td>
+            <td>Encounter</td>
           </tr>
         </tbody>
       </table>

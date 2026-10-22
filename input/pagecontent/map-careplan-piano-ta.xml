@@ -42,31 +42,31 @@
             <td>Diagnosi</td>
             <td>Codice/i e descrizione/i delle diagnosi associate al piano</td>
             <td>Observation</td>
-            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).valueCodeableConcept</td>
+            <td>Observation.valueCodeableConcept</td>
           </tr>
           <tr>
             <td>Medico prescrittore</td>
             <td>Nome e Cognome del Medico autore del piano</td>
             <td>Practitioner</td>
-            <td>CarePlan.author.resolve().ofType(PractitionerRole).practitioner.resolve()</td>
+            <td>Practitioner</td>
           </tr>
           <tr>
             <td>Codice e descrizione struttura medico prescrittore</td>
             <td>Struttura di appartenenza del medico prescrittore</td>
             <td>Organization</td>
-            <td>CarePlan.author.resolve().ofType(PractitionerRole).organization.resolve()</td>
+            <td>Organization</td>
           </tr>
           <tr>
             <td>Tipo struttura medico prescrittore</td>
             <td>Tipologia della struttura di appartenenza del medico</td>
             <td>Organization</td>
-            <td>CarePlan.author.resolve().ofType(PractitionerRole).organization.resolve().type</td>
+            <td>Organization.type</td>
           </tr>
           <tr>
             <td>Codice fiscale medico prescrittore</td>
             <td>Codice fiscale del medico autore del piano</td>
             <td>Practitioner</td>
-            <td>CarePlan.author.resolve().ofType(PractitionerRole).practitioner.resolve().identifier</td>
+            <td>Practitioner.identifier</td>
           </tr>
           <tr>
             <td>Durata prevista del piano delle attivit&#224;</td>
@@ -96,7 +96,7 @@
             <td>Paziente</td>
             <td>Paziente destinatario del piano di teleassistenza</td>
             <td>Patient</td>
-            <td>CarePlan.subject.resolve().ofType(Patient)</td>
+            <td>Patient</td>
           </tr>
         </tbody>
       </table>

@@ -60,19 +60,19 @@
             <td>Paziente</td>
             <td>Paziente destinatario del servizio di teleassistenza</td>
             <td>Patient</td>
-            <td>ServiceRequest.subject.resolve().ofType(Patient)</td>
+            <td>Patient</td>
           </tr>
           <tr>
             <td>Richiedente</td>
             <td>Professionista o organizzazione che ha emesso la richiesta</td>
             <td>PractitionerRole</td>
-            <td>ServiceRequest.requester.resolve().ofType(PractitionerRole)</td>
+            <td>PractitionerRole</td>
           </tr>
           <tr>
             <td>Esecutore</td>
             <td>Professionista o organizzazione incaricata dell&#39;erogazione</td>
             <td>PractitionerRole</td>
-            <td>ServiceRequest.performer.resolve().ofType(PractitionerRole)</td>
+            <td>PractitionerRole</td>
           </tr>
           <tr>
             <td>Periodo di esecuzione</td>

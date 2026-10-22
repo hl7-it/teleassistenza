@@ -18,11 +18,11 @@
           <tr><td>Tipologia di attivit&#224;</td><td>Tipologia attivit&#224; (es. telemonitoraggio, teleconsulto)</td><td>Procedure</td><td>Procedure.category</td></tr>
           <tr><td>Data e ora inizio erogazione</td><td>Data e ora di inizio della prestazione</td><td>Procedure</td><td>Procedure.performedPeriod.start</td></tr>
           <tr><td>Data e ora fine erogazione</td><td>Data e ora di fine della prestazione</td><td>Procedure</td><td>Procedure.performedPeriod.end</td></tr>
-          <tr><td>Esecutore</td><td>Professionista che ha eseguito la prestazione</td><td>PractitionerRole</td><td>Procedure.performer.actor.resolve().ofType(PractitionerRole)</td></tr>
+          <tr><td>Esecutore</td><td>Professionista che ha eseguito la prestazione</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
           <tr><td>Struttura erogante</td><td>Organizzazione presso cui &#232; stata erogata la prestazione</td><td>Organization</td><td>Procedure.location.resolve() / Procedure.performer.onBehalfOf.resolve()</td></tr>
-          <tr><td>Strumentazione utilizzata</td><td>Dispositivo medico utilizzato nel corso della prestazione</td><td>Device</td><td>Procedure.usedReference.resolve().ofType(Device)</td></tr>
-          <tr><td>Paziente</td><td>Assistito su cui &#232; stata eseguita la prestazione</td><td>Patient</td><td>Procedure.subject.resolve().ofType(Patient)</td></tr>
-          <tr><td>Riferimento al piano</td><td>Piano di Teleassistenza che ha originato la prestazione</td><td>CarePlan</td><td>Procedure.basedOn.resolve().ofType(CarePlan)</td></tr>
+          <tr><td>Strumentazione utilizzata</td><td>Dispositivo medico utilizzato nel corso della prestazione</td><td>Device</td><td>Device</td></tr>
+          <tr><td>Paziente</td><td>Assistito su cui &#232; stata eseguita la prestazione</td><td>Patient</td><td>Patient</td></tr>
+          <tr><td>Riferimento al piano</td><td>Piano di Teleassistenza che ha originato la prestazione</td><td>CarePlan</td><td>CarePlan</td></tr>
           <tr><td>Note</td><td>Note aggiuntive sulla prestazione</td><td>Procedure</td><td>Procedure.note.text</td></tr>
         </tbody>
       </table>
