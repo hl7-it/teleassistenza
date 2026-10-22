@@ -136,6 +136,11 @@
                         <td><a class="pill" href="map-medicationrequest-ta.html">MedicationRequest Mapping</a></td>
                     </tr>
                     <tr>
+                        <td><a href="StructureDefinition-MedicationStatementTeleassistenza.html"><code>MedicationStatementTeleassistenza</code></a></td>
+                        <td>Terapia farmacologica in atto del paziente, utile come informazione di contesto.</td>
+                        <td><a class="pill" href="map-medicationstatement-ta.html">MedicationStatement Mapping</a></td>
+                    </tr>
+                    <tr>
                         <td><a href="StructureDefinition-AllergyIntoleranceTeleassistenza.html"><code>AllergyIntoleranceTeleassistenza</code></a></td>
                         <td>Allergie e intolleranze rilevanti del paziente in teleassistenza.</td>
                         <td><a class="pill" href="map-allergy-ta.html">AllergyIntolerance Mapping</a></td>

@@ -22,6 +22,8 @@
           <tr><td>Medico prescrittore</td><td>Medico che ha effettuato la prescrizione</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
           <tr><td>Paziente</td><td>Assistito per cui &#232; prescritta la terapia</td><td>Patient</td><td>Patient</td></tr>
           <tr><td>Note</td><td>Note o istruzioni aggiuntive sulla prescrizione</td><td>MedicationRequest</td><td>MedicationRequest.note.text</td></tr>
+          <tr><td>Codice AIC/ATC farmaco consigliato</td><td>Codice AIC/ATC del farmaco o dei farmaci consigliati per la terapia farmacologica</td><td>MedicationRequest</td><td>MedicationRequest.medication.ofType(CodeableConcept).coding.code</td></tr>
+          <tr><td>Descrizione terapia farmacologica consigliata</td><td>Descrizione della terapia farmacologica consigliata</td><td>MedicationRequest</td><td>MedicationRequest.medication.ofType(CodeableConcept).text</td></tr>
         </tbody>
       </table>
     </div>

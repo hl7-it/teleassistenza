@@ -22,6 +22,15 @@
           <tr><td>Paziente</td><td>Riferimento all'assistito</td><td>Patient</td><td>Patient</td></tr>
           <tr><td>Medico erogatore</td><td>Riferimento al professionista erogante</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
           <tr><td>Riferimento al piano</td><td>Riferimento al Piano di Teleassistenza</td><td>CarePlan</td><td>CarePlan</td></tr>
+          <tr><td>Codice CUP</td><td>Codice CUP della prenotazione</td><td>Appointment / Encounter</td><td>Appointment.identifier / Encounter.identifier</td></tr>
+          <tr><td>Codice nosologico</td><td>Codice nosologico</td><td>Encounter</td><td>Encounter.hospitalization.admitSource / Encounter.serviceProvider</td></tr>
+          <tr><td>Provenienza</td><td>Provenienza (es. PS, Reparto)</td><td>Encounter</td><td>Encounter.hospitalization.admitSource / Encounter.serviceProvider</td></tr>
+          <tr><td>Tipologia Accesso</td><td>Tipologia di accesso (programmata / ad accesso diretto)</td><td>Encounter</td><td>Encounter.priority / Encounter.type</td></tr>
+          <tr><td>Disciplina specialistica ambulatoriale</td><td>Disciplina specialistica ambulatoriale</td><td>Encounter</td><td>Encounter.serviceType</td></tr>
+          <tr><td>Descrizione prestazione eseguita</td><td>Descrizione della prestazione eseguita (indicare quale tipologia di prestazioni in teleassistenza sono state eseguite e nello specifico se si tratta di teleriabilitazione)</td><td>Encounter</td><td>Encounter.type</td></tr>
+          <tr><td>Data prestazione eseguita</td><td>Data e ora della prestazione eseguita</td><td>Encounter</td><td>Encounter.period.start</td></tr>
+          <tr><td>Data e ora di inizio erogazione</td><td>Data e ora di inizio erogazione della prestazione</td><td>Encounter</td><td>Encounter.period.start</td></tr>
+          <tr><td>Data e ora di fine erogazione</td><td>Data e ora di fine erogazione della prestazione</td><td>Encounter</td><td>Encounter.period.end</td></tr>
         </tbody>
       </table>
     </div>

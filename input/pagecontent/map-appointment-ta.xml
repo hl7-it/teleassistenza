@@ -21,6 +21,7 @@
           <tr><td>Motivazione</td><td>Motivazione dell'appuntamento</td><td>Appointment</td><td>Appointment.reasonCode</td></tr>
           <tr><td>Paziente</td><td>Assistito coinvolto nell'appuntamento</td><td>Patient</td><td>Patient</td></tr>
           <tr><td>Medico</td><td>Professionista coinvolto nell'appuntamento</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
+          <tr><td>Codice CUP</td><td>Codice CUP della prenotazione</td><td>Appointment / Encounter</td><td>Appointment.identifier / Encounter.identifier</td></tr>
         </tbody>
       </table>
     </div>

@@ -104,6 +104,24 @@
             <td>ServiceRequest</td>
             <td>ServiceRequest.note</td>
           </tr>
+          <tr>
+            <td>Numero della ricetta medica</td>
+            <td>Numero della ricetta medica</td>
+            <td>ServiceRequest</td>
+            <td>ServiceRequest.identifier</td>
+          </tr>
+          <tr>
+            <td>Codice del quesito diagnostico</td>
+            <td>Codice del quesito diagnostico</td>
+            <td>ServiceRequest / Condition</td>
+            <td>ServiceRequest.reasonCode.code / Condition.code.text</td>
+          </tr>
+          <tr>
+            <td>Descrizione quesito diagnostico</td>
+            <td>Descrizione del quesito diagnostico</td>
+            <td>ServiceRequest / Condition</td>
+            <td>ServiceRequest.reasonCode.text / Condition.code.text</td>
+          </tr>
         </tbody>
       </table>
     </div>

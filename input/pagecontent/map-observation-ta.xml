@@ -27,6 +27,20 @@
           <tr><td>Tipo di rilevazione</td><td>Tipo rilevazione</td><td>ObservationDefinition</td><td>ObservationDefinition.category</td></tr>
           <tr><td>SogliaAllarme</td><td>Soglia di allarme per il parametro</td><td>ObservationDefinition</td><td>ObservationDefinition.qualifiedInterval.range</td></tr>
           <tr><td>Regole</td><td>Regole di comportamento associate al parametro</td><td>ObservationDefinition</td><td>ObservationDefinition.qualifiedInterval.condition</td></tr>
+          <tr><td>Codici identificazione oggetti correlati</td><td>Codici per identificare eventuali oggetti associati al referto (es. ID PACS, Accession number, Studio DICOM)</td><td>Observation</td><td>Observation.identifier / ImagingStudy.identifier</td></tr>
+          <tr><td>Anamnesi</td><td>Informazioni testuali dell'anamnesi (quadro clinico)</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Precedenti esami eseguiti</td><td>Raccolta, descrizione, notizie e data di eventuali esami precedenti eseguiti dal paziente e rilievi rilevanti al fine della formulazione diagnostica</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Esame obiettivo</td><td>Esame obiettivo</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Codice prestazione eseguita</td><td>Codice della prestazione eseguita</td><td>Observation</td><td>Observation.code</td></tr>
+          <tr><td>Parametri descrittivi della procedura</td><td>Parametri rilevanti al fine di caratterizzare la procedura</td><td>Observation</td><td>Observation.component</td></tr>
+          <tr><td>Note</td><td>Note</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Confronto con precedenti esami eseguiti</td><td>Confronto con precedenti esami eseguiti. Permette di riportare in modo agevole il riscontro di precedenti esami eseguiti e quanto rilevato nel corso della procedura oggetto del referto</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Relazione</td><td>Referto della prestazione / oggetto principale del referto</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Codice diagnosi</td><td>Codice diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td><td>Observation</td><td>Observation.valueCodeableConcept.code</td></tr>
+          <tr><td>Descrizione diagnosi</td><td>Descrizione diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td><td>Observation</td><td>Observation.valueCodeableConcept.display</td></tr>
+          <tr><td>Suggerimenti per il medico prescrittore</td><td>Suggerimenti per il medico prescrittore</td><td>Observation</td><td>Observation.note.text</td></tr>
+          <tr><td>Codice accertamento consigliato</td><td>Codice accertamento/i o prestazione/i consigliate da eseguire a seguito della prestazione</td><td>Observation</td><td>Observation.code</td></tr>
+          <tr><td>Descrizione accertamento consigliato</td><td>Descrizione accertamento/i o prestazione/i consigliate da eseguire a seguito della prestazione</td><td>Observation</td><td>Observation.code.text</td></tr>
         </tbody>
       </table>
     </div>

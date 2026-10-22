@@ -19,11 +19,15 @@
           <tr><td>Data e ora inizio erogazione</td><td>Data e ora di inizio della prestazione</td><td>Procedure</td><td>Procedure.performedPeriod.start</td></tr>
           <tr><td>Data e ora fine erogazione</td><td>Data e ora di fine della prestazione</td><td>Procedure</td><td>Procedure.performedPeriod.end</td></tr>
           <tr><td>Esecutore</td><td>Professionista che ha eseguito la prestazione</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
-          <tr><td>Struttura erogante</td><td>Organizzazione presso cui &#232; stata erogata la prestazione</td><td>Organization</td><td>Procedure.location.resolve() / Procedure.performer.onBehalfOf.resolve()</td></tr>
+          <tr><td>Struttura erogante</td><td>Organizzazione presso cui &#232; stata erogata la prestazione</td><td>Organization</td><td>Organization</td></tr>
           <tr><td>Strumentazione utilizzata</td><td>Dispositivo medico utilizzato nel corso della prestazione</td><td>Device</td><td>Device</td></tr>
           <tr><td>Paziente</td><td>Assistito su cui &#232; stata eseguita la prestazione</td><td>Patient</td><td>Patient</td></tr>
           <tr><td>Riferimento al piano</td><td>Piano di Teleassistenza che ha originato la prestazione</td><td>CarePlan</td><td>CarePlan</td></tr>
           <tr><td>Note</td><td>Note aggiuntive sulla prestazione</td><td>Procedure</td><td>Procedure.note.text</td></tr>
+          <tr><td>Codice procedura operativa</td><td>Codice della procedura operativa eseguita</td><td>Procedure</td><td>Procedure.code</td></tr>
+          <tr><td>Descrizione procedura operativa</td><td>Descrizione procedura operativa eseguita</td><td>Procedure</td><td>Procedure.code.text</td></tr>
+          <tr><td>Quantit&#224;</td><td>Quantit&#224;</td><td>Procedure</td><td>Procedure.extension</td></tr>
+          <tr><td>Modalit&#224; esecuzione procedura operativa</td><td>Descrizione modalit&#224; di esecuzione della procedura operativa</td><td>Procedure</td><td>Procedure.extension("http://hl7.org/fhir/StructureDefinition/procedure-method")</td></tr>
         </tbody>
       </table>
     </div>

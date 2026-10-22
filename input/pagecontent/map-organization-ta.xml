@@ -21,6 +21,12 @@
           <tr><td>Codice unit&#224; operativa</td><td>Codice identificativo unit&#224; operativa (T3)</td><td>Organization (T3)</td><td>Organization.identifier</td></tr>
           <tr><td>Descrizione unit&#224; operativa</td><td>Denominazione unit&#224; operativa</td><td>Organization (T3)</td><td>Organization.name</td></tr>
           <tr><td>Presidio di appartenenza</td><td>Presidio ospedaliero di appartenenza</td><td>Organization (T3)</td><td>Organization.partOf.resolve()</td></tr>
+          <tr><td>Codice e descrizione dell'azienda sanitaria</td><td>Codice e descrizione dell'azienda sanitaria</td><td>Organization</td><td>Organization.identifier / Organization.type.text</td></tr>
+          <tr><td>Codice e descrizione del presidio</td><td>Codice e descrizione del presidio</td><td>Organization</td><td>Organization.partOf.resolve().identifier / Organization.type.text</td></tr>
+          <tr><td>Codice e descrizione dell'unit&#224; operativa</td><td>Codice e descrizione dell'unit&#224; operativa</td><td>Organization</td><td>Organization.partOf.resolve().partOf.resolve().identifier / Organization.type.text</td></tr>
+          <tr><td>Numero telefono Unit&#224; Operativa / CUP / Azienda Sanitaria</td><td>Numero di telefono dell'Unit&#224; Operativa / CUP / Azienda Sanitaria</td><td>Organization</td><td>Organization.telecom</td></tr>
+          <tr><td>Tipo struttura professionista richiedente</td><td>Tipo struttura richiedente (ASL/AO etc)</td><td>Organization</td><td>Organization.type</td></tr>
+          <tr><td>Tipo struttura professionista erogante</td><td>Tipo struttura erogante (ASL/AO etc)</td><td>Organization</td><td>Organization.type</td></tr>
         </tbody>
       </table>
     </div>

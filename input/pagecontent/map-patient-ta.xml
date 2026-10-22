@@ -24,6 +24,18 @@
           <tr><td>Regione di residenza assistito</td><td>Regione di residenza</td><td>Patient</td><td>Patient.address.country</td></tr>
           <tr><td>Azienda sanitaria di residenza</td><td>Codice e descrizione ASL di residenza</td><td>Organization</td><td>Organization</td></tr>
           <tr><td>Medico Curante</td><td>Medico del ruolo unico di assistenza primaria</td><td>PractitionerRole</td><td>PractitionerRole</td></tr>
+          <tr><td>Indirizzo di residenza dell'assistito</td><td>Indirizzo della residenza dell'assistito</td><td>Patient</td><td>Patient.address.extension('address-official')</td></tr>
+          <tr><td>CAP residenza assistito</td><td>CAP di residenza dell'assistito</td><td>Patient</td><td>Patient.address.postalCode</td></tr>
+          <tr><td>Indirizzo di domicilio assistito</td><td>Indirizzo del domicilio dell'assistito</td><td>Patient</td><td>Patient.address</td></tr>
+          <tr><td>CAP domicilio assistito</td><td>CAP di domicilio dell'assistito</td><td>Patient</td><td>Patient.address.postalCode</td></tr>
+          <tr><td>Comune di domicilio assistito</td><td>Comune del domicilio dell'assistito</td><td>Patient</td><td>Patient.address.city</td></tr>
+          <tr><td>Descrizione Comune di residenza dell'assistito</td><td>Comune di residenza dell'assistito</td><td>Patient</td><td>Patient.address.city</td></tr>
+          <tr><td>Provincia dell'assistito</td><td>Provincia di residenza dell'assistito</td><td>Patient</td><td>Patient.address.district</td></tr>
+          <tr><td>Regione dell'assistito</td><td>Regione di residenza dell'assistito</td><td>Patient</td><td>Patient.address.extension</td></tr>
+          <tr><td>Stato di residenza dell'assistito</td><td>Stato di residenza dell'assistito</td><td>Patient</td><td>Patient.address.country</td></tr>
+          <tr><td>Recapito telefonico assistito</td><td>Recapito telefonico dell'assistito (fisso e/o mobile)</td><td>Patient</td><td>Patient.telecom.where(system='phone')</td></tr>
+          <tr><td>e-mail assistito</td><td>Indirizzo e-mail dell'assistito</td><td>Patient</td><td>Patient.telecom.where(system='email')</td></tr>
+          <tr><td>PEC assistito</td><td>Indirizzo PEC dell'assistito</td><td>Patient</td><td>Patient.telecom.where(system='other')</td></tr>
         </tbody>
       </table>
     </div>
