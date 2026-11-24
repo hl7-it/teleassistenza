@@ -28,7 +28,7 @@ Description: "Profilo del Bundle di tipo document utilizzato nel contesto della 
 
 
 * entry[composition].resource only CompositionRelazioneTeleassistenza
-* entry[carePlan].resource only CarePlanRelazioneTA
+* entry[carePlan].resource only CarePlanPianoDiCuraTeleassistenza
 * entry[patient].resource only PatientTeleassistenza
 * entry[practitionerRole].resource only PractitionerRoleTeleassistenza
 * entry[organization].resource only OrganizationT1

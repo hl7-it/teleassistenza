@@ -4,7 +4,9 @@ Parent: Composition
 Id: CompositionRelazioneTeleassistenza
 Description: "Profilo della Composition utilizzata nel contesto della Relazione Finale di Teleassistenza. Struttura il documento clinico conclusivo del percorso, comprendente anamnesi, esame obiettivo, quesito diagnostico, referto, suggerimenti e terapia."
 * ^status = #draft
-* title = "Relazione di Teleassistenza" (exactly)
+
+* identifier 1..
+* identifier ^short = "Identificatore indipendente dalla versione."
 
 * subject only Reference(PatientTeleassistenza)
 * encounter only Reference(EncounterTeleassistenza)
@@ -26,7 +28,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * author ^short = "Autore del Piano di Teleassistenza."
 
 * title ^short = "Titolo del documento"
-* title = "Relazione di Teleassistenza" (exactly)
+* title = "Relazione Clinico Assistenzale Conclusiva per la Teleassistenza" (exactly)
 
 * type = $loinc#91531-4 (exactly)
 * section ^slicing.discriminator.type = #value
@@ -47,11 +49,13 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     terapiaFarmacologicaConsigliata 0..1 and
     precedentiEsamiEseguiti 0..1 and 
     allegati 0..1
-    
+
 * section[pianoDiCura] ^sliceName = "pianoDiCura"
 * section[pianoDiCura].code = $loinc#18776-5 (exactly)
-* section[pianoDiCura].entry only Reference(CarePlanRelazioneTA)
+* section[pianoDiCura].entry 1..1
+* section[pianoDiCura].entry only Reference(CarePlanPianoDiCuraTeleassistenza)
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
+* section[questitoDiagnostico].entry 1..1
 * section[questitoDiagnostico].entry only Reference(ObservationTeleassistenza)
 * section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
@@ -79,29 +83,38 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTeleassistenzaNarrative)
 
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
+* section[terapiaFarmacologicaConsigliata].entry 1..1
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTeleassistenza)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6  
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
 * section[precedentiEsamiEseguiti].code = $loinc#30954-2 (exactly)
+* section[precedentiEsamiEseguiti].entry 1..1
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTeleassistenza)
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].code = $loinc#62387-6 (exactly)
-* section[prestazioni].entry only Reference(EncounterTeleassistenza)
+* section[prestazioni].entry 1..1
+* section[prestazioni].entry only Reference(ProcedureTeleassistenza)
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
 * section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1 (exactly)
+* section[confrontoPrecedentiEsamiEseguiti].entry 1..1
 * section[confrontoPrecedentiEsamiEseguiti].entry only Reference(ObservationTeleassistenza)
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].code = $loinc#29548-5 (exactly)
+* section[diagnosi].entry 1..1
 * section[diagnosi].entry only Reference(ObservationTeleassistenza)
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
 * section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0 (exactly)
+* section[suggerimentiPerMedicoPrescrittore].entry 1..1
 * section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTeleassistenza)
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
 * section[accertamentiControlliConsigliati].code = $loinc#80615-8 (exactly)
+* section[accertamentiControlliConsigliati].entry 1..1
 * section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleassistenzaNarrative)
 * section[referto] ^sliceName = "referto"
+* section[referto].entry 1..1
 * section[referto].entry only Reference(ObservationTeleassistenza)
 * section[referto].code = $loinc#47045-0  
 * section[allegati] ^sliceName = "allegati"
+* section[allegati].entry 1..1
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)
 * section[allegati].code = $loinc#77599-9  

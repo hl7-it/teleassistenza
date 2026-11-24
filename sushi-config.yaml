@@ -211,7 +211,6 @@ groups:
     - StructureDefinition/BundlePianoTeleassistenzaTransaction
     - StructureDefinition/CompositionPianoTA
     - StructureDefinition/CarePlanPianoDiCuraTeleassistenza
-    - StructureDefinition/ActivityDefinitionTeleassistenza
 
   GroupRelazioneTA:
     name: Profili - Relazione di Teleassistenza
@@ -220,7 +219,6 @@ groups:
     - StructureDefinition/BundleRelazioneTeleassistenza
     - StructureDefinition/BundleRelazioneTeleassistenzaTransaction
     - StructureDefinition/CompositionRelazioneTeleassistenza
-    - StructureDefinition/CarePlanRelazioneTA
 
   GroupRisorseCliniche:
     name: Profili - Risorse Correlate
@@ -306,7 +304,6 @@ groups:
     - Bundle/EsempioPianoDiTeleassistenzaTransaction
     - Composition/composition-pta-1
     - CarePlan/careplan-tele-1
-    - ActivityDefinition/actdef-teleass
 
   GroupEsempiRelazione:
     name: Esempi - Relazione di Teleassistenza
@@ -319,7 +316,6 @@ groups:
     - Bundle/EsempioRelazioneDiTeleassistenza
     - Bundle/EsempioRelazioneDiTeleassistenzaTransaction
     - Composition/composition-rel-1
-    - CarePlan/careplan-rel-1
     - Observation/obs-anamnesi-1
     - Observation/Observation-quesito
     - Observation/obs-confronto-1

@@ -31,7 +31,7 @@ Description: "Bundle FHIR di tipo transaction per la Relazione di Teleassistenza
 
 // Vincoli di profilo sulle risorse
 * entry[composition].resource only CompositionRelazioneTeleassistenza
-* entry[carePlan].resource only CarePlanRelazioneTA
+* entry[carePlan].resource only CarePlanPianoDiCuraTeleassistenza
 * entry[patient].resource only PatientTeleassistenza
 * entry[practitionerRole].resource only PractitionerRoleTeleassistenza
 * entry[organization].resource only OrganizationT1

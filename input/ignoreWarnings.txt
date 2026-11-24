@@ -33,7 +33,6 @@ There are multiple different potential matches for the url 'http://hl7.org/fhir/
 The value set expansion is too large, and only a subset has been displayed
 No definition could be found for URL value 'http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni'
 Error from https://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni
-The resource ActivityDefinition/actdef-teleass could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 Error from https://tx.fhir.org/r4: A definition for CodeSystem 'http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni' could not be found, so the value set cannot be expanded
 # URL esterne HL7 Italia non portate localmente in questa IG - warning attesi
 No definition could be found for URL value 'https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione'

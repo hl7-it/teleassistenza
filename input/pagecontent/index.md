@@ -98,6 +98,13 @@ L'adozione di entrambe le rappresentazioni permette quindi di supportare sia gli
  </td>
 <td>wtasinazzo@deloitte.it</td>
 </tr>
+<tr class="odd">
+<td>Autore</td>
+<td>Lorenzo Merlin</td>
+<td>Deloitte S.B. S.r.l.
+ </td>
+<td>lmerlin@deloitte.it</td>
+</tr>
 <tr class="even">
 <td>Autore</td>
 <td>Maria Giovanna Antida Preziosi</td>

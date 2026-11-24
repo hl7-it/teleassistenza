@@ -31,16 +31,14 @@ Description: "Bundle documento del Piano di Teleassistenza per Maria Rossi, pazi
 * entry[8].resource = ServiceRequestTeleassistenzaExample
 * entry[9].fullUrl = "http://example.org/fhir/Organization/uo-cardiologia-pertini"
 * entry[9].resource = EsempioUnitaOperativa
-// * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-tm-card"
-// * entry[8].resource = actdef-tm-card
-// * entry[8].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-teleass"
-// * entry[8].resource = actdef-teleass
 
 Instance: EsempioCompositionPianoDiTeleassistenza
 InstanceOf: CompositionPianoTA
 Usage: #example
 Description: "Composition che struttura il Piano di Teleassistenza di Maria Rossi: include la sezione Piano di Cura (CarePlan cardiologico) e la sezione Diagnosi (insufficienza cardiaca congestizia, ICD-9 428.0), firmata digitalmente dal Dr. Bianchi."
 * id = "composition-pta-1"
+* identifier.system = "urn:ietf:rfc:39861"
+* identifier.value = "urn:uuid:1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d"
 * status = #final
 * type = $loinc#75496-0 "Telehealth Note"
 * date = "2025-09-01T08:00:00+02:00"
@@ -72,7 +70,13 @@ Description: "CarePlan attivo (TM-2025-000123) per il monitoraggio teleassistito
 * period.start = "2025-09-01"
 * period.end = "2026-08-31"
 * activity[0].detail.kind = #ServiceRequest
-//* activity[=].detail.instantiatesCanonical = Reference(ActivityDefinition/actdef-tm-card)
+* activity[=].detail.extension[tipologiaAttivita].valueCodeableConcept = http://snomed.info/sct#879780004 "Telehealth monitoring for chronic heart failure (regime/therapy)"
+* activity[=].detail.extension[numeroCicli].valuePositiveInt = 12
+* activity[=].detail.extension[durataCiclo].valueDuration.value = 1
+* activity[=].detail.extension[durataCiclo].valueDuration.unit = "mese"
+* activity[=].detail.extension[durataCiclo].valueDuration.system = "http://unitsofmeasure.org"
+* activity[=].detail.extension[durataCiclo].valueDuration.code = #mo
+* activity[=].detail.extension[numeroAttivitaPerCiclo].valuePositiveInt = 60
 * activity[=].detail.code = CsCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 2
@@ -81,7 +85,13 @@ Description: "CarePlan attivo (TM-2025-000123) per il monitoraggio teleassistito
 * activity[=].detail.description = "Rilevazione PA, FC, SpO2 due volte al giorno; fascia 08:00-10:00 e 18:00-20:00."
 * activity[=].detail.performer = Reference(org-assistenza)
 * activity[+].detail.kind = #ServiceRequest
-* activity[=].detail.instantiatesCanonical = Canonical(actdef-teleass)
+* activity[=].detail.extension[tipologiaAttivita].valueCodeableConcept = http://snomed.info/sct#879780004 "Telehealth monitoring for chronic heart failure (regime/therapy)"
+* activity[=].detail.extension[numeroCicli].valuePositiveInt = 12
+* activity[=].detail.extension[durataCiclo].valueDuration.value = 1
+* activity[=].detail.extension[durataCiclo].valueDuration.unit = "mese"
+* activity[=].detail.extension[durataCiclo].valueDuration.system = "http://unitsofmeasure.org"
+* activity[=].detail.extension[durataCiclo].valueDuration.code = #mo
+* activity[=].detail.extension[numeroAttivitaPerCiclo].valuePositiveInt = 4
 * activity[=].detail.code = CsCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 1
@@ -210,21 +220,6 @@ Description: "Diagnosi principale codificata (ICD-9 428.0 – Insufficienza card
 * valueCodeableConcept = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * valueCodeableConcept.text = "Insufficienza cardiaca congestizia"
 
-Instance: EsempioAttivitaTeleassistenza
-InstanceOf: ActivityDefinitionTeleassistenza
-Usage: #example
-Description: "ActivityDefinition per il contatto infermieristico settimanale (via telefono/video) con cadenza 1×/settimana, finalizzato a valutazione clinica, educazione terapeutica e triage remoto nell'ambito del percorso cardiologico."
-* id = "actdef-teleass"
-* status = #active
-* name = "TeleassistenzaInferm"
-* kind = #ServiceRequest
-* description = "Contatto settimanale via telefono/video per valutazione clinica, educazione terapeutica, triage."
-* timingTiming.repeat.frequency = 1
-* timingTiming.repeat.period = 1
-* timingTiming.repeat.periodUnit = #wk
-* code = http://snomed.info/sct#185347001 "Encounter for problem"
-
-
 Instance: EsempioAppointmentTeleassistenza
 InstanceOf: AppointmentTeleassistenza
 
@@ -261,8 +256,8 @@ Description: "Bundle documento della Relazione di Fine Percorso di Teleassistenz
 * entry[composition].fullUrl = "http://example.org/fhir/Composition/composition-rel-1"
 * entry[composition].resource = composition-rel-1
 
-* entry[carePlan].fullUrl = "http://example.org/fhir/CarePlan/careplan-rel-1"
-* entry[carePlan].resource = careplan-rel-1
+* entry[carePlan].fullUrl = "http://example.org/fhir/CarePlan/careplan-tele-1"
+* entry[carePlan].resource = EsempioPianoDiCuraTeleassistenza
 
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient-mrossi"
 * entry[patient].resource = patient-mrossi
@@ -326,39 +321,15 @@ Description: "Bundle documento della Relazione di Fine Percorso di Teleassistenz
 
 
 // ======================================================
-// 1) CarePlanRelazioneTA
-// ======================================================
-Instance: EsempioCarePlanRelazioneTeleassistenza
-InstanceOf: CarePlanRelazioneTA
-Usage: #example
-Description: "CarePlan completato al termine del mese di teleassistenza cardiologica (settembre 2025): include revisione dei parametri domiciliari degli ultimi 14 giorni, video-consulto conclusivo ed educazione all'aderenza terapeutica per Maria Rossi."
-* id = "careplan-rel-1"
-* status = #completed
-* intent = #plan
-* identifier.system = "urn:ietf:rfc:39861"
-* identifier.value = "urn:uuid:5c8a6df2-5b7a-4f7f-8b2e-1f7f6b1c2d3e"
-* category = csTipologiaPiano#02 "Piano di Teleassistenza"
-* subject = Reference(Patient/patient-mrossi)
-* author = Reference(PractitionerRole/practrole-bianchi-gom)
-* period.start = "2025-09-01"
-* period.end   = "2025-09-30"
-
-// attività principali ricondotte a ServiceRequest/Task come tipo di attività
-* activity[0].detail.kind = #ServiceRequest
-* activity[0].detail.status = #completed
-* activity[0].detail.description = "Revisione parametri domiciliari ultimi 14 giorni e video-consulto conclusivo."
-* activity[1].detail.kind = #Task
-* activity[1].detail.status = #in-progress
-* activity[1].detail.description = "Educazione sanitaria: aderenza terapeutica e uso corretto saturimetro."
-
-// ======================================================
-// 2) CompositionRelazioneTeleassistenza
+// 1) CompositionRelazioneTeleassistenza
 // ======================================================
 Instance: EsempioCompositionRelazioneTeleassistenza
 InstanceOf: CompositionRelazioneTeleassistenza
 Usage: #example
 Description: "Composition della Relazione di Fine Percorso di Teleassistenza (LOINC 91531-4): struttura le sezioni cliniche della relazione (inquadramento iniziale, referto, diagnosi, confronto con esami precedenti, suggerimenti al MMG, accertamenti consigliati, terapia farmacologica), firmata dal Dr. Bianchi il 30/09/2025."
 * id = "composition-rel-1"
+* identifier.system = "urn:ietf:rfc:39861"
+* identifier.value = "urn:uuid:3f4a5b6c-7d8e-49f0-a1b2-c3d4e5f6a7b8"
 * status = #final
 * type = $loinc#91531-4
 * date = "2025-09-30T10:30:00+02:00"
@@ -370,7 +341,7 @@ Description: "Composition della Relazione di Fine Percorso di Teleassistenza (LO
 * attester[legalAuthenticator].party = Reference(PractitionerRole/practrole-bianchi-gom)
 * section[pianoDiCura].code = $loinc#18776-5
 * section[pianoDiCura].title = "Piano di cura"
-* section[pianoDiCura].entry[0] = Reference(CarePlan/careplan-rel-1)
+* section[pianoDiCura].entry[0] = Reference(CarePlan/careplan-tele-1)
 
 * section[questitoDiagnostico].code = $loinc#29299-5
 * section[questitoDiagnostico].title = "Quesito diagnostico"
@@ -757,8 +728,8 @@ Description: "Bundle transaction per l'invio della Relazione di Fine Percorso di
 * entry[composition].request.method = #POST
 * entry[composition].request.url = "Composition"
 
-* entry[carePlan].fullUrl = "http://example.org/fhir/CarePlan/careplan-rel-1"
-* entry[carePlan].resource = careplan-rel-1
+* entry[carePlan].fullUrl = "http://example.org/fhir/CarePlan/careplan-tele-1"
+* entry[carePlan].resource = EsempioPianoDiCuraTeleassistenza
 * entry[carePlan].request.method = #POST
 * entry[carePlan].request.url = "CarePlan"
 

@@ -3,6 +3,13 @@ Parent: Bundle
 Id: BundlePianoTeleassistenza
 Description: "Profilo del Bundle utilizzato nel contesto del Piano di Teleassistenza. Contiene il documento completo del piano di cura, incluse la Composition, il CarePlan, le risorse cliniche e amministrative associate."
 * ^status = #draft
+
+* identifier 1..1
+* identifier ^short = "Identificativo univoco del piano di teleassistenza."
+
+* timestamp 1..1
+* timestamp ^short = "Data e ora di creazione del Bundle documentale."
+
 * type = #document (exactly)
 * entry ^slicing.discriminator[0].type = #type
 * entry ^slicing.discriminator[0].path = "resource"
@@ -21,11 +28,13 @@ Description: "Profilo del Bundle utilizzato nel contesto del Piano di Teleassist
 //    activityDefinition 0..* and
     serviceRequest 0..1 and
     observation 0..*
+
+* entry.resource 1..1
 * entry[composition].resource only CompositionPianoTA
 * entry[carePlan].resource only CarePlanPianoDiCuraTeleassistenza
 * entry[patient].resource only PatientTeleassistenza
 * entry[practitionerRole].resource only PractitionerRoleTeleassistenza
-* entry[organization].resource only OrganizationT1
+* entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
 * entry[practitioner].resource only PractitionerTeleassistenza
 * entry[encounter].resource only EncounterTeleassistenza
 //* entry[activityDefinition].resource only ActivityDefinition
