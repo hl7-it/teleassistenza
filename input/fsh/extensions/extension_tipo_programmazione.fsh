@@ -8,7 +8,7 @@ Context: CarePlan
 * extension 0..0
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from VSTipoProgrammazione (required)
+* valueCodeableConcept from VSTipoProgrammazione (example)
 * valueCodeableConcept ^short = "Tipologia di programmazione del piano"
 
 

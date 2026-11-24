@@ -24,6 +24,7 @@ Description: "Profilo del CarePlan utilizzato nel contesto del Piano di Teleassi
 * author ^short = "Autore del piano di Teleassistenza."
 
 * replaces ^short = "Piano assistenziale precedente sostituito in caso di riprogrammazione."
+* replaces only Reference(CarePlanPianoDiCuraTeleassistenza)
 
 * activity ^short = "Azione da attuare come parte del piano di Teleassistenza"
 * activity.detail.extension contains
@@ -40,4 +41,4 @@ Description: "Profilo del CarePlan utilizzato nel contesto del Piano di Teleassi
 * activity.detail.scheduledTiming.repeat.timeOfDay ^short = "Orario specifico della ripetizione dell'attività del piano di Teleassistenza."
 
 * activity.outcomeReference only Reference(ObservationTeleassistenza)
-* activity.outcomeReference ^short = "Parametro rilevato durante il telemonitoraggio."
+* activity.outcomeReference ^short = "Parametro rilevato durante la teleassistenza."
