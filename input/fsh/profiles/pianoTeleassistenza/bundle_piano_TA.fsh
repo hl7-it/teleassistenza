@@ -20,15 +20,15 @@ Description: "Profilo del Bundle utilizzato nel contesto del Piano di Teleassist
 * entry contains
     composition 1..1 and
     carePlan 0..* and
-    patient 0..1 and
+    patient 1..1 and
     practitionerRole 0..* and
     organization 0..* and
     practitioner 0..* and
     encounter 0..1 and
-//    activityDefinition 0..* and
     serviceRequest 0..1 and
-    observation 0..*
-
+    observation 0..* and 
+    appintment 0..1 
+* entry[appintment].resource only AppointmentTeleassistenza
 * entry.resource 1..1
 * entry[composition].resource only CompositionPianoTA
 * entry[carePlan].resource only CarePlanPianoDiCuraTeleassistenza
@@ -37,6 +37,5 @@ Description: "Profilo del Bundle utilizzato nel contesto del Piano di Teleassist
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
 * entry[practitioner].resource only PractitionerTeleassistenza
 * entry[encounter].resource only EncounterTeleassistenza
-//* entry[activityDefinition].resource only ActivityDefinition
 * entry[serviceRequest].resource only ServiceRequestTeleassistenza
 * entry[observation].resource only ObservationTeleassistenza

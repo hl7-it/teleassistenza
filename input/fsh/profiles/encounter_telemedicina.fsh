@@ -7,7 +7,7 @@ Description: "Profilo dell'Encounter nel contesto della Teleassistenza. Rapprese
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier contains codiceNosologico 1..1
+* identifier contains codiceNosologico 1..
 * identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico" (exactly)
 
 * status ^short = "Stato attuale dell'incontro."
