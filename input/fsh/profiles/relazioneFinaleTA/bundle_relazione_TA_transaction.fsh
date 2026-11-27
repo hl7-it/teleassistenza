@@ -27,7 +27,8 @@ Description: "Bundle FHIR di tipo transaction per la Relazione di Teleassistenza
     observation         0..* and
     medicationRequest   0..* and
     encounter           0..1 and
-    activityDefinition  0..*
+    activityDefinition  0..* and
+    procedure           0..*
 
 // Vincoli di profilo sulle risorse
 * entry[composition].resource only CompositionRelazioneTeleassistenza
@@ -40,6 +41,7 @@ Description: "Bundle FHIR di tipo transaction per la Relazione di Teleassistenza
 * entry[medicationRequest].resource only MedicationRequestTeleassistenza
 * entry[encounter].resource only EncounterTeleassistenza
 * entry[activityDefinition].resource only ActivityDefinition
+* entry[procedure].resource only ProcedureTeleassistenza
 
 // ---------------------------
 // Metodi REST per la transaction
@@ -58,3 +60,4 @@ Description: "Bundle FHIR di tipo transaction per la Relazione di Teleassistenza
 * entry[medicationRequest].request.method = #POST
 * entry[encounter].request.method = #POST
 * entry[activityDefinition].request.method = #POST
+* entry[procedure].request.method = #POST

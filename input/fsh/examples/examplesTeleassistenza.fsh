@@ -77,7 +77,7 @@ Description: "CarePlan attivo (TM-2025-000123) per il monitoraggio teleassistito
 * activity[=].detail.extension[durataCiclo].valueDuration.system = "http://unitsofmeasure.org"
 * activity[=].detail.extension[durataCiclo].valueDuration.code = #mo
 * activity[=].detail.extension[numeroAttivitaPerCiclo].valuePositiveInt = 60
-* activity[=].detail.code = CsCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
+* activity[=].detail.code = CsCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso ECG (89.52). Il referto deve comprendere le risultanze dell'ECG"
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 2
 * activity[=].detail.scheduledTiming.repeat.period = 1
@@ -92,7 +92,7 @@ Description: "CarePlan attivo (TM-2025-000123) per il monitoraggio teleassistito
 * activity[=].detail.extension[durataCiclo].valueDuration.system = "http://unitsofmeasure.org"
 * activity[=].detail.extension[durataCiclo].valueDuration.code = #mo
 * activity[=].detail.extension[numeroAttivitaPerCiclo].valuePositiveInt = 4
-* activity[=].detail.code = CsCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
+* activity[=].detail.code = CsCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso ECG (89.52). Il referto deve comprendere le risultanze dell'ECG"
 * activity[=].detail.status = #scheduled
 * activity[=].detail.scheduledTiming.repeat.frequency = 1
 * activity[=].detail.scheduledTiming.repeat.period = 1
@@ -315,6 +315,9 @@ Description: "Bundle documento della Relazione di Fine Percorso di Teleassistenz
 * entry[serviceRequest].fullUrl = "http://example.org/fhir/ServiceRequest/ServiceRequestTeleassistenzaExample"
 * entry[serviceRequest].resource = ServiceRequestTeleassistenzaExample
 
+* entry[procedure].fullUrl = "http://example.org/fhir/Procedure/EsempioProcedureTeleassistenza"
+* entry[procedure].resource = EsempioProcedureTeleassistenza
+
 
 // * entry[activityDefinition][0].fullUrl = "http://example.org/fhir/ActivityDefinition/actdef-controllo-pressione"
 // * entry[activityDefinition][0].resource = actdef-controllo-pressione
@@ -349,7 +352,7 @@ Description: "Composition della Relazione di Fine Percorso di Teleassistenza (LO
 
 * section[prestazioni].code = $loinc#62387-6
 * section[prestazioni].title = "Prestazioni eseguite"
-* section[prestazioni].entry[0] = Reference(Encounter/enc-tele-1)
+* section[prestazioni].entry[0] = Reference(EsempioProcedureTeleassistenza)
 
 * section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1
 * section[confrontoPrecedentiEsamiEseguiti].title = "Confronto con precedenti esami eseguiti"
@@ -539,11 +542,11 @@ Usage: #example
 
 Instance: EsempioMedicationStatementTerapiaCorrente
 InstanceOf: MedicationStatementTeleassistenza
-Description: "Terapia farmacologica in atto di Maria Rossi al momento della presa in carico: Furosemide (SNOMED 372744001) in corso dall'inizio del percorso di teleassistenza cardiologica (settembre 2025)."
+Description: "Terapia farmacologica in atto di Maria Rossi al momento della presa in carico: Furosemide (SNOMED 387475002) in corso dall'inizio del percorso di teleassistenza cardiologica (settembre 2025)."
 Usage: #example
 * status = #active
 * subject = Reference(Patient/patient-mrossi)
-* medicationCodeableConcept = http://snomed.info/sct#372744001 "Furosemide"
+* medicationCodeableConcept = http://snomed.info/sct#387475002 "Furosemide"
 * effectivePeriod.start = "2025-09-01"
 * id = "e62c9f1d-9c0b-4433-853b-06ec5074f19a"
 
@@ -786,6 +789,11 @@ Description: "Bundle transaction per l'invio della Relazione di Fine Percorso di
 * entry[observation][6].request.method = #POST
 * entry[observation][6].request.url = "Observation"
 
+* entry[procedure].fullUrl = "http://example.org/fhir/Procedure/EsempioProcedureTeleassistenza"
+* entry[procedure].resource = EsempioProcedureTeleassistenza
+* entry[procedure].request.method = #POST
+* entry[procedure].request.url = "Procedure"
+
 
 
 Instance: EsempioServiceRequestTeleassistenza
@@ -810,6 +818,9 @@ Description: "Richiesta di teleassistenza domiciliare sincrona (SR-2025-000987, 
 
 // Dettagli ordine
 * orderDetail[0].text = "Controllo parametri e counselling per scompenso cardiaco; include verifica aderenza terapeutica."
+* orderDetail[raggioDiErogazione] = cs-raggio-erogazione-TC#AZ "Aziendale"
+* orderDetail[modalitaAttivazione] = csTipologiaAccessoTC#PROG "Programmata"
+* orderDetail[modalitaInterazione] = cs-modalita-interazione-TC#SINC "Sincrona"
 * quantityQuantity.value = 1
 
 // Soggetto, encounter, tempi
@@ -821,6 +832,7 @@ Description: "Richiesta di teleassistenza domiciliare sincrona (SR-2025-000987, 
 // Richiedente ed esecutore
 * requester = Reference(practrole-bianchi-gom)
 * performer[0] = Reference(practrole-bianchi-gom)
+* reasonCode[0] = CodeSystem_DiagnosiICD9CM#428.0 "INSUFFICIENZA CARDIACA CONGESTIZIA NON SPECIFICATA (SCOMPENSO CARDIACO CONGESTIZIO NON SPECIFICATO)"
 * reasonCode[0].text = "Scompenso cardiaco cronico - follow-up teleassistito"
 * note[0].text = "Paziente dotato di tablet aziendale; preferire fascia mattutina."
 

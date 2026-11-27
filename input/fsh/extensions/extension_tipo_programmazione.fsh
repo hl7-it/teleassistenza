@@ -20,6 +20,7 @@ Title: "Tipologia di programmazione"
 Description: "Tipologie di programmazione del piano delle attività assistenziali."
 
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 
@@ -36,4 +37,5 @@ Title: "Tipologia di programmazione"
 Description: "Valori ammessi per la tipologia di programmazione del piano delle attività."
 
 * ^status = #active
+* ^experimental = false
 * include codes from system CSTipoProgrammazione

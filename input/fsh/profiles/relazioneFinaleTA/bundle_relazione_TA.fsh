@@ -24,7 +24,8 @@ Description: "Profilo del Bundle di tipo document utilizzato nel contesto della 
     activityDefinition 0..* and
     medicationStatement 0..1 and
     allergyIntolerance 0..* and
-    serviceRequest 0..1
+    serviceRequest 0..1 and
+    procedure 0..*
 
 
 * entry[composition].resource only CompositionRelazioneTeleassistenza
@@ -40,3 +41,4 @@ Description: "Profilo del Bundle di tipo document utilizzato nel contesto della 
 * entry[medicationStatement].resource only MedicationStatementTeleassistenza
 * entry[allergyIntolerance].resource only AllergyIntoleranceTeleassistenza
 * entry[serviceRequest].resource only ServiceRequestTeleassistenza
+* entry[procedure].resource only ProcedureTeleassistenza

@@ -58,6 +58,22 @@ Description: "Profilo della ServiceRequest utilizzato nel contesto del Piano di 
 * orderDetail[modalitaAttivazione].coding.system = "http://hl7.it/fhir/teleassistenza/CodeSystem/csTipologiaAccessoTC" (exactly)
 * orderDetail[modalitaAttivazione] from vs-tipologia-accesso-TC (required)
 
+// Raggio di erogazione
+* orderDetail[raggioDiErogazione] ^short = "Raggio di erogazione della teleassistenza."
+* orderDetail[raggioDiErogazione] ^definition = "Indica l'ambito territoriale/organizzativo (aziendale, distrettuale, regionale, nazionale) di erogazione della prestazione di teleassistenza."
+* orderDetail[raggioDiErogazione].coding 1..1
+* orderDetail[raggioDiErogazione].coding.system 1..1
+* orderDetail[raggioDiErogazione].coding.system = "http://hl7.it/fhir/teleassistenza/CodeSystem/cs-raggio-erogazione-TC" (exactly)
+* orderDetail[raggioDiErogazione] from vs-raggio-erogazione-TC (required)
+
+// Modalità di interazione
+* orderDetail[modalitaInterazione] ^short = "Modalità di interazione della teleassistenza."
+* orderDetail[modalitaInterazione] ^definition = "Indica se la prestazione di teleassistenza è erogata in modalità sincrona o asincrona."
+* orderDetail[modalitaInterazione].coding 1..1
+* orderDetail[modalitaInterazione].coding.system 1..1
+* orderDetail[modalitaInterazione].coding.system = "http://hl7.it/fhir/teleassistenza/CodeSystem/cs-modalita-interazione-TC" (exactly)
+* orderDetail[modalitaInterazione] from vs-modalita-interazione-TC (required)
+
 * quantity[x] ^short = "Quantità prestazione."
 * quantity[x] ^definition = "Contiene la molteplicità della prestazione."
 
@@ -97,15 +113,17 @@ Description: "Profilo della ServiceRequest utilizzato nel contesto del Piano di 
 // * insurance only Reference(Coverage)
 
 * code.coding ^slicing.discriminator.type = #value
-* code.coding ^slicing.discriminator.path = "extension.value"
+* code.coding ^slicing.discriminator.path = "system"
 * code.coding ^slicing.rules = #open
 * code.coding contains codiceCatalogoRegionalePrestazione 0..1 and codiceCatalogoNazionalePrestazione 0..1
 * code.coding[codiceCatalogoRegionalePrestazione].system ^short = "Identifica il sistema di terminologia"
 * code.coding[codiceCatalogoRegionalePrestazione].system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice. https://terminology.agenas.gov.it/CodeSystem/catalogoRegionalePrestazioni"
+* code.coding[codiceCatalogoRegionalePrestazione].system = "https://terminology.agenas.gov.it/CodeSystem/catalogoRegionalePrestazioni" (exactly)
 * code.coding[codiceCatalogoRegionalePrestazione].code ^short = "Codice valido per il sistema terminologico di riferimento"
 * code.coding[codiceCatalogoRegionalePrestazione].code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
 * code.coding[codiceCatalogoNazionalePrestazione].code from VsCatalogoNazionalePrestazioni (preferred)
 * code.coding[codiceCatalogoNazionalePrestazione].system ^short = "Identifica il sistema di terminologia"
 * code.coding[codiceCatalogoNazionalePrestazione].system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice."
+* code.coding[codiceCatalogoNazionalePrestazione].system = "http://hl7.it/fhir/teleassistenza/CodeSystem/CsCatalogoNazionalePrestazioni" (exactly)
 * code.coding[codiceCatalogoNazionalePrestazione].code ^short = "Codice valido per il sistema terminologico di riferimento"
 * code.coding[codiceCatalogoNazionalePrestazione].code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
